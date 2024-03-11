@@ -1,0 +1,181 @@
+
+bet area.png
+size: 1879,697
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG blue
+  rotate: true
+  xy: 2, 231
+  size: 464, 222
+  orig: 481, 238
+  offset: 8, 8
+  index: -1
+BG draw
+  rotate: true
+  xy: 1078, 13
+  size: 277, 194
+  orig: 279, 196
+  offset: 1, 1
+  index: -1
+BG red
+  rotate: true
+  xy: 226, 232
+  size: 463, 222
+  orig: 480, 238
+  offset: 7, 8
+  index: -1
+firework/firework_01
+  rotate: false
+  xy: 291, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+firework/firework_02
+  rotate: true
+  xy: 1771, 103
+  size: 69, 70
+  orig: 400, 225
+  offset: 171, 93
+  index: -1
+firework/firework_03
+  rotate: false
+  xy: 1654, 44
+  size: 115, 128
+  orig: 400, 225
+  offset: 148, 65
+  index: -1
+firework/firework_04
+  rotate: true
+  xy: 1501, 19
+  size: 153, 151
+  orig: 400, 225
+  offset: 132, 51
+  index: -1
+firework/firework_05
+  rotate: false
+  xy: 1679, 174
+  size: 198, 181
+  orig: 400, 225
+  offset: 119, 39
+  index: -1
+firework/firework_06
+  rotate: false
+  xy: 1679, 174
+  size: 198, 181
+  orig: 400, 225
+  offset: 119, 39
+  index: -1
+firework/firework_07
+  rotate: true
+  xy: 1679, 357
+  size: 225, 198
+  orig: 400, 225
+  offset: 103, 27
+  index: -1
+firework/firework_08
+  rotate: true
+  xy: 861, 6
+  size: 240, 215
+  orig: 400, 225
+  offset: 93, 10
+  index: -1
+firework/firework_09
+  rotate: true
+  xy: 1454, 333
+  size: 249, 223
+  orig: 400, 225
+  offset: 89, 2
+  index: -1
+firework/firework_10
+  rotate: true
+  xy: 1274, 30
+  size: 273, 225
+  orig: 400, 225
+  offset: 71, 0
+  index: -1
+firework/firework_11
+  rotate: true
+  xy: 1274, 30
+  size: 273, 225
+  orig: 400, 225
+  offset: 71, 0
+  index: -1
+firework/firework_12
+  rotate: false
+  xy: 578, 9
+  size: 281, 225
+  orig: 400, 225
+  offset: 64, 0
+  index: -1
+firework/firework_13
+  rotate: false
+  xy: 291, 5
+  size: 285, 225
+  orig: 400, 225
+  offset: 60, 0
+  index: -1
+firework/firework_14
+  rotate: false
+  xy: 2, 4
+  size: 287, 225
+  orig: 400, 225
+  offset: 55, 0
+  index: -1
+light blue
+  rotate: true
+  xy: 658, 246
+  size: 449, 194
+  orig: 451, 196
+  offset: 1, 1
+  index: -1
+light dot
+  rotate: false
+  xy: 1501, 194
+  size: 136, 137
+  orig: 162, 162
+  offset: 11, 12
+  index: -1
+light draw
+  rotate: true
+  xy: 1050, 292
+  size: 290, 206
+  orig: 292, 208
+  offset: 1, 1
+  index: -1
+light frame
+  rotate: true
+  xy: 450, 236
+  size: 459, 206
+  orig: 464, 208
+  offset: 1, 1
+  index: -1
+light frame draw
+  rotate: true
+  xy: 1258, 305
+  size: 277, 194
+  orig: 279, 196
+  offset: 1, 1
+  index: -1
+light line
+  rotate: false
+  xy: 1050, 584
+  size: 818, 111
+  orig: 970, 118
+  offset: 76, 4
+  index: -1
+light red
+  rotate: true
+  xy: 854, 248
+  size: 447, 194
+  orig: 451, 196
+  offset: 1, 1
+  index: -1
+star
+  rotate: false
+  xy: 1050, 267
+  size: 24, 23
+  orig: 29, 29
+  offset: 1, 2
+  index: -1
