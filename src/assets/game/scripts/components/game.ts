@@ -4,12 +4,8 @@ import GameComponent from "db://shared-components/game/scripts/components/game-c
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 import { siteConfigs } from "../../../scripts/site-configs";
-import { ColorGame } from "../../color-game/scripts/color-game";
-import { ColorDice } from "../../color-game/scripts/dice";
 import { containerOptions, settings } from "../game-settings";
 import "./../../../resources/i18n";
-import { ColorGameDoubleTripleResult } from "./double-triple-result";
-import { ColorGameWinningResult } from "./winning-result";
 const { Rounds, Translator } = gc;
 
 startGame(settings.name, containerOptions, siteConfigs);
@@ -43,22 +39,9 @@ export default class Game extends GameComponent {
     @property(Node)
     camera3D: Node = null;
 
-    private winningResult: ColorGameWinningResult = null;
-    private colorGame: ColorGame = null;
-    private doubleTripleResult: ColorGameDoubleTripleResult = null;
-
     override namespace = settings.name;
     override containerOptions = containerOptions;
     isLoading = true;
-
-    private readonly winningSounds = {
-        [ColorDice.Yellow]: "yellow",
-        [ColorDice.Red]: "red",
-        [ColorDice.Pink]: "pink",
-        [ColorDice.White]: "white",
-        [ColorDice.Blue]: "blue",
-        [ColorDice.Green]: "green",
-    };
 
     protected clientRoundId = -1;
     protected openAnimationIndex = 0;
