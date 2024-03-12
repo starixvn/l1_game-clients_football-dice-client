@@ -77,7 +77,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "hot",
+    "_name": "home",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -1452,7 +1452,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "red",
+    "_name": "draw",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -2837,7 +2837,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "cold",
+    "_name": "away",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
