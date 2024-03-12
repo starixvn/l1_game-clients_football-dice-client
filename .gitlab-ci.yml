@@ -8,8 +8,8 @@ variables:
   GIT_STRATEGY: clone
   COCOS_VERSION: "3.8.0"
   COCOS_PROJECT_DIR: src
-  INTEGRATION_IMAGE: pentagon/l1_color_game_client
-  INTEGRATION_WS_PATH: colorgame
+  INTEGRATION_IMAGE: pentagon/l1_football_dice_client
+  INTEGRATION_WS_PATH: footballdice
 
 .build_cocos_creator_script: &build_cocos_creator_script
   stage: test
