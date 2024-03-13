@@ -728,7 +728,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "7ec9kKWXNCLKMG9RE8wm8U",
+    "fileId": "63PTiWOw1MsL3JoZLP95Gx",
     "prefabRootNode": null,
     "mountedChildren": [],
     "mountedComponents": [],
@@ -775,7 +775,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -154.653,
+      "y": -158.129,
       "z": 0
     }
   },
