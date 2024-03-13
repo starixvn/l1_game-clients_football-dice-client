@@ -135,8 +135,8 @@ export class FootballDiceAnimation extends Component {
         }
     }
 
-    randomTest() {
-        const result = { home: [2, 3], away: [1, 5] };
+    setResult(result: any) {
+        // const result = { home: [2, 3], away: [1, 5] };
 
         const randomAnimationIndex = this.testAnimationIndex;
         this.changeTestAnimationIndex();
