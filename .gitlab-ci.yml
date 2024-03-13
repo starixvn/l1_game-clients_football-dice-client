@@ -23,24 +23,11 @@ variables:
     - node --version
     - npm run install-dependencies --prefix "./$COCOS_PROJECT_DIR"
     - set +e
-    - |
-        MAX_ATTEMPTS=2
-        ATTEMPT_COUNT=0
-        TIMEOUT_MINUTES=60
-
-        until /Applications/CocosCreator/Creator/$COCOS_VERSION/CocosCreator.app/Contents/MacOS/CocosCreator --project "./$COCOS_PROJECT_DIR" --build "platform=web-mobile;debug=false;webOrientation=landscape;md5Cache=true;replaceSplashScreen=true"; do
-          ATTEMPT_COUNT=$((ATTEMPT_COUNT+1))
-          if [ $ATTEMPT_COUNT -gt $MAX_ATTEMPTS ]; then
-            echo "Failed to build project after $MAX_ATTEMPTS attempts"
-            exit 1
-          fi
-          echo "Retrying build in $TIMEOUT_MINUTES minutes..."
-          sleep $((TIMEOUT_MINUTES * 60))
-        done
+    - /Applications/CocosCreator/Creator/$COCOS_VERSION/CocosCreator.app/Contents/MacOS/CocosCreator --project "./$COCOS_PROJECT_DIR" --build "platform=web-mobile;debug=false;webOrientation=landscape;md5Cache=true;replaceSplashScreen=true"
     - set -e
     - |
       if [ -z "$(ls -A ./$COCOS_PROJECT_DIR/build/web-mobile)" ]; then
-        echo -e "\033[0;31mFolder build is empty, please check the build script"
+        echo -e "\033[0;31mFolder build is empty, please check the build scritp"
         exit 1
       fi
   tags:
