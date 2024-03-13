@@ -47,6 +47,10 @@ variables:
     - key: $CI_COMMIT_SHORT_SHA
       paths:
         - $COCOS_PROJECT_DIR/build/web-mobile
+  retry:
+    max: 2
+    when:
+      - GET /information_url https://creator-api.cocos.com/information_url received HTTP status code 504
 .base_build_cocos:
   <<: *build_cocos_creator_script
 
