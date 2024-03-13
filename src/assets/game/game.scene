@@ -728,7 +728,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "82n+3uI71AF4FOz0paxiep",
+    "fileId": "7ec9kKWXNCLKMG9RE8wm8U",
     "prefabRootNode": null,
     "mountedChildren": [],
     "mountedComponents": [],
@@ -774,8 +774,8 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": -6,
-      "y": -126.99000000000001,
+      "x": 0,
+      "y": -154.653,
       "z": 0
     }
   },
@@ -1346,9 +1346,7 @@
       "contents",
       "1"
     ],
-    "value": {
-      "__id__": 16
-    }
+    "value": null
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -1374,9 +1372,7 @@
       "contents",
       "0"
     ],
-    "value": {
-      "__id__": 16
-    }
+    "value": null
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -1402,9 +1398,7 @@
       "contents",
       "0"
     ],
-    "value": {
-      "__id__": 16
-    }
+    "value": null
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -1426,9 +1420,7 @@
       "contents",
       "0"
     ],
-    "value": {
-      "__id__": 16
-    }
+    "value": null
   },
   {
     "__type__": "cc.TargetOverrideInfo",
@@ -5994,9 +5986,7 @@
     "propertyPath": [
       "betItems"
     ],
-    "target": {
-      "__id__": 16
-    },
+    "target": null,
     "targetInfo": {
       "__id__": 380
     }
