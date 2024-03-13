@@ -169,7 +169,7 @@
     },
     "defaultSkin": "default",
     "defaultAnimation": "home-logo",
-    "_premultipliedAlpha": true,
+    "_premultipliedAlpha": false,
     "_timeScale": 1,
     "_preCacheMode": 1,
     "_cacheMode": 1,
@@ -180,7 +180,7 @@
     "_debugBones": true,
     "_debugSlots": false,
     "_enableBatch": true,
-    "loop": true,
+    "loop": false,
     "_id": ""
   },
   {
@@ -317,7 +317,7 @@
     "_debugBones": true,
     "_debugSlots": false,
     "_enableBatch": true,
-    "loop": true,
+    "loop": false,
     "_id": ""
   },
   {
@@ -374,6 +374,7 @@
       "__id__": 0
     },
     "fileId": "47FEaT9U9P2YdKBxn19LoW",
+    "instance": null,
     "targetOverrides": null
   }
 ]
