@@ -49,6 +49,7 @@ export class FootballDiceAnimation extends Component {
     private readonly homeShakingDuration = 8333;
 
     private readonly awayShakingDuration = 11200;
+    private readonly zoomInDuration = 1667;
 
     onLoad() {
         this.loadAnimation();
@@ -179,7 +180,10 @@ export class FootballDiceAnimation extends Component {
     }
 
     zoomInCamera() {
-        this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
+        return new Promise((resolve) => {
+            this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
+            this.scheduleOnce(resolve, this.zoomInDuration / 1000);
+        });
     }
 
     zoomOutCamera() {

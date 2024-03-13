@@ -3,6 +3,7 @@ import { Label, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
+import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
 import { containerOptions, settings } from "../game-settings";
@@ -65,10 +66,10 @@ export default class Game extends GameComponent {
 
     async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
         if (result) {
-            // await zoom in camera
-            this.gameAnimation.zoomInCamera();
+            await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
                 this.startLogoAnimation();
+                await FunctionUtils.delay(300);
             }
             await this.gameAnimation.setResult(result, hasAnimation);
         }
