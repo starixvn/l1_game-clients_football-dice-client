@@ -56,8 +56,10 @@ export default class Game extends GameComponent {
     async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
         if (result) {
             // await zoom in camera
-            this.startLogoAnimation();
-            this.gameAnimation.setResult(result);
+            if (hasAnimation) {
+                this.startLogoAnimation();
+            }
+            await this.gameAnimation.setResult(result, hasAnimation);
         }
     }
 

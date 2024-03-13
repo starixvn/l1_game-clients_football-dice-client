@@ -135,27 +135,43 @@ export class FootballDiceAnimation extends Component {
         }
     }
 
-    setResult(result: any) {
-        // const result = { home: [2, 3], away: [1, 5] };
+    randomTest() {
+        const result = { home: [2, 3], away: [1, 5] };
+        this.setResult(result);
+    }
 
-        const randomAnimationIndex = this.testAnimationIndex;
-        this.changeTestAnimationIndex();
+    setResult(result: any, animated = true) {
+        return new Promise<void>((resolve, reject) => {
+            const randomAnimationIndex = this.testAnimationIndex;
+            this.changeTestAnimationIndex();
+            console.log("========= animation index ", randomAnimationIndex);
 
-        Object.keys(result).forEach((team) => {
-            const recordGroup = team === "home" ? this.redDiceGroup : this.blueDiceGroup;
-            const animationData = team === "home" ? this.homeAnimations[randomAnimationIndex] : this.awayAnimations[randomAnimationIndex];
+            Object.keys(result).forEach((team) => {
+                const recordGroup = team === "home" ? this.redDiceGroup : this.blueDiceGroup;
+                const animationData =
+                    team === "home" ? this.homeAnimations[randomAnimationIndex] : this.awayAnimations[randomAnimationIndex];
 
-            const dices = recordGroup.getComponentsInChildren(Dice);
+                const dices = recordGroup.getComponentsInChildren(Dice);
 
-            result[team].forEach((value, index) => {
-                const dice = dices[index];
-                dice.setResult(value, animationData.fu[dice.cube.name], 1);
+                result[team].forEach((value, index) => {
+                    const dice = dices[index];
+                    dice.setResult(value, animationData.fu[dice.cube.name], 1);
+                });
+
+                if (animated) {
+                    recordGroup.startReplay(animationData.t);
+                } else {
+                    recordGroup.replayLastFrame(animationData.t);
+                }
             });
 
-            recordGroup.startReplay(animationData.t);
+            if (animated) {
+                this.animation.play(AnimationIndex.SHAKE_RED);
+                this.animation.crossFade(AnimationIndex.SHAKE_BLUE, this.homeShakingDuration / 1000);
+                this.scheduleOnce(resolve, this.awayShakingDuration / 1000);
+            } else {
+                resolve();
+            }
         });
-        console.log("========= animation index ", randomAnimationIndex);
-        this.animation.play(AnimationIndex.SHAKE_RED);
-        this.animation.crossFade(AnimationIndex.SHAKE_BLUE, this.homeShakingDuration / 1000);
     }
 }
