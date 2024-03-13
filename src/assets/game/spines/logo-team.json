@@ -1,0 +1,162 @@
+{
+"skeleton": { "hash": "w8hxzFjzcNKAJY/xXu85VH2zwVA=", "spine": "3.8.75" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "away", "parent": "root" },
+	{ "name": "home", "parent": "root" }
+],
+"slots": [
+	{ "name": "away-logo/logo away_0", "bone": "away" },
+	{ "name": "home-logo/logo home_0", "bone": "home" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"away-logo/logo away_0": {
+				"away logo/logo away_0": { "width": 480, "height": 450 },
+				"away logo/logo away_1": { "width": 480, "height": 450 },
+				"away logo/logo away_2": { "width": 480, "height": 450 },
+				"away logo/logo away_3": { "width": 480, "height": 450 },
+				"away logo/logo away_4": { "width": 480, "height": 450 },
+				"away logo/logo away_5": { "width": 480, "height": 450 },
+				"away logo/logo away_6": { "width": 480, "height": 450 },
+				"away logo/logo away_7": { "width": 480, "height": 450 },
+				"away logo/logo away_8": { "width": 480, "height": 450 },
+				"away logo/logo away_9": { "width": 480, "height": 450 },
+				"away logo/logo away_10": { "width": 480, "height": 450 },
+				"away logo/logo away_11": { "width": 480, "height": 450 },
+				"away logo/logo away_12": { "width": 480, "height": 450 },
+				"away logo/logo away_13": { "width": 480, "height": 450 },
+				"away logo/logo away_14": { "width": 480, "height": 450 },
+				"away logo/logo away_15": { "width": 480, "height": 450 },
+				"away logo/logo away_16": { "width": 480, "height": 450 },
+				"away logo/logo away_17": { "width": 480, "height": 450 },
+				"away logo/logo away_18": { "width": 480, "height": 450 },
+				"away logo/logo away_19": { "width": 480, "height": 450 },
+				"away logo/logo away_20": { "width": 480, "height": 450 },
+				"away logo/logo away_21": { "width": 480, "height": 450 },
+				"away logo/logo away_22": { "width": 480, "height": 450 },
+				"away logo/logo away_23": { "width": 480, "height": 450 },
+				"away logo/logo away_24": { "width": 480, "height": 450 }
+			},
+			"home-logo/logo home_0": {
+				"home logo/logo home_0": { "width": 480, "height": 450 },
+				"home logo/logo home_1": { "width": 480, "height": 450 },
+				"home logo/logo home_2": { "width": 480, "height": 450 },
+				"home logo/logo home_3": { "width": 480, "height": 450 },
+				"home logo/logo home_4": { "width": 480, "height": 450 },
+				"home logo/logo home_5": { "width": 480, "height": 450 },
+				"home logo/logo home_6": { "width": 480, "height": 450 },
+				"home logo/logo home_7": { "width": 480, "height": 450 },
+				"home logo/logo home_8": { "width": 480, "height": 450 },
+				"home logo/logo home_9": { "width": 480, "height": 450 },
+				"home logo/logo home_10": { "width": 480, "height": 450 },
+				"home logo/logo home_11": { "width": 480, "height": 450 },
+				"home logo/logo home_12": { "width": 480, "height": 450 },
+				"home logo/logo home_13": { "width": 480, "height": 450 },
+				"home logo/logo home_14": { "width": 480, "height": 450 },
+				"home logo/logo home_15": { "width": 480, "height": 450 },
+				"home logo/logo home_16": { "width": 480, "height": 450 },
+				"home logo/logo home_17": { "width": 480, "height": 450 },
+				"home logo/logo home_18": { "width": 480, "height": 450 },
+				"home logo/logo home_19": { "width": 480, "height": 450 },
+				"home logo/logo home_20": { "width": 480, "height": 450 },
+				"home logo/logo home_21": { "width": 480, "height": 450 },
+				"home logo/logo home_22": { "width": 480, "height": 450 },
+				"home logo/logo home_23": { "width": 480, "height": 450 },
+				"home logo/logo home_24": { "width": 480, "height": 450 }
+			}
+		}
+	}
+],
+"animations": {
+	"away-logo": {
+		"slots": {
+			"away-logo/logo away_0": {
+				"attachment": [
+					{ "name": "away logo/logo away_0" },
+					{ "time": 0.0417, "name": "away logo/logo away_1" },
+					{ "time": 0.0833, "name": "away logo/logo away_2" },
+					{ "time": 0.125, "name": "away logo/logo away_3" },
+					{ "time": 0.1667, "name": "away logo/logo away_4" },
+					{ "time": 0.2083, "name": "away logo/logo away_5" },
+					{ "time": 0.25, "name": "away logo/logo away_6" },
+					{ "time": 0.2917, "name": "away logo/logo away_7" },
+					{ "time": 0.3333, "name": "away logo/logo away_8" },
+					{ "time": 0.375, "name": "away logo/logo away_9" },
+					{ "time": 0.4167, "name": "away logo/logo away_10" },
+					{ "time": 0.4583, "name": "away logo/logo away_11" },
+					{ "time": 0.5, "name": "away logo/logo away_12" },
+					{ "time": 0.7083, "name": "away logo/logo away_13" },
+					{ "time": 0.75, "name": "away logo/logo away_14" },
+					{ "time": 0.7917, "name": "away logo/logo away_15" },
+					{ "time": 0.8333, "name": "away logo/logo away_16" },
+					{ "time": 0.875, "name": "away logo/logo away_17" },
+					{ "time": 0.9167, "name": "away logo/logo away_18" },
+					{ "time": 0.9583, "name": "away logo/logo away_19" },
+					{ "time": 1, "name": "away logo/logo away_20" },
+					{ "time": 1.0417, "name": "away logo/logo away_21" },
+					{ "time": 1.0833, "name": "away logo/logo away_22" },
+					{ "time": 1.125, "name": "away logo/logo away_23" },
+					{ "time": 1.1667, "name": "away logo/logo away_24" },
+					{ "time": 1.4583, "name": "away logo/logo away_12" },
+					{ "time": 1.5, "name": "away logo/logo away_11" },
+					{ "time": 1.5417, "name": "away logo/logo away_9" },
+					{ "time": 1.5833, "name": "away logo/logo away_8" },
+					{ "time": 1.625, "name": "away logo/logo away_7" },
+					{ "time": 1.6667, "name": "away logo/logo away_5" },
+					{ "time": 1.7083, "name": "away logo/logo away_4" },
+					{ "time": 1.75, "name": "away logo/logo away_3" },
+					{ "time": 1.7917, "name": "away logo/logo away_2" },
+					{ "time": 1.8333, "name": "away logo/logo away_1" },
+					{ "time": 1.875, "name": "away logo/logo away_0" }
+				]
+			}
+		}
+	},
+	"home-logo": {
+		"slots": {
+			"home-logo/logo home_0": {
+				"attachment": [
+					{ "time": 0.0417, "name": "home logo/logo home_1" },
+					{ "time": 0.0833, "name": "home logo/logo home_2" },
+					{ "time": 0.125, "name": "home logo/logo home_3" },
+					{ "time": 0.1667, "name": "home logo/logo home_4" },
+					{ "time": 0.2083, "name": "home logo/logo home_5" },
+					{ "time": 0.25, "name": "home logo/logo home_6" },
+					{ "time": 0.2917, "name": "home logo/logo home_7" },
+					{ "time": 0.3333, "name": "home logo/logo home_8" },
+					{ "time": 0.375, "name": "home logo/logo home_9" },
+					{ "time": 0.4167, "name": "home logo/logo home_10" },
+					{ "time": 0.4583, "name": "home logo/logo home_11" },
+					{ "time": 0.5, "name": "home logo/logo home_12" },
+					{ "time": 0.7083, "name": "home logo/logo home_13" },
+					{ "time": 0.75, "name": "home logo/logo home_14" },
+					{ "time": 0.7917, "name": "home logo/logo home_15" },
+					{ "time": 0.8333, "name": "home logo/logo home_16" },
+					{ "time": 0.875, "name": "home logo/logo home_17" },
+					{ "time": 0.9167, "name": "home logo/logo home_18" },
+					{ "time": 0.9583, "name": "home logo/logo home_19" },
+					{ "time": 1, "name": "home logo/logo home_20" },
+					{ "time": 1.0417, "name": "home logo/logo home_21" },
+					{ "time": 1.0833, "name": "home logo/logo home_22" },
+					{ "time": 1.125, "name": "home logo/logo home_23" },
+					{ "time": 1.1667, "name": "home logo/logo home_24" },
+					{ "time": 1.4583, "name": "home logo/logo home_12" },
+					{ "time": 1.5, "name": "home logo/logo home_11" },
+					{ "time": 1.5417, "name": "home logo/logo home_9" },
+					{ "time": 1.5833, "name": "home logo/logo home_8" },
+					{ "time": 1.625, "name": "home logo/logo home_7" },
+					{ "time": 1.6667, "name": "home logo/logo home_5" },
+					{ "time": 1.7083, "name": "home logo/logo home_4" },
+					{ "time": 1.75, "name": "home logo/logo home_3" },
+					{ "time": 1.7917, "name": "home logo/logo home_2" },
+					{ "time": 1.8333, "name": "home logo/logo home_1" },
+					{ "time": 1.875, "name": "home logo/logo home_0" }
+				]
+			}
+		}
+	}
+}
+}

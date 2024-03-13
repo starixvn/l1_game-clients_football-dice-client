@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, _decorator } from "cc";
+import { Label, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -26,6 +26,9 @@ export default class Game extends GameComponent {
     @property(FootballDiceAnimation)
     gameAnimation: FootballDiceAnimation = null;
 
+    @property({ type: sp.Skeleton })
+    logoSkeletons: sp.Skeleton[] = [];
+
     override namespace = settings.name;
     override containerOptions = containerOptions;
     isLoading = true;
@@ -50,10 +53,15 @@ export default class Game extends GameComponent {
         this.isLoading = isLoading;
     }
 
-    @render(Settlements.SettlementStore, (store) => store.result, { fireImmediately: false })
-    renderResult(result: any) {
+    async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
         if (result) {
+            // await zoom in camera
+            this.startLogoAnimation();
             this.gameAnimation.setResult(result);
         }
+    }
+
+    private startLogoAnimation() {
+        this.logoSkeletons.forEach((logo) => logo.setAnimation(0, `${logo.node.name}-logo`, false));
     }
 }
