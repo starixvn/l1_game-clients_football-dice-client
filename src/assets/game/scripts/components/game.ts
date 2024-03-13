@@ -50,7 +50,7 @@ export default class Game extends GameComponent {
         this.isLoading = isLoading;
     }
 
-    @render(Settlements.SettlementStore, (store) => store.result)
+    @render(Settlements.SettlementStore, (store) => store.result, { fireImmediately: false })
     renderResult(result: any) {
         if (result) {
             this.gameAnimation.setResult(result);
