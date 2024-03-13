@@ -6,7 +6,7 @@ import { RecordData } from "../../shared/simulator/RecordItem";
 const { ccclass, property } = _decorator;
 
 enum AnimationIndex {
-    IDLE = "ActionCamera waiting bet",
+    IDLE = "ActionCamera waiting  bet",
     SHAKE_RED = "base red shake",
     SHAKE_BLUE = "base blue shake",
     ZOOM_IN = "ActionCamera zoom in",
@@ -31,6 +31,9 @@ export class FootballDiceAnimation extends Component {
 
     @property(JsonAsset)
     animationJson: JsonAsset = null;
+
+    @property(Animation)
+    cameraAnimation: Animation = null;
 
     testAnimationIndex = 0;
 
@@ -173,5 +176,17 @@ export class FootballDiceAnimation extends Component {
                 resolve();
             }
         });
+    }
+
+    zoomInCamera() {
+        this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
+    }
+
+    zoomOutCamera() {
+        this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
+    }
+
+    idleCamera() {
+        this.cameraAnimation.play(AnimationIndex.IDLE);
     }
 }
