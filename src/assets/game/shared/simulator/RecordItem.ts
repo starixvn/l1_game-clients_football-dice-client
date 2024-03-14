@@ -19,6 +19,10 @@ export class RecordItem extends Component {
 
     lastData: RecordData;
 
+    onLoad() {
+        this.stopSimulator();
+    }
+
     resetData() {
         this.data = [];
         this.lastData = null;
