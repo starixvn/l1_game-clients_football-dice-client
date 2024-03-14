@@ -2599,7 +2599,7 @@
       "__id__": 146
     },
     "image": {
-      "__uuid__": "30ca2c7b-11e0-4a7f-9f4f-00818f3d1f7b@b8de4",
+      "__uuid__": "2d67d332-0b65-4c26-aacf-03f54c9217cc@8bf26",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
@@ -2614,7 +2614,7 @@
       "__id__": 148
     },
     "image": {
-      "__uuid__": "30ca2c7b-11e0-4a7f-9f4f-00818f3d1f7b@b8de4",
+      "__uuid__": "2d67d332-0b65-4c26-aacf-03f54c9217cc@8bf26",
       "__expectedType__": "cc.SpriteFrame"
     }
   },
