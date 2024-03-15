@@ -8,6 +8,7 @@ import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
 import { containerOptions, settings } from "../game-settings";
 import "./../../../resources/i18n";
+import { ScoreTable } from "./score-table";
 const { Rounds, Translator, Settlements } = gc;
 
 startGame(settings.name, containerOptions, siteConfigs);
@@ -29,6 +30,9 @@ export default class Game extends GameComponent {
 
     @property({ type: sp.Skeleton })
     logoSkeletons: sp.Skeleton[] = [];
+
+    @property(ScoreTable)
+    scoreTable: ScoreTable = null;
 
     override namespace = settings.name;
     override containerOptions = containerOptions;
@@ -72,6 +76,7 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(300);
             }
             await this.gameAnimation.setResult(result, hasAnimation);
+            this.scoreTable.updateScoreTable(result);
         }
     }
 
