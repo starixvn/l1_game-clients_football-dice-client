@@ -69,13 +69,10 @@ export class FootballDiceAnimation extends Component {
         dices.forEach((d) => d.resetCubePosition());
         this.currentRecordGroup.startRecord();
         const duration = isHome ? this.homeShakingDuration : this.awayShakingDuration;
-        const waitingStop = 1500;
+        const waitingStop = 1000;
 
         setTimeout(() => {
-            this.animation.stop();
-        }, duration);
-
-        setTimeout(() => {
+            console.log("stop physics simulation");
             this.currentRecordGroup.stopRecord();
 
             const data = this.saveRecord();

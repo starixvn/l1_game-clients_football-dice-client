@@ -307,7 +307,7 @@
       "y": 0.017,
       "z": 0.88
     },
-    "_id": "d3MBHVlwRA7aWJ3A2mivZ+"
+    "_id": "92yJrh+XhAzYgmZML/LEmm"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -364,7 +364,7 @@
       "y": 0.017,
       "z": 0.88
     },
-    "_id": "5eKZSQEuZJDIvDTVdEPuVP"
+    "_id": "3f5q7COS5O3aQiYHnxHx/r"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -417,7 +417,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_convex": false,
-    "_id": "cfVsvtGVpAE7I597udjF9h"
+    "_id": "e6AXOxA6RKa5huUNR1ymU3"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -546,7 +546,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 393,
+    "_orthoHeight": 424.57245632065775,
     "_near": 1,
     "_far": 2000,
     "_color": {
