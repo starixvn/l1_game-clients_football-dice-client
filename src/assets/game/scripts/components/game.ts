@@ -63,11 +63,6 @@ export default class Game extends GameComponent {
         isStartRound && this.gameAnimation.zoomOutCamera();
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.isInRoundTime)
-    renderInRoundTime(isInRoundTime: boolean) {
-        isInRoundTime && this.gameAnimation.idleCamera();
-    }
-
     async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
         if (result) {
             await this.gameAnimation.zoomInCamera();

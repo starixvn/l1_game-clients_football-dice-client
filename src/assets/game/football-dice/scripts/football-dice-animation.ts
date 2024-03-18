@@ -6,11 +6,10 @@ import { RecordData } from "../../shared/simulator/RecordItem";
 const { ccclass, property } = _decorator;
 
 enum AnimationIndex {
-    IDLE = "ActionCamera waiting  bet",
-    SHAKE_RED = "base red shake",
-    SHAKE_BLUE = "base blue shake",
-    ZOOM_IN = "ActionCamera zoom in",
-    ZOOM_OUT = "ActionCamera zoom out",
+    SHAKE_RED = "shake1",
+    SHAKE_BLUE = "shake2",
+    ZOOM_IN = "zoom-in",
+    ZOOM_OUT = "zoom-out",
 }
 
 interface Record {
@@ -188,9 +187,5 @@ export class FootballDiceAnimation extends Component {
 
     zoomOutCamera() {
         this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
-    }
-
-    idleCamera() {
-        this.cameraAnimation.play(AnimationIndex.IDLE);
     }
 }
