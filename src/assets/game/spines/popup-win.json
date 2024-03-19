@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "OMqOVJqcqYR1+t/xJrU0RFkazwQ", "spine": "3.8.99" },
+"skeleton": { "hash": "UDDDoi8RjwLgMLZaGn5Usj9z+yw", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "popupBG", "parent": "root", "x": 0.13, "y": 0.71 },
@@ -31,7 +31,8 @@
 	{ "name": "sport-whistle 2", "bone": "sport-whistle 2" },
 	{ "name": "sport-whistle 1", "bone": "sport-whistle 1" },
 	{ "name": "sport-net", "bone": "sport-net", "blend": "multiply" },
-	{ "name": "motion-light/line run_01", "bone": "motion-light" }
+	{ "name": "motion-light/line run_01", "bone": "motion-light" },
+	{ "name": "text-team-win", "bone": "text-team-win" }
 ],
 "skins": [
 	{
@@ -241,6 +242,14 @@
 				],
 				"attachment": [
 					{ "name": "sport net" }
+				]
+			},
+			"text-team-win": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 2, "color": "ffffffff" },
+					{ "time": 2.3333, "color": "ffffff00" }
 				]
 			}
 		},
@@ -470,6 +479,14 @@
 				],
 				"attachment": [
 					{ "name": "sport whistle 3" }
+				]
+			},
+			"text-team-win": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 2, "color": "ffffffff" },
+					{ "time": 2.3333, "color": "ffffff00" }
 				]
 			}
 		},
@@ -712,6 +729,14 @@
 				],
 				"attachment": [
 					{ "name": "sport net" }
+				]
+			},
+			"text-team-win": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 2, "color": "ffffffff" },
+					{ "time": 2.3333, "color": "ffffff00" }
 				]
 			}
 		},

@@ -1,18 +1,18 @@
 {
     "lobbyNames": {
-        "en": "COLOR GAME",
-        "id": "Permainan Warna",
-        "th": "เกมสี",
-        "vi": "XÍ NGẦU LỤC SẮC",
-        "zh_cn": "色彩游戏",
-        "zh_tw": "色彩遊戲"
+        "en": "Football Dice",
+        "id": "Dadu Sepak Bola",
+        "th": "ลูกเต๋าฟุตบอล",
+        "vi": "Xí Ngầu Bàn Thắng",
+        "zh_cn": "足球骰子",
+        "zh_tw": "足球骰子"
     },
     "gameNames": {
-        "en": "Color Game",
-        "id": "Permainan Warna",
-        "th": "เกมสี",
-        "vi": "Xí Ngầu Lục Sắc",
-        "zh_cn": "色彩游戏",
-        "zh_tw": "色彩遊戲"
+        "en": "Football Dice",
+        "id": "Dadu Sepak Bola",
+        "th": "ลูกเต๋าฟุตบอล",
+        "vi": "Xí Ngầu Bàn Thắng",
+        "zh_cn": "足球骰子",
+        "zh_tw": "足球骰子"
     }
 }

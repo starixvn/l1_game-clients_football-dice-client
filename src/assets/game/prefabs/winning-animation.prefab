@@ -112,7 +112,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 0
+      "z": 0.000002504478065487657
     },
     "_id": ""
   },
@@ -256,7 +256,7 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "a149c3f3-9119-4051-ad7d-80a5c4c05667",
+      "__uuid__": "e75db22b-844a-4406-82b7-8130b8084eac",
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
