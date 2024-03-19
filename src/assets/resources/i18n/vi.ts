@@ -161,14 +161,14 @@ export const languages = {
         "away_win": "ĐỘI KHÁCH THẮNG !!!",
         "bet_history_away": "Đội Khách)",
         "bet_history_home": "(Đội Nhà",
+        "draw_win": "HÒA !!!",
         "game_icon_name": "Xí Ngầu Bàn Thắng",
         "game_name": "Xí Ngầu Bàn Thắng",
         "glossary_away": "Đội Khách",
         "glossary_draw": "Hòa",
         "glossary_home": "Đội Nhà",
         "home_win": "ĐỘI NHÀ THẮNG !!!",
-        "match_starts": "TRẬN ĐẤU BẮT ĐẦU",
-        "tie_win": "HÒA !!!"
+        "match_starts": "TRẬN ĐẤU BẮT ĐẦU"
     }
 };
 

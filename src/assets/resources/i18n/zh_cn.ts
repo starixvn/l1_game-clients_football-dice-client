@@ -162,14 +162,14 @@ export const languages = {
         "away_win": "客队胜！！！",
         "bet_history_away": "Away",
         "bet_history_home": "Home",
+        "draw_win": "和",
         "game_icon_name": "足球骰子",
         "game_name": "足球骰子",
         "glossary_away": "客队",
         "glossary_draw": "平",
         "glossary_home": "主队",
         "home_win": "主队胜！！！",
-        "match_starts": "比赛开始",
-        "tie_win": "和"
+        "match_starts": "比赛开始"
     }
 };
 

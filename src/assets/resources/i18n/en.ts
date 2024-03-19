@@ -162,14 +162,14 @@ export const languages = {
         "away_win": "AWAY WINS !!!",
         "bet_history_away": "Away)",
         "bet_history_home": "(Home",
+        "draw_win": "DRAW !!!",
         "game_icon_name": "Football Dice",
         "game_name": "Football Dice",
         "glossary_away": "Away",
         "glossary_draw": "Draw",
         "glossary_home": "Home",
         "home_win": "HOME WINS !!!",
-        "match_starts": "MATCH STARTS",
-        "tie_win": "TIE !!!"
+        "match_starts": "MATCH STARTS"
     }
 };
 

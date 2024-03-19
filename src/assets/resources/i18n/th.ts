@@ -162,14 +162,14 @@ export const languages = {
         "away_win": "ทีมเยือนชนะ !!!",
         "bet_history_away": "Away",
         "bet_history_home": "Home",
+        "draw_win": "เสมอ",
         "game_icon_name": "ลูกเต๋าฟุตบอล",
         "game_name": "ลูกเต๋าฟุตบอล",
         "glossary_away": "ทีมเยือน",
         "glossary_draw": "เสมอ",
         "glossary_home": "เจ้าบ้าน",
         "home_win": "เจ้าบ้านชนะ !!!",
-        "match_starts": "เริ่มการแข่งขัน",
-        "tie_win": "เสมอ"
+        "match_starts": "เริ่มการแข่งขัน"
     }
 };
 

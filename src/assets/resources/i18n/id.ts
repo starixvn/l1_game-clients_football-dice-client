@@ -162,14 +162,14 @@ export const languages = {
         "away_win": "TIM TANDANG MENANG!!!",
         "bet_history_away": "Away",
         "bet_history_home": "Home",
+        "draw_win": "Seri",
         "game_icon_name": "Dadu Sepak Bola",
         "game_name": "Dadu Sepak Bola",
         "glossary_away": "Tim tandang",
         "glossary_draw": "Seri",
         "glossary_home": "Tim kandang",
         "home_win": "TIM KANDANG MENANG!!!",
-        "match_starts": "PERTANDINGAN DIMULAI",
-        "tie_win": "Seri"
+        "match_starts": "PERTANDINGAN DIMULAI"
     }
 };
 
