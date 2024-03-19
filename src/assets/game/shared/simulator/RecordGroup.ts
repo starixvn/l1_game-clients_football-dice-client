@@ -10,7 +10,18 @@ export class RecordGroup extends Component {
 
     data: RecordGroupData[] = [];
 
-    private readonly intervalTime = 1 / 60;
+    private _sample = 30;
+
+    get sample() {
+        return this._sample;
+    }
+
+    set sample(value: number) {
+        this._sample = value;
+        this.intervalTime = 1.0 / this._sample;
+    }
+
+    private intervalTime = 1.0 / this.sample;
 
     private recordTween: Tween<Node>;
     private replayTween: Tween<Node>;
@@ -43,9 +54,10 @@ export class RecordGroup extends Component {
         this.resetItems();
         this.stopRecord();
         this.items.forEach((item) => item.startSimulator());
+        this.record();
         this.recordTween = tween(this.node)
-            .call(() => this.record())
             .delay(this.intervalTime)
+            .call(() => this.record())
             .union()
             .repeatForever()
             .start();
@@ -68,8 +80,7 @@ export class RecordGroup extends Component {
         if (index >= groupData[this.items[0].node.name].length) {
             return false;
         }
-
-        this.items.forEach((item) => {
+        this.items.map((item) => {
             const key = item.node.name;
             const records = groupData[key];
             item.play(records[index]);
@@ -101,9 +112,10 @@ export class RecordGroup extends Component {
         this.currentGroupData = groupData;
         this.items.forEach((item) => item.stopSimulator());
         console.time(this.node.name + " replay in ");
+        this.doingReplay();
         this.replayTween = tween(this.node)
-            .call(() => this.doingReplay())
             .delay(this.intervalTime)
+            .call(() => this.doingReplay())
             .union()
             .repeatForever()
             .start();

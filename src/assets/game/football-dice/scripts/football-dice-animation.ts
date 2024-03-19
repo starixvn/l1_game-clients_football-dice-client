@@ -22,6 +22,9 @@ export class FootballDiceAnimation extends Component {
     @property(Animation)
     animation: Animation = null;
 
+    @property(Animation)
+    animation2nd: Animation = null;
+
     @property(RecordGroup)
     redDiceGroup: RecordGroup = null;
 
@@ -52,6 +55,10 @@ export class FootballDiceAnimation extends Component {
 
     onLoad() {
         this.loadAnimation();
+
+        const sample = this.animation.clips.find((clip) => clip.name === AnimationIndex.SHAKE_RED).sample;
+        this.redDiceGroup.sample = sample;
+        this.blueDiceGroup.sample = sample;
     }
 
     loadAnimation() {
@@ -63,7 +70,7 @@ export class FootballDiceAnimation extends Component {
 
     startShake(isHome: boolean) {
         this.recordCount++;
-        this.animation.play(isHome ? AnimationIndex.SHAKE_RED : AnimationIndex.SHAKE_BLUE);
+        isHome ? this.animation.play(AnimationIndex.SHAKE_RED) : this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
 
         const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
         dices.forEach((d) => d.resetCubePosition());
@@ -167,7 +174,7 @@ export class FootballDiceAnimation extends Component {
 
             if (animated) {
                 this.animation.play(AnimationIndex.SHAKE_RED);
-                this.animation.crossFade(AnimationIndex.SHAKE_BLUE, this.homeShakingDuration / 1000);
+                this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
                 this.scheduleOnce(resolve, this.awayShakingDuration / 1000);
             } else {
                 resolve();

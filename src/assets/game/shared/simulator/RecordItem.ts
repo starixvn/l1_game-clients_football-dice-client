@@ -92,11 +92,14 @@ export class RecordItem extends Component {
     }
 
     play(data: RecordData) {
-        this.node.position = v3(data?.p?.x ?? this.node.position.x, data?.p?.y ?? this.node.position.y, data?.p?.z ?? this.node.position.z);
-        this.node.eulerAngles = v3(
+        const position = v3(data?.p?.x ?? this.node.position.x, data?.p?.y ?? this.node.position.y, data?.p?.z ?? this.node.position.z);
+        const eulerAngles = v3(
             data?.e?.x ?? this.node.eulerAngles.x,
             data?.e?.y ?? this.node.eulerAngles.y,
             data?.e?.z ?? this.node.eulerAngles.z
         );
+
+        this.node.position = position;
+        this.node.eulerAngles = eulerAngles;
     }
 }

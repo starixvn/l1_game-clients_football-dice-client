@@ -307,7 +307,7 @@
       "y": 0.017,
       "z": 0.88
     },
-    "_id": "92yJrh+XhAzYgmZML/LEmm"
+    "_id": "2c2/r38vhO0qBUWa+A+T7o"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -364,7 +364,7 @@
       "y": 0.017,
       "z": 0.88
     },
-    "_id": "3f5q7COS5O3aQiYHnxHx/r"
+    "_id": "e4HyDdrEZN5Yyva/XtOcFt"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -404,7 +404,10 @@
     "__prefab": {
       "__id__": 29
     },
-    "_material": null,
+    "_material": {
+      "__uuid__": "eb0c9144-774f-45a4-a9fc-f8dffaccb4e5",
+      "__expectedType__": "cc.PhysicsMaterial"
+    },
     "_isTrigger": false,
     "_center": {
       "__type__": "cc.Vec3",
@@ -417,7 +420,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_convex": false,
-    "_id": "e6AXOxA6RKa5huUNR1ymU3"
+    "_id": "9brCzhTBxFb5ouWEDunWBh"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -546,7 +549,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 424.57245632065775,
+    "_orthoHeight": 393,
     "_near": 1,
     "_far": 2000,
     "_color": {
