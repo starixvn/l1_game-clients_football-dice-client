@@ -9,6 +9,7 @@ import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice
 import { containerOptions, settings } from "../game-settings";
 import "./../../../resources/i18n";
 import { ScoreTable } from "./score-table";
+import { WinningAnimation } from "./winning-animation";
 const { Rounds, Translator, Settlements } = gc;
 
 startGame(settings.name, containerOptions, siteConfigs);
@@ -33,6 +34,9 @@ export default class Game extends GameComponent {
 
     @property(ScoreTable)
     scoreTable: ScoreTable = null;
+
+    @property(WinningAnimation)
+    nodeWinningAnimation: WinningAnimation = null;
 
     override namespace = settings.name;
     override containerOptions = containerOptions;
@@ -63,7 +67,11 @@ export default class Game extends GameComponent {
         isStartRound && this.gameAnimation.zoomOutCamera();
     }
 
-    async showResult(result: gc.GameServiceMessage.TResult, hasAnimation: boolean) {
+    async showResult(
+        result: gc.GameServiceMessage.TResult,
+        hasAnimation: boolean,
+        settlementResult: gc.GameServiceMessage.TSettlementResult
+    ) {
         if (result) {
             await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
@@ -71,6 +79,7 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(300);
             }
             await this.gameAnimation.setResult(result, hasAnimation);
+            this.nodeWinningAnimation.setAnimation(settlementResult);
             this.scoreTable.updateScoreTable(result);
         }
     }

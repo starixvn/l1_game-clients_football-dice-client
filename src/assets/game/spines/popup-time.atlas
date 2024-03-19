@@ -1,0 +1,41 @@
+
+popup-time.png
+size: 153,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+effect time frame
+  rotate: true
+  xy: 21, 34
+  size: 220, 64
+  orig: 222, 66
+  offset: 1, 1
+  index: -1
+effect time light
+  rotate: false
+  xy: 2, 2
+  size: 113, 27
+  orig: 137, 35
+  offset: 12, 4
+  index: -1
+time
+  rotate: false
+  xy: 117, 24
+  size: 25, 8
+  orig: 27, 10
+  offset: 1, 1
+  index: -1
+time base 1
+  rotate: true
+  xy: 2, 31
+  size: 223, 17
+  orig: 225, 19
+  offset: 1, 1
+  index: -1
+time base 2
+  rotate: true
+  xy: 87, 34
+  size: 220, 64
+  orig: 222, 67
+  offset: 1, 2
+  index: -1
