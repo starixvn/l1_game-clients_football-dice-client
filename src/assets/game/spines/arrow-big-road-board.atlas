@@ -1,0 +1,13 @@
+
+arrow-big-road-board.png
+size: 51,23
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arrow
+  rotate: false
+  xy: 2, 2
+  size: 47, 19
+  orig: 50, 21
+  offset: 1, 1
+  index: -1
