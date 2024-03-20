@@ -250,7 +250,7 @@
     "_group": 1,
     "_type": 1,
     "_mass": 1,
-    "_allowSleep": true,
+    "_allowSleep": false,
     "_linearDamping": 0.1,
     "_angularDamping": 0.1,
     "_useGravity": true,
@@ -273,7 +273,7 @@
     "fileId": "90zMaMmRxKZY/USYtvBZ3m"
   },
   {
-    "__type__": "cc.MeshCollider",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -295,16 +295,17 @@
       "y": 0,
       "z": 0
     },
-    "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a",
-      "__expectedType__": "cc.Mesh"
+    "_size": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
-    "_convex": true,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "b6sEirzXJFfa+9wK5F2Ms8"
+    "fileId": "b9Y+qRllpJHqNMu7itXJ7k"
   },
   {
     "__type__": "cc.PrefabInfo",
