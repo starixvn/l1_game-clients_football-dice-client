@@ -2480,7 +2480,7 @@
     "nodeBetItems": {
       "__id__": 45
     },
-    "delayAnimPayChips": 1.25,
+    "delayAnimPayChips": 9.25,
     "_id": "5aiWz2qQxCMJAb0PpBVlqq"
   },
   {
@@ -4540,8 +4540,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0.5100078582763672,
-      "y": -90.30000305175781,
+      "x": 0.5099999904632568,
+      "y": 0.05999999865889549,
       "z": 0
     },
     "_lrot": {
@@ -4772,7 +4772,7 @@
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "match-starts",
+    "defaultAnimation": "",
     "_premultipliedAlpha": true,
     "_timeScale": 1,
     "_preCacheMode": 0,
@@ -7472,7 +7472,7 @@
   },
   {
     "__type__": "cc.ShadowsInfo",
-    "_enabled": false,
+    "_enabled": true,
     "_type": 1,
     "_normal": {
       "__type__": "cc.Vec3",
