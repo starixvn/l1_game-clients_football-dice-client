@@ -22,7 +22,7 @@ export class WinningAnimation extends Component {
             }
         });
 
-        await AnimationUtils.playSpine(this.nodeAnim, teamWin, false, 1.2);
+        await AnimationUtils.playSpine(this.nodeAnim, teamWin, false);
         this.lblTeam.node.active = false;
     }
 }

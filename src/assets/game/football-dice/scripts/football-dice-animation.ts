@@ -215,12 +215,8 @@ export class FootballDiceAnimation extends Component {
             });
 
             if (animated) {
-                // this.playHomeAnimation();
-                // this.playAwayAnimation(resolve);
-
                 this.redBaseGroup.startReplay(this.baseRecord.home);
-                this.blueBaseGroup.startReplay(this.baseRecord.away);
-                this.scheduleOnce(resolve, 14.5);
+                this.blueBaseGroup.startReplay(this.baseRecord.away, resolve);
             } else {
                 resolve();
             }

@@ -18,6 +18,7 @@ export class RecordGroup extends Component {
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
 
+    private onCompleteReplay = () => {};
     private enableReplay = false;
     private deltaTime = 0;
 
@@ -93,11 +94,11 @@ export class RecordGroup extends Component {
     stopReplay() {
         console.timeEnd(this.node.name + " replay in ");
         this.currentGroupData = null;
-
         this.enableReplay = false;
+        this.onCompleteReplay && this.onCompleteReplay();
     }
 
-    startReplay(groupData: RecordGroupData) {
+    startReplay(groupData: RecordGroupData, onComplete?: () => void) {
         if (this.replayStep > 0) {
             this.stopReplay();
         }
@@ -106,6 +107,7 @@ export class RecordGroup extends Component {
         console.time(this.node.name + " replay in ");
         this.enableReplay = true;
         this.deltaTime = 0;
+        this.onCompleteReplay = onComplete;
     }
 
     update(dt: number) {

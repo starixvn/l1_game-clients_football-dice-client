@@ -73,12 +73,16 @@ export default class Game extends GameComponent {
         settlementResult: gc.GameServiceMessage.TSettlementResult
     ) {
         if (result) {
+            console.time("zoomin");
             await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
                 this.startLogoAnimation();
                 await FunctionUtils.delay(300);
             }
+            console.timeEnd("zoomin");
+            console.time("showResult");
             await this.gameAnimation.setResult(result, hasAnimation);
+            console.timeEnd("showResult");
             this.nodeWinningAnimation.setAnimation(settlementResult);
             this.scoreTable.updateScoreTable(result);
         }
