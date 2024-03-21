@@ -6,6 +6,6 @@
   "_native": "",
   "_friction": 0.3,
   "_rollingFriction": 0,
-  "_spinningFriction": 0.2,
-  "_restitution": 0.2
+  "_spinningFriction": 0,
+  "_restitution": 0.3
 }

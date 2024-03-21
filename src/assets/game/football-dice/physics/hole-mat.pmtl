@@ -7,5 +7,5 @@
   "_friction": 0.5,
   "_rollingFriction": 0,
   "_spinningFriction": 0,
-  "_restitution": 1
+  "_restitution": 4
 }

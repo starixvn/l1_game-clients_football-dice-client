@@ -1,4 +1,4 @@
-import { Animation, Component, EventTouch, JsonAsset, Vec3, _decorator } from "cc";
+import { Animation, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, tween, v3 } from "cc";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
 import { RecordGroup } from "../../shared/simulator/RecordGroup";
@@ -6,8 +6,6 @@ import { RecordData } from "../../shared/simulator/RecordItem";
 const { ccclass, property } = _decorator;
 
 enum AnimationIndex {
-    SHAKE_RED = "shake1",
-    SHAKE_BLUE = "shake2",
     ZOOM_IN = "zoom-in",
     ZOOM_OUT = "zoom-out",
 }
@@ -19,12 +17,6 @@ interface Record {
 
 @ccclass
 export class FootballDiceAnimation extends Component {
-    @property(Animation)
-    animation: Animation = null;
-
-    @property(Animation)
-    animation2nd: Animation = null;
-
     @property(RecordGroup)
     redDiceGroup: RecordGroup = null;
 
@@ -37,9 +29,15 @@ export class FootballDiceAnimation extends Component {
     @property(Animation)
     cameraAnimation: Animation = null;
 
+    @property(Node)
+    nodeBaseHome: Node = null;
+
+    @property(Node)
+    nodeBaseAway: Node = null;
+
     testAnimationIndex = 0;
 
-    recordTimes = 5;
+    recordTimes = 1;
     recordCount = 0;
 
     records = [];
@@ -47,18 +45,10 @@ export class FootballDiceAnimation extends Component {
     currentRecordGroup: RecordGroup = null;
     private homeAnimations: Record[] = [];
     private awayAnimations: Record[] = [];
-
-    private readonly homeShakingDuration = 8333;
-
-    private readonly awayShakingDuration = 11200;
     private readonly zoomInDuration = 1667;
 
     onLoad() {
         this.loadAnimation();
-
-        const sample = this.animation.clips.find((clip) => clip.name === AnimationIndex.SHAKE_RED).sample;
-        this.redDiceGroup.sample = sample;
-        this.blueDiceGroup.sample = sample;
     }
 
     loadAnimation() {
@@ -70,20 +60,16 @@ export class FootballDiceAnimation extends Component {
 
     startShake(isHome: boolean) {
         this.recordCount++;
-        isHome ? this.animation.play(AnimationIndex.SHAKE_RED) : this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
-
-        const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
-        dices.forEach((d) => d.resetCubePosition());
-        this.currentRecordGroup.startRecord();
-        const duration = isHome ? this.homeShakingDuration : this.awayShakingDuration;
-        const waitingStop = 1000;
-
-        setTimeout(() => {
-            console.log("stop physics simulation");
+        const onComplete = () => {
             this.currentRecordGroup.stopRecord();
 
             const data = this.saveRecord();
             this.records.push(data);
+            if (isHome) {
+                this.homeAnimations = [data];
+            } else {
+                this.awayAnimations = [data];
+            }
             if (this.recordCount < this.recordTimes) {
                 setTimeout(() => this.startShake(isHome), 1000);
             } else {
@@ -92,7 +78,31 @@ export class FootballDiceAnimation extends Component {
                     setTimeout(() => this.startRecordAway(), 1000);
                 }
             }
-        }, duration + waitingStop);
+        };
+        // isHome ? this.animation.play(AnimationIndex.SHAKE_RED) : this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
+        const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
+        dices.forEach((d) => d.resetCubePosition());
+        if (isHome) {
+            this.playHomeAnimation(onComplete);
+        } else {
+            this.playAwayAnimation(onComplete);
+        }
+        this.currentRecordGroup.startRecord();
+    }
+
+    private playHomeAnimation(onComplete?: () => void) {
+        this.playBaseAnimation(this.nodeBaseHome, 8, onComplete);
+    }
+
+    private playAwayAnimation(onComplete?: () => void) {
+        this.playBaseAnimation(this.nodeBaseAway, 11, onComplete);
+    }
+
+    private playBaseAnimation(node: Node, duration: number, onComplete?: () => void) {
+        tween(node)
+            .sequence(this.generateMoveDownTween(node), this.generateShakeTween(node, duration), this.generateMoveUpTween(node))
+            .call(() => onComplete && onComplete())
+            .start();
     }
 
     startRecordHome() {
@@ -173,9 +183,8 @@ export class FootballDiceAnimation extends Component {
             });
 
             if (animated) {
-                this.animation.play(AnimationIndex.SHAKE_RED);
-                this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
-                this.scheduleOnce(resolve, this.awayShakingDuration / 1000);
+                this.playHomeAnimation();
+                this.playAwayAnimation(resolve);
             } else {
                 resolve();
             }
@@ -191,5 +200,84 @@ export class FootballDiceAnimation extends Component {
 
     zoomOutCamera() {
         this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
+    }
+
+    generateMoveDownTween(node: Node) {
+        const y2 = -0.25;
+
+        return tween(node).to(
+            0.4,
+            {
+                position: v3(0, y2, 0),
+                eulerAngles: v3(),
+            },
+            { easing: "sineIn" }
+        );
+    }
+
+    generateMoveUpTween(node: Node) {
+        const y1 = -0.3;
+        return tween(node)
+            .to(0.1, {
+                position: v3(0, y1, 0),
+                eulerAngles: v3(),
+            })
+            .delay(0.5)
+            .to(
+                0.7,
+                {
+                    position: v3(),
+                    eulerAngles: v3(),
+                },
+                { easing: "sineInOut" }
+            )
+            .delay(1.3);
+    }
+
+    generateShakeTween(node: Node, totalDuration: number) {
+        const stepShake = 0.07;
+        const shakeCount = totalDuration / stepShake;
+        console.log("shake count: " + shakeCount);
+        const padding = 0.02;
+        const y1 = -0.3;
+        const y2 = -0.2;
+
+        const rotations = [
+            //
+            v3(4, 0, 0),
+            v3(0, 0, 4),
+            v3(-4, 0, 0),
+            v3(0, 0, -4),
+            v3(4, 0, 0),
+            v3(0, 0, -4),
+        ];
+
+        const positions = [
+            //
+            v3(padding, y1, 0),
+            v3(-padding, y2, padding),
+            v3(padding, y1, -padding),
+            v3(-padding, y2, 0),
+            v3(-padding, y1, 0),
+            v3(0, y2, -padding),
+        ];
+
+        let index = 0;
+        return tween(node)
+            .call(() => {
+                index++;
+                if (index >= rotations.length) {
+                    index = 0;
+                }
+                tween(node)
+                    .to(stepShake, {
+                        position: positions[index],
+                        eulerAngles: rotations[index],
+                    })
+                    .start();
+            })
+            .delay(stepShake)
+            .union()
+            .repeat(shakeCount);
     }
 }

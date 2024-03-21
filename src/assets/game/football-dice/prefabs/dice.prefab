@@ -100,9 +100,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
+      "x": 0.65,
+      "y": 0.65,
+      "z": 0.65
     },
     "_mobility": 0,
     "_layer": 1073741824,
@@ -147,9 +147,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 2.303897863940189,
-      "y": 2.303897863940188,
-      "z": 2.303897863940188
+      "x": 4.607795727880379,
+      "y": 4.607795727880378,
+      "z": 4.607795727880378
     },
     "_mobility": 0,
     "_layer": 1073741824,
@@ -187,7 +187,7 @@
       "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@d1250",
       "__expectedType__": "cc.Mesh"
     },
-    "_shadowCastingMode": 0,
+    "_shadowCastingMode": 1,
     "_shadowReceivingMode": 1,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
@@ -251,7 +251,7 @@
     "_type": 1,
     "_mass": 1,
     "_allowSleep": false,
-    "_linearDamping": 0.1,
+    "_linearDamping": 0,
     "_angularDamping": 0.1,
     "_useGravity": true,
     "_linearFactor": {
@@ -273,7 +273,7 @@
     "fileId": "90zMaMmRxKZY/USYtvBZ3m"
   },
   {
-    "__type__": "cc.BoxCollider",
+    "__type__": "cc.MeshCollider",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -295,17 +295,16 @@
       "y": 0,
       "z": 0
     },
-    "_size": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
+    "_mesh": {
+      "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@2f6d1",
+      "__expectedType__": "cc.Mesh"
     },
+    "_convex": true,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "b9Y+qRllpJHqNMu7itXJ7k"
+    "fileId": "48deoxdYdGE4C/Ui6EaSui"
   },
   {
     "__type__": "cc.PrefabInfo",
