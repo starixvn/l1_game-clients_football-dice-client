@@ -14,8 +14,12 @@ export class RecordGroup extends Component {
 
     private recordTween: Tween<Node>;
     private replayTween: Tween<Node>;
+
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
+
+    private enableReplay = false;
+    private deltaTime = 0;
 
     get dataKey() {
         return this.node.name;
@@ -88,26 +92,30 @@ export class RecordGroup extends Component {
 
     stopReplay() {
         console.timeEnd(this.node.name + " replay in ");
-        this.replayStep = 0;
         this.currentGroupData = null;
-        this.replayTween?.stop();
+
+        this.enableReplay = false;
     }
 
     startReplay(groupData: RecordGroupData) {
         if (this.replayStep > 0) {
             this.stopReplay();
         }
-        this.replayStep = 0;
         this.currentGroupData = groupData;
         this.items.forEach((item) => item.stopSimulator());
         console.time(this.node.name + " replay in ");
-        this.doingReplay();
-        this.replayTween = tween(this.node)
-            .delay(this.intervalTime)
-            .call(() => this.doingReplay())
-            .union()
-            .repeatForever()
-            .start();
+        this.enableReplay = true;
+        this.deltaTime = 0;
+    }
+
+    update(dt: number) {
+        if (this.enableReplay) {
+            this.deltaTime += dt;
+
+            this.replayStep = Math.floor(this.deltaTime / this.intervalTime);
+
+            this.doingReplay();
+        }
     }
 
     replayLastFrame(groupData: RecordGroupData) {
@@ -119,9 +127,7 @@ export class RecordGroup extends Component {
         const success = this.tryReplay(this.currentGroupData, this.replayStep);
         if (!success) {
             this.stopReplay();
-            return;
         }
-        this.replayStep++;
     }
 
     replayLast() {

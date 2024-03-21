@@ -43,7 +43,6 @@ export class RecordItem extends Component {
         if (rigidBody) {
             if (!enabled) {
                 rigidBody.clearVelocity();
-                console.log("clear velocity");
             }
             rigidBody.useGravity = enabled;
             rigidBody.enabled = enabled;
