@@ -181,7 +181,11 @@ export class FootballDiceAnimation extends Component {
     }
 
     randomTest() {
-        const result = { home: [2, 3], away: [1, 5] };
+        const randomDice = () => {
+            return 1 + Math.floor(Math.random() * 6);
+        };
+        const result = { home: [randomDice(), randomDice()], away: [randomDice(), randomDice()] };
+        console.log("result ", [...result.home, ...result.away]);
         this.setResult(result);
     }
 
