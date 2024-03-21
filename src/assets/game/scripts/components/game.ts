@@ -38,6 +38,9 @@ export default class Game extends GameComponent {
     @property(WinningAnimation)
     nodeWinningAnimation: WinningAnimation = null;
 
+    @property(sp.Skeleton)
+    matchStartSkeletons: sp.Skeleton = null;
+
     override namespace = settings.name;
     override containerOptions = containerOptions;
     isLoading = true;
@@ -65,6 +68,7 @@ export default class Game extends GameComponent {
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
     renderStartRound(isStartRound: boolean) {
         isStartRound && this.gameAnimation.zoomOutCamera();
+        this.matchStartAnimation(false);
     }
 
     async showResult(
@@ -77,6 +81,7 @@ export default class Game extends GameComponent {
             await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
                 this.startLogoAnimation();
+                this.matchStartAnimation(true);
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
@@ -90,5 +95,10 @@ export default class Game extends GameComponent {
 
     private startLogoAnimation() {
         this.logoSkeletons.forEach((logo) => logo.setAnimation(0, `${logo.node.name}-logo`, false));
+    }
+
+    private matchStartAnimation(show: boolean) {
+        this.matchStartSkeletons && (this.matchStartSkeletons.node.active = show);
+        show && this.matchStartSkeletons.setAnimation(0, "match-starts", false);
     }
 }
