@@ -46,6 +46,7 @@ export class RecordItem extends Component {
                 console.log("clear velocity");
             }
             rigidBody.useGravity = enabled;
+            rigidBody.enabled = enabled;
         }
 
         const animation = this.getComponent(Animation);

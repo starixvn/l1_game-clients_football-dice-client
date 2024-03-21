@@ -10,18 +10,7 @@ export class RecordGroup extends Component {
 
     data: RecordGroupData[] = [];
 
-    private _sample = 30;
-
-    get sample() {
-        return this._sample;
-    }
-
-    set sample(value: number) {
-        this._sample = value;
-        this.intervalTime = 1.0 / this._sample;
-    }
-
-    private intervalTime = 1.0 / this.sample;
+    private intervalTime = 0.016667;
 
     private recordTween: Tween<Node>;
     private replayTween: Tween<Node>;

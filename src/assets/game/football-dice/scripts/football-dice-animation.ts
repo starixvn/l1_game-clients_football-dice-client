@@ -1,4 +1,4 @@
-import { Animation, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, tween, v3 } from "cc";
+import { Animation, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
 import { RecordGroup } from "../../shared/simulator/RecordGroup";
@@ -23,6 +23,12 @@ export class FootballDiceAnimation extends Component {
     @property(RecordGroup)
     blueDiceGroup: RecordGroup = null;
 
+    @property(RecordGroup)
+    redBaseGroup: RecordGroup = null;
+
+    @property(RecordGroup)
+    blueBaseGroup: RecordGroup = null;
+
     @property(JsonAsset)
     animationJson: JsonAsset = null;
 
@@ -40,7 +46,15 @@ export class FootballDiceAnimation extends Component {
     recordTimes = 1;
     recordCount = 0;
 
-    records = [];
+    records = {
+        home: [],
+        away: [],
+    };
+
+    baseRecord = {
+        home: null,
+        away: null,
+    };
 
     currentRecordGroup: RecordGroup = null;
     private homeAnimations: Record[] = [];
@@ -49,12 +63,14 @@ export class FootballDiceAnimation extends Component {
 
     onLoad() {
         this.loadAnimation();
+        game.frameRate = 60;
     }
 
     loadAnimation() {
         if (this.animationJson) {
             this.homeAnimations = this.animationJson.json.home;
             this.awayAnimations = this.animationJson.json.away;
+            this.baseRecord = this.animationJson.json.base;
         }
     }
 
@@ -62,30 +78,43 @@ export class FootballDiceAnimation extends Component {
         this.recordCount++;
         const onComplete = () => {
             this.currentRecordGroup.stopRecord();
+            if (isHome) {
+                this.redBaseGroup.stopRecord();
+                this.baseRecord.home = this.redBaseGroup.getLastRecord();
+            } else {
+                this.blueBaseGroup.stopRecord();
+                this.baseRecord.away = this.blueBaseGroup.getLastRecord();
+            }
 
             const data = this.saveRecord();
-            this.records.push(data);
+            this.records[isHome ? "home" : "away"].push(data);
             if (isHome) {
-                this.homeAnimations = [data];
+                this.homeAnimations = this.records.home;
             } else {
-                this.awayAnimations = [data];
+                this.awayAnimations = this.records.away;
             }
             if (this.recordCount < this.recordTimes) {
                 setTimeout(() => this.startShake(isHome), 1000);
             } else {
-                console.log("records ", this.records);
                 if (isHome) {
                     setTimeout(() => this.startRecordAway(), 1000);
+                } else {
+                    console.log("Record finished!");
+                    console.log("records ", {
+                        ...this.records,
+                        base: this.baseRecord,
+                    });
                 }
             }
         };
-        // isHome ? this.animation.play(AnimationIndex.SHAKE_RED) : this.animation2nd.play(AnimationIndex.SHAKE_BLUE);
         const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
         dices.forEach((d) => d.resetCubePosition());
         if (isHome) {
             this.playHomeAnimation(onComplete);
+            this.redBaseGroup.startRecord();
         } else {
             this.playAwayAnimation(onComplete);
+            this.blueBaseGroup.startRecord();
         }
         this.currentRecordGroup.startRecord();
     }
@@ -114,7 +143,6 @@ export class FootballDiceAnimation extends Component {
     startRecordAway() {
         this.recordCount = 0;
         this.currentRecordGroup = this.blueDiceGroup;
-        this.records = [];
         this.startShake(false);
     }
 
@@ -183,8 +211,12 @@ export class FootballDiceAnimation extends Component {
             });
 
             if (animated) {
-                this.playHomeAnimation();
-                this.playAwayAnimation(resolve);
+                // this.playHomeAnimation();
+                // this.playAwayAnimation(resolve);
+
+                this.redBaseGroup.startReplay(this.baseRecord.home);
+                this.blueBaseGroup.startReplay(this.baseRecord.away);
+                this.scheduleOnce(resolve, 14.5);
             } else {
                 resolve();
             }
