@@ -21,7 +21,7 @@ export class HistoryItemResult extends BaseResultBodyItem {
 
     setData(result: gc.BetHistory.DynamicObject<object>, settlementResult: gc.BetHistory.DynamicObject<boolean>) {
         Object.keys(result).forEach((team) => {
-            const isWin = settlementResult[team];
+            const isWin = settlementResult ? settlementResult[team]: false;
             const teamResult = result[team] as Array<number>;
             teamResult.forEach((diceValue, index) => {
                 const node = this.spriteContainer.getChildByName(`${team}-${index}`);
