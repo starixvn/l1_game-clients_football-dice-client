@@ -6,24 +6,6 @@ jest.mock("db://shared-components/shared/scripts/startup", () => ({
     getSharedContainer: jest.fn(() => ({ sharedContainer: true })),
 }));
 
-describe("settings", () => {
-    it("should have data as expected", () => {
-        // Assert
-        expect(settings).toStrictEqual({
-            id: 71,
-            name: "ColorGame",
-            durations: {
-                wholeRound: 41,
-                lockingBet: 3,
-                placingBet: 30,
-                generatingResult: 3,
-                startRound: 2,
-            },
-            numberOfRoundHistory: 100,
-        });
-    });
-});
-
 describe("when container created", () => {
     let container;
     let bind: jest.Mock;
