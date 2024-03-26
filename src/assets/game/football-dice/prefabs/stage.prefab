@@ -3625,7 +3625,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@fcd97",
+        "__uuid__": null,
         "__expectedType__": "cc.Material"
       }
     ],
