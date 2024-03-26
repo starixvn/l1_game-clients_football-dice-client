@@ -67,8 +67,11 @@ export default class Game extends GameComponent {
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
     renderStartRound(isStartRound: boolean) {
-        isStartRound && this.gameAnimation.zoomOutCamera();
-        this.matchStartAnimation(false);
+        if (isStartRound) {
+            this.gameAnimation.zoomOutCamera();
+            this.matchStartAnimation(false);
+            this.gameAnimation.modeDownBases();
+        }
     }
 
     async showResult(

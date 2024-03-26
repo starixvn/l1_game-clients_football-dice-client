@@ -61,6 +61,8 @@ export class FootballDiceAnimation extends Component {
     private awayAnimations: Record[] = [];
     private readonly zoomInDuration = 1667;
 
+    private readonly moveUpDuration = 1;
+
     onLoad() {
         this.loadAnimation();
         game.frameRate = 60;
@@ -76,14 +78,17 @@ export class FootballDiceAnimation extends Component {
 
     startShake(isHome: boolean) {
         this.recordCount++;
+        const needRecordBase = false;
         const onComplete = () => {
             this.currentRecordGroup.stopRecord();
-            if (isHome) {
-                this.redBaseGroup.stopRecord();
-                this.baseRecord.home = this.redBaseGroup.getLastRecord();
-            } else {
-                this.blueBaseGroup.stopRecord();
-                this.baseRecord.away = this.blueBaseGroup.getLastRecord();
+            if (needRecordBase) {
+                if (isHome) {
+                    this.redBaseGroup.stopRecord();
+                    this.baseRecord.home = this.redBaseGroup.getLastRecord();
+                } else {
+                    this.blueBaseGroup.stopRecord();
+                    this.baseRecord.away = this.blueBaseGroup.getLastRecord();
+                }
             }
 
             const data = this.saveRecord();
@@ -110,13 +115,27 @@ export class FootballDiceAnimation extends Component {
         const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
         dices.forEach((d) => d.resetCubePosition());
         if (isHome) {
-            this.playHomeAnimation(onComplete);
-            this.redBaseGroup.startRecord();
+            if (needRecordBase) {
+                this.playHomeAnimation(onComplete);
+                this.redBaseGroup.startRecord();
+            } else {
+                this.redBaseGroup.startReplay(this.baseRecord.home, false, onComplete);
+            }
         } else {
-            this.playAwayAnimation(onComplete);
-            this.blueBaseGroup.startRecord();
+            if (needRecordBase) {
+                this.playAwayAnimation(onComplete);
+                this.blueBaseGroup.startRecord();
+            } else {
+                this.blueBaseGroup.startReplay(this.baseRecord.away, false, onComplete);
+            }
         }
         this.currentRecordGroup.startRecord();
+    }
+
+    modeDownBases() {
+        [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
+            tween(this.nodeBaseHome).sequence(this.generateMoveDownTween(node)).start();
+        });
     }
 
     private playHomeAnimation(onComplete?: () => void) {
@@ -128,8 +147,16 @@ export class FootballDiceAnimation extends Component {
     }
 
     private playBaseAnimation(node: Node, duration: number, onComplete?: () => void) {
+        const waitDiceStop = 1;
         tween(node)
-            .sequence(this.generateMoveDownTween(node), this.generateShakeTween(node, duration), this.generateMoveUpTween(node))
+            .sequence(this.generateShakeTween(node, duration), this.generateSlowShakeTween(node))
+            .delay(waitDiceStop)
+            .call(() => {
+                this.stopDiceSimulator();
+                this.generateMoveDicesUp().forEach((d) => d.start());
+                this.generateMoveUpTween(node).start();
+            })
+            .delay(this.moveUpDuration)
             .call(() => onComplete && onComplete())
             .start();
     }
@@ -215,8 +242,8 @@ export class FootballDiceAnimation extends Component {
             });
 
             if (animated) {
-                this.redBaseGroup.startReplay(this.baseRecord.home);
-                this.blueBaseGroup.startReplay(this.baseRecord.away, resolve);
+                this.redBaseGroup.startReplay(this.baseRecord.home, true);
+                this.blueBaseGroup.startReplay(this.baseRecord.away, true, resolve);
             } else {
                 resolve();
             }
@@ -234,6 +261,10 @@ export class FootballDiceAnimation extends Component {
         this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
     }
 
+    stopDiceSimulator() {
+        this.currentRecordGroup.stopSimulator();
+    }
+
     generateMoveDownTween(node: Node) {
         const y2 = -0.25;
 
@@ -247,23 +278,62 @@ export class FootballDiceAnimation extends Component {
         );
     }
 
+    generateMoveDicesUp() {
+        const tweens = this.currentRecordGroup.items.map((item) => {
+            return tween(item.node).to(
+                1,
+                {
+                    position: v3(item.node.position.x, 0, item.node.position.z),
+                },
+                { easing: "sineOut" }
+            );
+        });
+        return tweens;
+    }
+
     generateMoveUpTween(node: Node) {
         const y1 = -0.3;
         return tween(node)
-            .to(0.1, {
-                position: v3(0, y1, 0),
-                eulerAngles: v3(),
-            })
-            .delay(0.5)
             .to(
-                0.7,
+                this.moveUpDuration,
                 {
                     position: v3(),
                     eulerAngles: v3(),
                 },
-                { easing: "sineInOut" }
+                { easing: "sineOut" }
             )
             .delay(1.3);
+    }
+
+    generateSlowShakeTween(node: Node) {
+        const stepShake = 0.07;
+        const shakeCount = 3;
+        const padding = 0.02;
+        const offsetRotation = 1;
+        const y1 = -0.3;
+
+        const rotations = [v3(offsetRotation, 0, 0), v3(0, 0, offsetRotation)];
+
+        const positions = [v3(padding, 0, 0), v3(-padding, 0, 0)];
+
+        let index = 0;
+        return tween(node)
+            .call(() => {
+                index++;
+                if (index >= rotations.length) {
+                    index = 0;
+                }
+                const multiply = shakeCount - 1 - index;
+                tween(node)
+                    .to(stepShake, {
+                        position: v3(0, y1, 0).add(positions[index % positions.length].multiplyScalar(multiply)),
+                        eulerAngles: rotations[index % rotations.length].multiplyScalar(multiply),
+                    })
+                    .start();
+            })
+            .delay(stepShake)
+            .union()
+            .repeat(shakeCount);
     }
 
     generateShakeTween(node: Node, totalDuration: number) {
@@ -271,21 +341,20 @@ export class FootballDiceAnimation extends Component {
         const shakeCount = totalDuration / stepShake;
         console.log("shake count: " + shakeCount);
         const padding = 0.02;
+        const offsetRotation = 4;
         const y1 = -0.3;
         const y2 = -0.2;
 
         const rotations = [
-            //
-            v3(4, 0, 0),
-            v3(0, 0, 4),
-            v3(-4, 0, 0),
-            v3(0, 0, -4),
-            v3(4, 0, 0),
-            v3(0, 0, -4),
+            v3(offsetRotation, 0, 0),
+            v3(0, 0, offsetRotation),
+            v3(-offsetRotation, 0, 0),
+            v3(0, 0, -offsetRotation),
+            v3(offsetRotation, 0, 0),
+            v3(0, 0, -offsetRotation),
         ];
 
         const positions = [
-            //
             v3(padding, y1, 0),
             v3(-padding, y2, padding),
             v3(padding, y1, -padding),

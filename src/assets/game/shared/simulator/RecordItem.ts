@@ -32,6 +32,13 @@ export class RecordItem extends Component {
         this.changeSimulator(false);
     }
 
+    clearVelocity() {
+        const rigidBody = this.getComponent(RigidBody);
+        if (rigidBody) {
+            rigidBody.clearVelocity();
+        }
+    }
+
     private changeSimulator(enabled: boolean) {
         const actionNode = this.getComponent(ActionNode);
         enabled ? actionNode?.startAction() : actionNode?.stopAction();

@@ -1,4 +1,4 @@
-import { Component, Node, Tween, _decorator, sys, tween } from "cc";
+import { Component, _decorator, sys } from "cc";
 import { RecordData, RecordItem } from "./RecordItem";
 const { ccclass, property } = _decorator;
 interface RecordGroupData {
@@ -7,19 +7,13 @@ interface RecordGroupData {
 @ccclass
 export class RecordGroup extends Component {
     items: RecordItem[] = [];
-
     data: RecordGroupData[] = [];
-
     private intervalTime = 0.016667;
-
-    private recordTween: Tween<Node>;
-    private replayTween: Tween<Node>;
-
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
-
     private onCompleteReplay = () => {};
     private enableReplay = false;
+    private enableRecord = false;
     private deltaTime = 0;
 
     get dataKey() {
@@ -39,27 +33,25 @@ export class RecordGroup extends Component {
         }
     }
 
-    onDestroy() {
-        this.recordTween?.stop();
-        this.replayTween?.stop();
-    }
-
     startRecord() {
         this.resetItems();
         this.stopRecord();
         this.items.forEach((item) => item.startSimulator());
         this.record();
-        this.recordTween = tween(this.node)
-            .delay(this.intervalTime)
-            .call(() => this.record())
-            .union()
-            .repeatForever()
-            .start();
+        this.enableRecord = true;
     }
 
     stopRecord() {
-        this.recordTween?.stop();
+        this.stopSimulator();
+        this.enableRecord = false;
+    }
+
+    stopSimulator() {
         this.items.forEach((item) => item.stopSimulator());
+    }
+
+    clearVelocity() {
+        this.items.forEach((item) => item.clearVelocity());
     }
 
     resetItems() {
@@ -83,14 +75,6 @@ export class RecordGroup extends Component {
         return true;
     }
 
-    replay(dataIndex: number) {
-        if (dataIndex >= this.data.length || dataIndex < 0) {
-            return;
-        }
-        const data = this.data[dataIndex];
-        this.startReplay(data);
-    }
-
     stopReplay() {
         console.timeEnd(this.node.name + " replay in ");
         this.currentGroupData = null;
@@ -98,12 +82,9 @@ export class RecordGroup extends Component {
         this.onCompleteReplay && this.onCompleteReplay();
     }
 
-    startReplay(groupData: RecordGroupData, onComplete?: () => void) {
-        if (this.replayStep > 0) {
-            this.stopReplay();
-        }
+    startReplay(groupData: RecordGroupData, stopSimulator = true, onComplete?: () => void) {
         this.currentGroupData = groupData;
-        this.items.forEach((item) => item.stopSimulator());
+        this.items.forEach((item) => (stopSimulator ? item.stopSimulator() : item.startSimulator()));
         console.time(this.node.name + " replay in ");
         this.enableReplay = true;
         this.deltaTime = 0;
@@ -117,6 +98,11 @@ export class RecordGroup extends Component {
             this.replayStep = Math.floor(this.deltaTime / this.intervalTime);
 
             this.doingReplay();
+            return;
+        }
+        if (this.enableRecord) {
+            this.record();
+            return;
         }
     }
 
