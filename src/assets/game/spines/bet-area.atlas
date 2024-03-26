@@ -1,82 +1,82 @@
 
 bet-area.png
-size: 1891,659
+size: 1212,1004
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 BG blue
-  rotate: true
-  xy: 305, 109
+  rotate: false
+  xy: 102, 149
   size: 548, 301
   orig: 562, 315
   offset: 7, 7
   index: -1
 BG draw
-  rotate: true
-  xy: 1439, 141
-  size: 277, 225
-  orig: 279, 227
-  offset: 1, 1
+  rotate: false
+  xy: 891, 227
+  size: 285, 229
+  orig: 285, 230
+  offset: 0, 1
   index: -1
 BG red
   rotate: true
-  xy: 2, 107
+  xy: 102, 452
   size: 550, 301
   orig: 564, 315
   offset: 7, 7
   index: -1
 light blue
-  rotate: true
-  xy: 1166, 148
+  rotate: false
+  xy: 690, 458
   size: 509, 271
   orig: 520, 273
   offset: 10, 1
   index: -1
 light dot
-  rotate: true
-  xy: 1730, 521
+  rotate: false
+  xy: 102, 10
   size: 136, 137
   orig: 162, 162
   offset: 11, 12
   index: -1
 light draw
-  rotate: false
-  xy: 1439, 420
+  rotate: true
+  xy: 652, 167
   size: 289, 237
   orig: 291, 239
   offset: 1, 1
   index: -1
 light frame
   rotate: true
-  xy: 608, 123
+  xy: 405, 468
   size: 534, 283
   orig: 536, 285
   offset: 1, 1
   index: -1
 light frame draw
-  rotate: true
-  xy: 1666, 141
+  rotate: false
+  xy: 891, 2
   size: 277, 223
   orig: 279, 225
   offset: 1, 1
   index: -1
 light line
-  rotate: false
-  xy: 893, 2
-  size: 984, 133
+  rotate: true
+  xy: 2, 46
+  size: 956, 98
   orig: 992, 142
-  offset: 4, 5
+  offset: 22, 22
   index: -1
 light red
-  rotate: true
-  xy: 893, 137
+  rotate: false
+  xy: 690, 731
   size: 520, 271
   orig: 522, 273
   offset: 1, 1
   index: -1
 star
   rotate: true
-  xy: 2, 81
+  xy: 2, 20
   size: 24, 23
   orig: 29, 29
   offset: 1, 2

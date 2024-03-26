@@ -1,19 +1,24 @@
 import gc from "@sg/game-client-base";
-import { Node, _decorator, tween, v3 } from "cc";
+import { Layout, Node, Tween, UITransform, _decorator, tween, v3 } from "cc";
 import Observer from "observer";
-import { BetItemsPolygon } from "./../../../../extensions/shared-components/assets/game/bets/scripts/components/bet-items-polygon";
+import { ObserverComponent } from "../../../../extensions/shared-components/assets/shared/common-components/observer-component/scripts/observer-component";
 const { ccclass, property } = _decorator;
 const { Settlements, Rounds } = gc;
 const { render, handle } = Observer;
 
 @ccclass
-export class FootballDiceBetChoices extends BetItemsPolygon {
+export class FootballDiceBetAreas extends ObserverComponent {
     @property(Node)
     chipContainer: Node = null;
 
+    @property(Node)
+    betChoices: Node = null;
+
+    private tweenNode: Tween<UITransform> = null;
+
     @render(Settlements.SettlementStore, (store) => ({ result: store.result, settlementResult: store.settlementResult }))
     setAnimZoomInBetChoices() {
-        this.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
+        this.setAnimZoomBetChoices(v3(0.75, 0.75), 1);
     }
 
     @render(Rounds.RoundTimeStore, (store) => ({ isStartRound: store.isStartRound, isPlacingBet: store.isPlacingBet }))
@@ -24,7 +29,18 @@ export class FootballDiceBetChoices extends BetItemsPolygon {
     }
 
     setAnimZoomBetChoices(scaleRatio, time: number) {
-        tween(this.node).to(time, { scale: scaleRatio }, { easing: "sineIn" }).start();
+        tween(this.betChoices)
+            .to(time, { scale: scaleRatio }, { easing: "sineIn", onUpdate: () => this.updateLayoutBetAreas() })
+            .start();
         this.chipContainer && tween(this.chipContainer).to(time, { scale: scaleRatio }, { easing: "sineIn" }).start();
+    }
+
+    updateLayoutBetAreas() {
+        const layout = this.node.getComponent(Layout);
+        if (layout) {
+            layout.enabled = true;
+            layout.updateLayout();
+            layout.enabled = false;
+        }
     }
 }
