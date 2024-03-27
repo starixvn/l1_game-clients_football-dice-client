@@ -1,0 +1,92 @@
+{
+"skeleton": { "hash": "l/r88WvX7khr/881bFE9sW4arxs", "spine": "3.8.99", "x": -126.34, "y": -31.94, "width": 255.94, "height": 63.79 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "control-all", "parent": "root" },
+	{ "name": "mini-away", "parent": "control-all", "rotation": 0.31, "x": 101.15, "y": -1.43 },
+	{ "name": "mini-home", "parent": "control-all", "x": -99.01, "y": -2.86 }
+],
+"slots": [
+	{ "name": "clipping", "bone": "root", "attachment": "clipping" },
+	{ "name": "mini-logo-away", "bone": "mini-away", "attachment": "mini-logo-away" },
+	{ "name": "mini-logo-home", "bone": "mini-home", "attachment": "mini-logo-home" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"clipping": {
+				"clipping": {
+					"type": "clipping",
+					"end": "clipping",
+					"vertexCount": 4,
+					"vertices": [ -146.06, -37.5, 150.49, -37.5, 150.25, 39.14, -147.01, 39.61 ]
+				}
+			},
+			"mini-logo-away": {
+				"mini-logo-away": { "x": 0.79, "y": -0.37, "width": 55, "height": 60 }
+			},
+			"mini-logo-home": {
+				"mini-logo-home": { "x": -1.83, "y": 3.2, "width": 51, "height": 63 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {
+		"bones": {
+			"mini-home": {
+				"scale": [
+					{},
+					{ "time": 1, "x": 1.01, "y": 1.01, "curve": 0.25, "c3": 0.75 },
+					{ "time": 2 },
+					{ "time": 3, "x": 0.99, "y": 0.99, "curve": 0.25, "c3": 0.75 },
+					{ "time": 4 }
+				]
+			},
+			"mini-away": {
+				"scale": [
+					{},
+					{ "time": 1, "x": 0.99, "y": 0.99, "curve": 0.25, "c3": 0.75 },
+					{ "time": 2 },
+					{ "time": 3, "x": 1.01, "y": 1.01, "curve": 0.25, "c3": 0.75 },
+					{ "time": 4 }
+				]
+			}
+		}
+	},
+	"move-out-in": {
+		"bones": {
+			"control-all": {
+				"translate": [
+					{ "curve": 0.25, "c3": 0.624 },
+					{ "time": 0.1667, "y": 2.23, "curve": 0.622, "c3": 0.819, "c4": 0.61 },
+					{ "time": 0.5, "y": -77.38, "curve": "stepped" },
+					{ "time": 2.5, "y": -77.38, "curve": 0.389, "c2": 0.6, "c3": 0.616 },
+					{ "time": 3.1667 }
+				]
+			},
+			"mini-home": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.99, "y": 1.02 },
+					{ "time": 0.5, "x": 0.99, "y": 1.05 },
+					{ "time": 3 },
+					{ "time": 3.1667, "x": 1.01, "y": 0.99 },
+					{ "time": 3.3333 }
+				]
+			},
+			"mini-away": {
+				"scale": [
+					{},
+					{ "time": 0.1667, "x": 0.99, "y": 1.02 },
+					{ "time": 0.5, "x": 0.99, "y": 1.05 },
+					{ "time": 3 },
+					{ "time": 3.1667, "x": 1.01, "y": 0.99 },
+					{ "time": 3.3333 }
+				]
+			}
+		}
+	}
+}
+}

@@ -83,6 +83,8 @@ export default class Game extends GameComponent {
             console.time("zoomin");
             await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
+                this.scoreTable.runAnimLogo();
+                await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.matchStartAnimation(true);
                 await FunctionUtils.delay(300);

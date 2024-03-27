@@ -1,0 +1,20 @@
+
+mini-logo.png
+size: 112,67
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+mini-logo-away
+  rotate: false
+  xy: 2, 5
+  size: 55, 60
+  orig: 55, 60
+  offset: 0, 0
+  index: -1
+mini-logo-home
+  rotate: false
+  xy: 59, 2
+  size: 51, 63
+  orig: 51, 63
+  offset: 0, 0
+  index: -1

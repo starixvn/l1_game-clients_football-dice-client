@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { _decorator, Label } from "cc";
+import { _decorator, Label, sp } from "cc";
 import Observer from "observer";
 import { ObserverComponent } from "../../../../extensions/shared-components/assets/shared/common-components/observer-component/scripts/observer-component";
 const { ccclass, property } = _decorator;
@@ -13,6 +13,9 @@ export class ScoreTable extends ObserverComponent {
 
     @property(Label)
     lblAwayScore: Label = null;
+
+    @property(sp.Skeleton)
+    skeletonLogo: sp.Skeleton = null;
 
     updateScoreTable(result: gc.GameServiceMessage.TResult) {
         let homeScore = 0;
@@ -35,5 +38,9 @@ export class ScoreTable extends ObserverComponent {
     resetScoreTable() {
         this.lblAwayScore.string = "0";
         this.lblHomeScore.string = "0";
+    }
+
+    runAnimLogo() {
+        this.skeletonLogo.setAnimation(0, "move-out-in", false);
     }
 }

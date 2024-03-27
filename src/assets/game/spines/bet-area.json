@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "g7gOtKsqPCRTYzEjLPmQ6BbYZ+A", "spine": "3.8.99" },
+"skeleton": { "hash": "tPXolEnMTYzuUbeTdFUbYtMH110", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "base", "parent": "root", "x": 0.66, "y": -90.86 },
@@ -1534,6 +1534,9 @@
 			"light-frame": {
 				"translate": [
 					{ "x": 0.95 }
+				],
+				"scale": [
+					{ "x": 0.995 }
 				]
 			},
 			"effect": {
@@ -5600,7 +5603,10 @@
 		"bones": {
 			"light-frame": {
 				"translate": [
-					{ "x": 0.95 }
+					{ "x": 0.48 }
+				],
+				"scale": [
+					{ "x": 0.995 }
 				]
 			},
 			"light-dot": {
