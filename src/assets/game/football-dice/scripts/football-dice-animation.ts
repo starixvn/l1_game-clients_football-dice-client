@@ -156,7 +156,7 @@ export class FootballDiceAnimation extends Component {
 
     modeDownBases() {
         [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
-            tween(this.nodeBaseHome).sequence(this.generateMoveDownTween(node)).start();
+            this.generateMoveDownTween(node).start();
         });
     }
 

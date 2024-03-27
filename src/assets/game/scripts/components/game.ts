@@ -69,9 +69,10 @@ export default class Game extends GameComponent {
         this.isLoading = isLoading;
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
-    renderStartRound(isStartRound: boolean) {
-        if (isStartRound) {
+    @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
+    async renderStartRound(isShowResult: boolean) {
+        if (isShowResult) {
+            await FunctionUtils.delay(3000);
             this.gameAnimation.zoomOutCamera();
             this.matchStartAnimation(false);
             this.gameAnimation.modeDownBases();
