@@ -44,7 +44,7 @@ export class FootballDiceAnimation extends Component {
 
     testAnimationIndex = 0;
 
-    recordTimes = 3;
+    recordTimes = 20;
     recordCount = 0;
 
     records = {
@@ -242,13 +242,15 @@ export class FootballDiceAnimation extends Component {
         }
     }
 
-    randomTest() {
+    async randomTest() {
         const randomDice = () => {
             return 1 + Math.floor(Math.random() * 6);
         };
         const result = { home: [randomDice(), randomDice()], away: [randomDice(), randomDice()] };
         console.log("result ", [...result.home, ...result.away]);
-        this.setResult(result);
+        console.time("test result in ");
+        await this.setResult(result);
+        console.timeEnd("test result in ");
     }
 
     setResult(result: any, animated = true) {
