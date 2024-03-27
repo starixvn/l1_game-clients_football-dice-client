@@ -17,6 +17,12 @@ export class ScoreTable extends ObserverComponent {
     @property(sp.Skeleton)
     skeletonLogo: sp.Skeleton = null;
 
+    @property(sp.Skeleton)
+    skeletonHomeScore: sp.Skeleton = null;
+
+    @property(sp.Skeleton)
+    skeletonAwayScore: sp.Skeleton = null;
+
     updateScoreTable(result: gc.GameServiceMessage.TResult) {
         let homeScore = 0;
         let awayScore = 0;
@@ -32,6 +38,8 @@ export class ScoreTable extends ObserverComponent {
         }
         this.lblHomeScore.string = homeScore.toString();
         this.lblAwayScore.string = awayScore.toString();
+        this.skeletonAwayScore.setAnimation(0, "number-in", false);
+        this.skeletonHomeScore.setAnimation(0, "number-in", false);
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
