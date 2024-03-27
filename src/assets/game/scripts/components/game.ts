@@ -83,9 +83,11 @@ export default class Game extends GameComponent {
         hasAnimation: boolean,
         settlementResult: gc.GameServiceMessage.TSettlementResult
     ) {
+        console.log("=========================================================== show result animated ", hasAnimation);
         if (result) {
+            console.time("total show result in ");
             console.time("zoomin");
-            await this.gameAnimation.zoomInCamera();
+            await this.gameAnimation.zoomInCamera(hasAnimation);
             if (hasAnimation) {
                 this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
                 this.scoreTable.runAnimLogoScoreTable();
@@ -95,11 +97,12 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
-            console.time("showResult");
             await this.gameAnimation.setResult(result, hasAnimation);
-            console.timeEnd("showResult");
-            this.nodeWinningAnimation.setAnimation(settlementResult);
-            this.scoreTable.updateScoreTable(result);
+            console.timeEnd("total show result in ");
+            if (hasAnimation) {
+                this.nodeWinningAnimation.setAnimation(settlementResult);
+                this.scoreTable.updateScoreTable(result);
+            }
         }
     }
 

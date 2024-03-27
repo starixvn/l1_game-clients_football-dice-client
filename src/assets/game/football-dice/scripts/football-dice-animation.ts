@@ -296,10 +296,14 @@ export class FootballDiceAnimation extends Component {
         });
     }
 
-    zoomInCamera() {
-        return new Promise((resolve) => {
+    zoomInCamera(animated = true) {
+        return new Promise<void>((resolve) => {
             this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
-            this.scheduleOnce(resolve, this.zoomInDuration / 1000);
+            if (!animated) {
+                resolve();
+            } else {
+                this.scheduleOnce(resolve, this.zoomInDuration / 1000);
+            }
         });
     }
 
