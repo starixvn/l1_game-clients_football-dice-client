@@ -17,8 +17,8 @@
       "id": "33532",
       "name": "Cylinder.007.mesh",
       "userData": {
-        "gltfIndex": 14,
-        "triangleCount": 18
+        "gltfIndex": 13,
+        "triangleCount": 14
       },
       "ver": "1.1.1",
       "imported": true,
@@ -35,7 +35,7 @@
       "id": "40935",
       "name": "Plane.005.mesh",
       "userData": {
-        "gltfIndex": 17,
+        "gltfIndex": 16,
         "triangleCount": 688
       },
       "ver": "1.1.1",
@@ -254,24 +254,6 @@
       ],
       "subMetas": {}
     },
-    "38a9f": {
-      "importer": "gltf-mesh",
-      "uuid": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@38a9f",
-      "displayName": "",
-      "id": "38a9f",
-      "name": "Plane.011.mesh",
-      "userData": {
-        "gltfIndex": 7,
-        "triangleCount": 5632
-      },
-      "ver": "1.1.1",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {}
-    },
     "db9ab": {
       "importer": "gltf-mesh",
       "uuid": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@db9ab",
@@ -279,7 +261,7 @@
       "id": "db9ab",
       "name": "Cylinder.008.mesh",
       "userData": {
-        "gltfIndex": 8,
+        "gltfIndex": 7,
         "triangleCount": 448
       },
       "ver": "1.1.1",
@@ -297,7 +279,7 @@
       "id": "d1250",
       "name": "04.002.mesh",
       "userData": {
-        "gltfIndex": 9,
+        "gltfIndex": 8,
         "triangleCount": 2480
       },
       "ver": "1.1.1",
@@ -315,7 +297,7 @@
       "id": "6f82a",
       "name": "04.001.mesh",
       "userData": {
-        "gltfIndex": 10,
+        "gltfIndex": 9,
         "triangleCount": 2480
       },
       "ver": "1.1.1",
@@ -333,7 +315,7 @@
       "id": "bbd92",
       "name": "Cylinder.004.mesh",
       "userData": {
-        "gltfIndex": 11,
+        "gltfIndex": 10,
         "triangleCount": 64
       },
       "ver": "1.1.1",
@@ -351,7 +333,7 @@
       "id": "2feb1",
       "name": "Circle.mesh",
       "userData": {
-        "gltfIndex": 12,
+        "gltfIndex": 11,
         "triangleCount": 2304
       },
       "ver": "1.1.1",
@@ -369,7 +351,7 @@
       "id": "2f6d1",
       "name": "Cube.mesh",
       "userData": {
-        "gltfIndex": 13,
+        "gltfIndex": 12,
         "triangleCount": 188
       },
       "ver": "1.1.1",
@@ -387,7 +369,7 @@
       "id": "d8f22",
       "name": "Plane.007.mesh",
       "userData": {
-        "gltfIndex": 15,
+        "gltfIndex": 14,
         "triangleCount": 2
       },
       "ver": "1.1.1",
@@ -405,7 +387,7 @@
       "id": "c1084",
       "name": "Plane.004.mesh",
       "userData": {
-        "gltfIndex": 16,
+        "gltfIndex": 15,
         "triangleCount": 688
       },
       "ver": "1.1.1",
@@ -423,7 +405,7 @@
       "id": "08c68",
       "name": "Plane.mesh",
       "userData": {
-        "gltfIndex": 18,
+        "gltfIndex": 17,
         "triangleCount": 12
       },
       "ver": "1.1.1",
@@ -441,7 +423,7 @@
       "id": "41ac8",
       "name": "Cube.001.mesh",
       "userData": {
-        "gltfIndex": 19,
+        "gltfIndex": 18,
         "triangleCount": 12
       },
       "ver": "1.1.1",
@@ -459,7 +441,7 @@
       "id": "c2d4f",
       "name": "Cube.009.mesh",
       "userData": {
-        "gltfIndex": 20,
+        "gltfIndex": 19,
         "triangleCount": 12
       },
       "ver": "1.1.1",
@@ -477,7 +459,7 @@
       "id": "2e7eb",
       "name": "Cube.008.mesh",
       "userData": {
-        "gltfIndex": 21,
+        "gltfIndex": 20,
         "triangleCount": 12
       },
       "ver": "1.1.1",
@@ -495,7 +477,7 @@
       "id": "45f73",
       "name": "Cube.005.mesh",
       "userData": {
-        "gltfIndex": 22,
+        "gltfIndex": 21,
         "triangleCount": 12
       },
       "ver": "1.1.1",
@@ -1541,7 +1523,6 @@
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@313e0",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@bdd91",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@faad7",
-        "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@38a9f",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@db9ab",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@d1250",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@6f82a",
