@@ -44,6 +44,7 @@
         "jest-environment-jsdom": "29.5.0",
         "jest-junit": "16.0.0",
         "jest-sonar-reporter": "2.0.0",
+        "jest-auto-stub": "^1.0.8",
         "reflect-metadata": "0.1.13",
         "ts-jest": "29.1.0",
         "ts-node": "10.9.1",
