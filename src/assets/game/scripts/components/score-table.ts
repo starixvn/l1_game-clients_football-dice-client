@@ -43,12 +43,14 @@ export class ScoreTable extends ObserverComponent {
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
-    resetScoreTable() {
-        this.lblAwayScore.string = "0";
-        this.lblHomeScore.string = "0";
+    resetScoreTable(isStartRound: boolean) {
+        if (isStartRound) {
+            this.skeletonAwayScore.setAnimation(0, "number-out", false);
+            this.skeletonHomeScore.setAnimation(0, "number-out", false);
+        }
     }
 
-    runAnimLogo() {
+    runAnimLogoScoreTable() {
         this.skeletonLogo.setAnimation(0, "move-out-in", false);
     }
 }

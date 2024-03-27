@@ -16,14 +16,9 @@ export class FootballDiceBetAreas extends ObserverComponent {
 
     private tweenNode: Tween<UITransform> = null;
 
-    @render(Settlements.SettlementStore, (store) => ({ result: store.result, settlementResult: store.settlementResult }))
-    setAnimZoomInBetChoices() {
-        this.setAnimZoomBetChoices(v3(0.75, 0.75), 1);
-    }
-
-    @render(Rounds.RoundTimeStore, (store) => ({ isStartRound: store.isStartRound, isPlacingBet: store.isPlacingBet }))
-    setAnimZoomOutBetChoices(isStartRound: boolean, isPlacingBet: boolean) {
-        if (isStartRound || isPlacingBet) {
+    @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
+    setAnimZoomOutBetChoices(isShowResult: boolean) {
+        if (isShowResult) {
             this.setAnimZoomBetChoices(v3(1, 1, 1), 0.5);
         }
     }

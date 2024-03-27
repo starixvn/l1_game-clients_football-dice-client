@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, _decorator, sp } from "cc";
+import { Label, _decorator, sp, v3 } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -8,6 +8,7 @@ import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
 import { containerOptions, settings } from "../game-settings";
 import "./../../../resources/i18n";
+import { FootballDiceBetAreas } from "./football-dice-bet-areas";
 import { ScoreTable } from "./score-table";
 import { WinningAnimation } from "./winning-animation";
 const { Rounds, Translator, Settlements } = gc;
@@ -40,6 +41,9 @@ export default class Game extends GameComponent {
 
     @property(sp.Skeleton)
     matchStartSkeletons: sp.Skeleton = null;
+
+    @property(FootballDiceBetAreas)
+    betAreas: FootballDiceBetAreas = null;
 
     override namespace = settings.name;
     override containerOptions = containerOptions;
@@ -83,7 +87,8 @@ export default class Game extends GameComponent {
             console.time("zoomin");
             await this.gameAnimation.zoomInCamera();
             if (hasAnimation) {
-                this.scoreTable.runAnimLogo();
+                this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
+                this.scoreTable.runAnimLogoScoreTable();
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.matchStartAnimation(true);

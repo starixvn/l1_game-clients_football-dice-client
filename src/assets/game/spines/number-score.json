@@ -1,12 +1,14 @@
 {
-"skeleton": { "hash": "IEOF1Y+g2oEEcLnoj0kqWIwSpak", "spine": "3.8.99" },
+"skeleton": { "hash": "bB1Kfdd8kfwcZfPLeufotSCBESo", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
-	{ "name": "number", "parent": "root", "y": -5.44 }
+	{ "name": "number", "parent": "root", "y": -5.44 },
+	{ "name": "number-0", "parent": "root" }
 ],
 "slots": [
 	{ "name": "clipping", "bone": "root", "attachment": "clipping" },
-	{ "name": "dot", "bone": "number", "attachment": "dot" }
+	{ "name": "dot", "bone": "number", "attachment": "dot" },
+	{ "name": "dot2", "bone": "number-0", "attachment": "dot" }
 ],
 "skins": [
 	{
@@ -22,6 +24,9 @@
 			},
 			"dot": {
 				"dot": { "x": -100.86, "y": 4.73, "width": 1, "height": 1 }
+			},
+			"dot2": {
+				"dot": { "x": -88.63, "y": -0.7, "width": 1, "height": 1 }
 			}
 		}
 	}
@@ -31,8 +36,15 @@
 		"bones": {
 			"number": {
 				"translate": [
-					{ "y": 42.08, "curve": 0.389, "c2": 0.99, "c3": 0.763, "c4": 1.09 },
-					{ "time": 0.6667 }
+					{ "y": 42.08, "curve": "stepped" },
+					{ "time": 0.3333, "y": 42.08, "curve": 0.389, "c2": 0.99, "c3": 0.763, "c4": 1.09 },
+					{ "time": 1 }
+				]
+			},
+			"number-0": {
+				"translate": [
+					{ "curve": 0.319, "c2": -0.08, "c3": 0.62, "c4": 0.19 },
+					{ "time": 0.6667, "y": -39.71 }
 				]
 			}
 		}
@@ -41,8 +53,15 @@
 		"bones": {
 			"number": {
 				"translate": [
-					{ "curve": 0.54, "c2": 0.01, "c3": 0.547, "c4": 0.1 },
-					{ "time": 0.6667, "y": -39.52 }
+					{ "curve": 0.319, "c2": -0.08, "c3": 0.62, "c4": 0.19 },
+					{ "time": 0.6667, "y": -39.71 }
+				]
+			},
+			"number-0": {
+				"translate": [
+					{ "y": 42.08, "curve": "stepped" },
+					{ "time": 0.3333, "y": 42.08, "curve": 0.389, "c2": 0.99, "c3": 0.763, "c4": 1.09 },
+					{ "time": 1 }
 				]
 			}
 		}
