@@ -50,6 +50,10 @@ export class RecordGroup extends Component {
         this.items.forEach((item) => item.stopSimulator());
     }
 
+    getItemsEulerAngles() {
+        return this.items.map((item) => item.node.up.normalize());
+    }
+
     clearVelocity() {
         this.items.forEach((item) => item.clearVelocity());
     }
