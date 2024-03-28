@@ -6,10 +6,10 @@ export const settings = {
     id: 78,
     name: "FootballDice",
     durations: {
-        wholeRound: 38,
+        wholeRound: 44,
         lockingBet: 3,
         placingBet: 20,
-        generatingResult: 13,
+        generatingResult: 15,
         startRound: 1,
     },
     numberOfRoundHistory: 100,
