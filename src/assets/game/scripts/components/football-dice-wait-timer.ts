@@ -13,7 +13,7 @@ export class FootballDiceWaitTimer extends WaitTimer {
     @render(RoundTimeStore, (store) => store.roundState)
     async setVisibility(state: string) {
         if (state === Rounds.ROUND_STATE.SHOW_RESULT) {
-            await FunctionUtils.delay(3000);
+            await FunctionUtils.delay(4000);
         }
         super.setVisibility(state);
     }

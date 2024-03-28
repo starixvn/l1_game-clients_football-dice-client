@@ -99,11 +99,13 @@ export default class Game extends GameComponent {
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, hasAnimation);
-            console.timeEnd("total show result in ");
+
             if (hasAnimation) {
-                this.nodeWinningAnimation.setAnimation(settlementResult);
                 this.scoreTable.updateScoreTable(result);
+                await FunctionUtils.delay(1000);
+                this.nodeWinningAnimation.setAnimation(settlementResult);
             }
+            console.timeEnd("total show result in ");
         }
     }
 
