@@ -261,7 +261,7 @@
     },
     "defaultSkin": "default",
     "defaultAnimation": "",
-    "_premultipliedAlpha": false,
+    "_premultipliedAlpha": true,
     "_timeScale": 1,
     "_preCacheMode": 0,
     "_cacheMode": 0,

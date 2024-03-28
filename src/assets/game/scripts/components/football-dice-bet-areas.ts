@@ -20,7 +20,7 @@ export class FootballDiceBetAreas extends ObserverComponent {
     @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
     async setAnimZoomOutBetChoices(isShowResult: boolean) {
         if (isShowResult) {
-            await FunctionUtils.delay(3000);
+            await FunctionUtils.delay(2500);
             this.setAnimZoomBetChoices(v3(1, 1, 1), 0.5);
         }
     }
