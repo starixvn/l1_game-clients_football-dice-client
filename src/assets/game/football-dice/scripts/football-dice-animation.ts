@@ -61,8 +61,10 @@ export class FootballDiceAnimation extends Component {
     private homeAnimations: Record[] = [];
     private awayAnimations: Record[] = [];
     private readonly zoomInDuration = 1667;
-
     private readonly moveUpDuration = 1;
+    private readonly DicesLowestY = -2.25;
+    private readonly BaseLowestY = -0.3;
+    private readonly BaseLowY = -0.2;
 
     onLoad() {
         this.loadAnimation();
@@ -157,6 +159,20 @@ export class FootballDiceAnimation extends Component {
     modeDownBases() {
         [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
             this.generateMoveDownTween(node).start();
+        });
+        [this.redDiceGroup, this.blueDiceGroup].forEach((diceGroup) => {
+            diceGroup.items.map((item) => {
+                const position = v3(item.node.position.x, this.DicesLowestY, item.node.position.z);
+                tween(item.node)
+                    .to(
+                        this.moveUpDuration,
+                        {
+                            position: position,
+                        },
+                        { easing: "sineOut" }
+                    )
+                    .start();
+            });
         });
     }
 
@@ -316,7 +332,7 @@ export class FootballDiceAnimation extends Component {
     }
 
     generateMoveDownTween(node: Node) {
-        const y2 = -0.25;
+        const y2 = this.BaseLowestY;
 
         return tween(node).to(
             0.4,
@@ -366,7 +382,7 @@ export class FootballDiceAnimation extends Component {
         const shakeCount = 3;
         const padding = 0.02;
         const offsetRotation = 1;
-        const y1 = -0.3;
+        const y1 = this.BaseLowestY;
 
         const rotations = [v3(offsetRotation, 0, 0), v3(0, 0, offsetRotation)];
 
@@ -397,8 +413,8 @@ export class FootballDiceAnimation extends Component {
         const shakeCount = Math.floor(totalDuration / stepShake);
         const padding = 0.02;
         const offsetRotation = 4;
-        const y1 = -0.3;
-        const y2 = -0.2;
+        const y1 = this.BaseLowestY;
+        const y2 = this.BaseLowY;
 
         const rotations = [
             v3(offsetRotation, 0, 0),
