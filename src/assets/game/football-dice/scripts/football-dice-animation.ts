@@ -179,7 +179,7 @@ export class FootballDiceAnimation extends Component {
                         {
                             position: position,
                         },
-                        { easing: "sineOut" }
+                        { easing: "sineIn" }
                     )
                     .start();
             });
