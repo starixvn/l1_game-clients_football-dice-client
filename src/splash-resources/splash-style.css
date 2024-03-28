@@ -1,13 +1,13 @@
 .splash-container .bg_no_translate {
-    background-image: url("./game_background.png?v=1");
+    background-image: url("./game_background.png?v=2");
 }
 
 .splash-container .splash_game_name_vi {
-    background-image: url("./game_name_vi.png?v=1");
+    background-image: url("./game_name_vi.png?v=2");
 }
 
 .splash-container .splash_game_name_en {
-    background-image: url("./game_name_en.png?v=1");
+    background-image: url("./game_name_en.png?v=2");
 }
 
 .splash-container .splash_game_name_id {
