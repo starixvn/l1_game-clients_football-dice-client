@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Layout, Node, Tween, UITransform, _decorator, tween, v3 } from "cc";
+import { Layout, Node, _decorator, tween, v3 } from "cc";
 import Observer from "observer";
 import { ObserverComponent } from "../../../../extensions/shared-components/assets/shared/common-components/observer-component/scripts/observer-component";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils";
@@ -14,8 +14,6 @@ export class FootballDiceBetAreas extends ObserverComponent {
 
     @property(Node)
     betChoices: Node = null;
-
-    private tweenNode: Tween<UITransform> = null;
 
     @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
     async setAnimZoomOutBetChoices(isShowResult: boolean) {
