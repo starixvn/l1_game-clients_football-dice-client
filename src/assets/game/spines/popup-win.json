@@ -1,90 +1,22 @@
 {
-"skeleton": { "hash": "UDDDoi8RjwLgMLZaGn5Usj9z+yw", "spine": "3.8.99" },
+"skeleton": { "hash": "96qNQlCe8ffbbROmZADTnyU2PzQ", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "popupBG", "parent": "root", "x": 0.13, "y": 0.71 },
-	{ "name": "flip-all", "parent": "root", "x": -0.14, "y": 2.61 },
-	{ "name": "ball", "parent": "flip-all", "x": -1.4, "y": -9.08 },
-	{ "name": "text-team-win", "parent": "root", "x": -1.44, "y": 60.74 },
-	{ "name": "sport-whistle", "parent": "root", "x": -3.52, "y": -25.14 },
-	{ "name": "sport-whistle 1", "parent": "sport-whistle", "rotation": 54.26, "x": -18.95, "y": 24.62 },
-	{ "name": "sport-whistle 2", "parent": "sport-whistle", "rotation": 26.52, "x": -11.53, "y": 27.99 },
-	{ "name": "sport-whistle 3", "parent": "sport-whistle", "rotation": -23.66, "x": -5.84, "y": 35.03 },
-	{ "name": "effect-dot", "parent": "flip-all", "x": -2.08, "y": -9.79 },
-	{ "name": "effect-line", "parent": "flip-all", "x": 23.27, "y": -11.84 },
-	{ "name": "ball-blur 1", "parent": "flip-all", "x": -34.68, "y": -12.68 },
-	{ "name": "ball-blur 2", "parent": "flip-all", "x": -39.34, "y": -12.68 },
-	{ "name": "ball-dust", "parent": "flip-all", "x": 13.12, "y": -11.84 },
-	{ "name": "sport-net", "parent": "flip-all", "x": 33.51, "y": -13.7 },
-	{ "name": "motion-light", "parent": "root", "x": 150.68, "y": 3.29 }
+	{ "name": "text-team-win", "parent": "root", "x": -1.44, "y": 60.74 }
 ],
 "slots": [
 	{ "name": "home-win BG", "bone": "popupBG" },
-	{ "name": "fire-dot", "bone": "effect-dot" },
-	{ "name": "fire-line", "bone": "effect-line" },
-	{ "name": "ball-dust", "bone": "ball-dust" },
-	{ "name": "ball-blur 2", "bone": "ball-blur 2" },
-	{ "name": "ball-blur 1", "bone": "ball-blur 1" },
-	{ "name": "ball", "bone": "ball" },
-	{ "name": "sport-whistle", "bone": "sport-whistle" },
-	{ "name": "sport-whistle 3", "bone": "sport-whistle 3" },
-	{ "name": "sport-whistle 2", "bone": "sport-whistle 2" },
-	{ "name": "sport-whistle 1", "bone": "sport-whistle 1" },
-	{ "name": "sport-net", "bone": "sport-net", "blend": "multiply" },
-	{ "name": "motion-light/line run_01", "bone": "motion-light" },
 	{ "name": "text-team-win", "bone": "text-team-win" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
-			"ball": {
-				"ball": { "x": 0.54, "y": -0.53, "width": 72, "height": 72 }
-			},
-			"ball-blur 1": {
-				"ball blur 1": { "x": 24.82, "y": 3.07, "width": 96, "height": 72 }
-			},
-			"ball-blur 2": {
-				"ball blur 2": { "x": 12.48, "y": 1.07, "width": 222, "height": 70 }
-			},
-			"ball-dust": {
-				"ball dust": { "x": -99.97, "y": 4.72, "width": 228, "height": 127 }
-			},
-			"fire-dot": {
-				"fire dot": { "x": 2.72, "y": -0.83, "width": 203, "height": 206 },
-				"ice dot": { "x": 2.72, "y": -0.83, "width": 203, "height": 206 }
-			},
-			"fire-line": {
-				"fire line": { "x": -113.13, "y": -0.78, "width": 404, "height": 118 },
-				"ice line": { "x": -113.13, "y": -0.78, "width": 404, "height": 118 }
-			},
 			"home-win BG": {
-				"away win BG": { "x": -13.63, "y": 3.29, "width": 497, "height": 168 },
-				"draw win BG": { "x": -13.63, "y": 3.29, "width": 497, "height": 168 },
-				"home win BG": { "x": -13.63, "y": 3.29, "width": 497, "height": 168 }
-			},
-			"motion-light/line run_01": {
-				"motion light/line run_01": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 },
-				"motion light/line run_02": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 },
-				"motion light/line run_03": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 },
-				"motion light/line run_04": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 },
-				"motion light/line run_05": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 },
-				"motion light/line run_06": { "x": -155.39, "y": 0.53, "width": 550, "height": 200 }
-			},
-			"sport-net": {
-				"sport net": { "x": -32.99, "y": 11.84, "width": 204, "height": 174 }
-			},
-			"sport-whistle": {
-				"sport whistle": { "x": 4.52, "y": 9.14, "width": 74, "height": 72 }
-			},
-			"sport-whistle 1": {
-				"sport whistle 1": { "x": 0.99, "y": 14.92, "rotation": -54.26, "width": 24, "height": 20 }
-			},
-			"sport-whistle 2": {
-				"sport whistle 2": { "x": 1.21, "y": 19.12, "rotation": -26.52, "width": 21, "height": 37 }
-			},
-			"sport-whistle 3": {
-				"sport whistle 3": { "x": 3.45, "y": 14.19, "rotation": 23.66, "width": 19, "height": 25 }
+				"away win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 156 },
+				"draw win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 163 },
+				"home win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 156 }
 			}
 		}
 	}
@@ -92,75 +24,10 @@
 "animations": {
 	"away-win": {
 		"slots": {
-			"ball": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball" }
-				]
-			},
-			"ball-blur 1": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball blur 1" }
-				]
-			},
-			"ball-blur 2": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball blur 2" }
-				]
-			},
-			"ball-dust": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.6667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball dust" }
-				]
-			},
-			"fire-dot": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.1667, "color": "ffffff00" },
-					{ "time": 0.5, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ice dot" }
-				]
-			},
-			"fire-line": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.5, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ice line" }
-				]
-			},
 			"home-win BG": {
 				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				],
@@ -168,82 +35,6 @@
 					{ "name": "away win BG" }
 				]
 			},
-			"motion-light/line run_01": {
-				"attachment": [
-					{ "time": 0.1667, "name": "motion light/line run_01" },
-					{ "time": 0.2, "name": "motion light/line run_02" },
-					{ "time": 0.2333, "name": "motion light/line run_03" },
-					{ "time": 0.2667, "name": "motion light/line run_04" },
-					{ "time": 0.3, "name": "motion light/line run_05" },
-					{ "time": 0.3333, "name": "motion light/line run_06" },
-					{ "time": 0.3667, "name": "motion light/line run_01" },
-					{ "time": 0.4, "name": "motion light/line run_02" },
-					{ "time": 0.4333, "name": "motion light/line run_03" },
-					{ "time": 0.4667, "name": "motion light/line run_04" },
-					{ "time": 0.5, "name": "motion light/line run_05" },
-					{ "time": 0.5333, "name": "motion light/line run_06" },
-					{ "time": 0.5667, "name": "motion light/line run_01" },
-					{ "time": 0.6, "name": "motion light/line run_02" },
-					{ "time": 0.6333, "name": "motion light/line run_03" },
-					{ "time": 0.6667, "name": "motion light/line run_04" },
-					{ "time": 0.7, "name": "motion light/line run_05" },
-					{ "time": 0.7333, "name": "motion light/line run_06" },
-					{ "time": 0.7667, "name": "motion light/line run_01" },
-					{ "time": 0.8, "name": "motion light/line run_02" },
-					{ "time": 0.8333, "name": "motion light/line run_03" },
-					{ "time": 0.8667, "name": "motion light/line run_04" },
-					{ "time": 0.9, "name": "motion light/line run_05" },
-					{ "time": 0.9333, "name": "motion light/line run_06" },
-					{ "time": 0.9667, "name": "motion light/line run_01" },
-					{ "time": 1, "name": "motion light/line run_02" },
-					{ "time": 1.0333, "name": "motion light/line run_03" },
-					{ "time": 1.0667, "name": "motion light/line run_04" },
-					{ "time": 1.1, "name": "motion light/line run_05" },
-					{ "time": 1.1333, "name": "motion light/line run_06" },
-					{ "time": 1.1667, "name": "motion light/line run_01" },
-					{ "time": 1.2, "name": "motion light/line run_02" },
-					{ "time": 1.2333, "name": "motion light/line run_03" },
-					{ "time": 1.2667, "name": "motion light/line run_04" },
-					{ "time": 1.3, "name": "motion light/line run_05" },
-					{ "time": 1.3333, "name": "motion light/line run_06" },
-					{ "time": 1.3667, "name": "motion light/line run_01" },
-					{ "time": 1.4, "name": "motion light/line run_02" },
-					{ "time": 1.4333, "name": "motion light/line run_03" },
-					{ "time": 1.4667, "name": "motion light/line run_04" },
-					{ "time": 1.5, "name": "motion light/line run_05" },
-					{ "time": 1.5333, "name": "motion light/line run_06" },
-					{ "time": 1.5667, "name": "motion light/line run_01" },
-					{ "time": 1.6, "name": "motion light/line run_02" },
-					{ "time": 1.6333, "name": "motion light/line run_03" },
-					{ "time": 1.6667, "name": "motion light/line run_04" },
-					{ "time": 1.7, "name": "motion light/line run_05" },
-					{ "time": 1.7333, "name": "motion light/line run_06" },
-					{ "time": 1.7667, "name": "motion light/line run_01" },
-					{ "time": 1.8, "name": "motion light/line run_02" },
-					{ "time": 1.8333, "name": "motion light/line run_03" },
-					{ "time": 1.8667, "name": "motion light/line run_04" },
-					{ "time": 1.9, "name": "motion light/line run_05" },
-					{ "time": 1.9333, "name": "motion light/line run_06" },
-					{ "time": 1.9667, "name": "motion light/line run_01" },
-					{ "time": 2, "name": "motion light/line run_02" },
-					{ "time": 2.0333, "name": "motion light/line run_03" },
-					{ "time": 2.0667, "name": "motion light/line run_04" },
-					{ "time": 2.1, "name": "motion light/line run_05" },
-					{ "time": 2.1333, "name": "motion light/line run_06" },
-					{ "time": 2.1667, "name": null }
-				]
-			},
-			"sport-net": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport net" }
-				]
-			},
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
@@ -254,117 +45,21 @@
 			}
 		},
 		"bones": {
-			"popupBG": {
-				"scale": [
-					{ "x": 0, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.1667 }
-				]
-			},
 			"text-team-win": {
 				"translate": [
 					{ "x": 150.96, "curve": 0.7, "c2": 0.9, "c3": 0.75 },
 					{ "time": 0.3333, "x": 25.05 },
 					{ "time": 2.3333, "x": -7.32 }
 				]
-			},
-			"ball": {
-				"rotate": [
-					{ "curve": 0.696, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "angle": 180 },
-					{ "time": 2.3333, "angle": 160 }
-				],
-				"translate": [
-					{ "x": -146.15, "curve": 0.627, "c2": 0.89, "c3": 0.75 },
-					{ "time": 0.3333, "x": -10.73 },
-					{ "time": 2.3333, "x": 13.29 }
-				]
-			},
-			"ball-blur 1": {
-				"translate": [
-					{ "x": -137.97, "curve": 0.579, "c2": 0.82, "c3": 0.75 },
-					{ "time": 0.3333, "x": -8.18 },
-					{ "time": 2.3333, "x": 1.02 }
-				]
-			},
-			"ball-blur 2": {
-				"translate": [
-					{ "x": -80.74, "curve": "stepped" },
-					{ "time": 0.3333, "x": -80.74 },
-					{ "time": 2.3333, "x": 30.15 }
-				]
-			},
-			"ball-dust": {
-				"translate": [
-					{ "x": -2.04 },
-					{ "time": 2.3333 }
-				],
-				"scale": [
-					{ "x": 0.851, "y": 0.851 },
-					{ "time": 2.3333 }
-				]
-			},
-			"effect-dot": {
-				"rotate": [
-					{},
-					{ "time": 1.1667, "angle": 180 },
-					{ "time": 2.3333 }
-				],
-				"translate": [
-					{ "time": 0.1667, "x": -12.7 },
-					{ "time": 2.3333, "x": 10.22 }
-				]
-			},
-			"effect-line": {
-				"translate": [
-					{ "x": -70.01 },
-					{ "time": 2.3333, "x": 0.51 }
-				]
-			},
-			"sport-net": {
-				"translate": [
-					{ "x": -139.45, "curve": 0.635, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "x": -10.22 },
-					{ "time": 2.3333, "x": 14.82 }
-				],
-				"shear": [
-					{},
-					{ "time": 2.3333, "y": -9.71 }
-				]
-			},
-			"flip-all": {
-				"scale": [
-					{ "x": -1 }
-				]
 			}
 		}
 	},
 	"draw-win": {
 		"slots": {
-			"ball-dust": {
-				"color": [
-					{ "color": "d23bff00" },
-					{ "time": 0.3333, "color": "d23cffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "d23cffff" },
-					{ "time": 2.3333, "color": "d23bff00" }
-				],
-				"attachment": [
-					{ "name": "ball dust" }
-				]
-			},
-			"fire-dot": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "1e00ff3f" },
-					{ "time": 1, "color": "1e00ff27" },
-					{ "time": 1.8333, "color": "1e00ff3f" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "fire dot" }
-				]
-			},
 			"home-win BG": {
 				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				],
@@ -372,115 +67,6 @@
 					{ "name": "draw win BG" }
 				]
 			},
-			"motion-light/line run_01": {
-				"attachment": [
-					{ "time": 0.1667, "name": "motion light/line run_01" },
-					{ "time": 0.2, "name": "motion light/line run_02" },
-					{ "time": 0.2333, "name": "motion light/line run_03" },
-					{ "time": 0.2667, "name": "motion light/line run_04" },
-					{ "time": 0.3, "name": "motion light/line run_05" },
-					{ "time": 0.3333, "name": "motion light/line run_06" },
-					{ "time": 0.3667, "name": "motion light/line run_01" },
-					{ "time": 0.4, "name": "motion light/line run_02" },
-					{ "time": 0.4333, "name": "motion light/line run_03" },
-					{ "time": 0.4667, "name": "motion light/line run_04" },
-					{ "time": 0.5, "name": "motion light/line run_05" },
-					{ "time": 0.5333, "name": "motion light/line run_06" },
-					{ "time": 0.5667, "name": "motion light/line run_01" },
-					{ "time": 0.6, "name": "motion light/line run_02" },
-					{ "time": 0.6333, "name": "motion light/line run_03" },
-					{ "time": 0.6667, "name": "motion light/line run_04" },
-					{ "time": 0.7, "name": "motion light/line run_05" },
-					{ "time": 0.7333, "name": "motion light/line run_06" },
-					{ "time": 0.7667, "name": "motion light/line run_01" },
-					{ "time": 0.8, "name": "motion light/line run_02" },
-					{ "time": 0.8333, "name": "motion light/line run_03" },
-					{ "time": 0.8667, "name": "motion light/line run_04" },
-					{ "time": 0.9, "name": "motion light/line run_05" },
-					{ "time": 0.9333, "name": "motion light/line run_06" },
-					{ "time": 0.9667, "name": "motion light/line run_01" },
-					{ "time": 1, "name": "motion light/line run_02" },
-					{ "time": 1.0333, "name": "motion light/line run_03" },
-					{ "time": 1.0667, "name": "motion light/line run_04" },
-					{ "time": 1.1, "name": "motion light/line run_05" },
-					{ "time": 1.1333, "name": "motion light/line run_06" },
-					{ "time": 1.1667, "name": "motion light/line run_01" },
-					{ "time": 1.2, "name": "motion light/line run_02" },
-					{ "time": 1.2333, "name": "motion light/line run_03" },
-					{ "time": 1.2667, "name": "motion light/line run_04" },
-					{ "time": 1.3, "name": "motion light/line run_05" },
-					{ "time": 1.3333, "name": "motion light/line run_06" },
-					{ "time": 1.3667, "name": "motion light/line run_01" },
-					{ "time": 1.4, "name": "motion light/line run_02" },
-					{ "time": 1.4333, "name": "motion light/line run_03" },
-					{ "time": 1.4667, "name": "motion light/line run_04" },
-					{ "time": 1.5, "name": "motion light/line run_05" },
-					{ "time": 1.5333, "name": "motion light/line run_06" },
-					{ "time": 1.5667, "name": "motion light/line run_01" },
-					{ "time": 1.6, "name": "motion light/line run_02" },
-					{ "time": 1.6333, "name": "motion light/line run_03" },
-					{ "time": 1.6667, "name": "motion light/line run_04" },
-					{ "time": 1.7, "name": "motion light/line run_05" },
-					{ "time": 1.7333, "name": "motion light/line run_06" },
-					{ "time": 1.7667, "name": "motion light/line run_01" },
-					{ "time": 1.8, "name": "motion light/line run_02" },
-					{ "time": 1.8333, "name": "motion light/line run_03" },
-					{ "time": 1.8667, "name": "motion light/line run_04" },
-					{ "time": 1.9, "name": "motion light/line run_05" },
-					{ "time": 1.9333, "name": "motion light/line run_06" },
-					{ "time": 1.9667, "name": "motion light/line run_01" },
-					{ "time": 2, "name": "motion light/line run_02" },
-					{ "time": 2.0333, "name": "motion light/line run_03" },
-					{ "time": 2.0667, "name": "motion light/line run_04" },
-					{ "time": 2.1, "name": "motion light/line run_05" },
-					{ "time": 2.1333, "name": "motion light/line run_06" },
-					{ "time": 2.1667, "name": null }
-				]
-			},
-			"sport-whistle": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport whistle" }
-				]
-			},
-			"sport-whistle 1": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport whistle 1" }
-				]
-			},
-			"sport-whistle 2": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport whistle 2" }
-				]
-			},
-			"sport-whistle 3": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport whistle 3" }
-				]
-			},
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
@@ -491,163 +77,20 @@
 			}
 		},
 		"bones": {
-			"popupBG": {
-				"scale": [
-					{ "x": 0, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.1667 }
-				]
-			},
 			"text-team-win": {
 				"scale": [
 					{ "x": 0.95, "y": 0.95 },
 					{ "time": 2.3333, "x": 1.05, "y": 1.05 }
-				]
-			},
-			"sport-whistle": {
-				"scale": [
-					{ "x": 0, "y": 0, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.3333, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.5, "x": 0.8, "y": 1.2, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.6667, "x": 1.1, "y": 0.9, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.8333, "curve": 0.25, "c3": 0.75 },
-					{ "time": 1, "x": 0.9, "y": 1.1, "curve": 0.25, "c3": 0.75 },
-					{ "time": 1.1667, "x": 1.1, "y": 0.9, "curve": 0.25, "c3": 0.75 },
-					{ "time": 1.3333, "curve": 0.25, "c3": 0.75 },
-					{ "time": 1.8333, "x": 1.05, "y": 0.95, "curve": 0.25, "c3": 0.75 },
-					{ "time": 2.3333 }
-				]
-			},
-			"sport-whistle 1": {
-				"scale": [
-					{},
-					{ "time": 0.2333, "y": 0.738 },
-					{ "time": 0.5 },
-					{ "time": 0.7, "y": 0.738 },
-					{ "time": 0.9667 },
-					{ "time": 1.1667, "y": 0.738 },
-					{ "time": 1.4 },
-					{ "time": 1.6333, "y": 0.738 },
-					{ "time": 1.8667 },
-					{ "time": 2.0667, "y": 0.738 },
-					{ "time": 2.3333, "x": 0.999, "y": 0.999 }
-				]
-			},
-			"sport-whistle 2": {
-				"scale": [
-					{},
-					{ "time": 0.2333, "y": 0.738 },
-					{ "time": 0.5 },
-					{ "time": 0.7, "y": 0.738 },
-					{ "time": 0.9667 },
-					{ "time": 1.1667, "y": 0.738 },
-					{ "time": 1.4 },
-					{ "time": 1.6333, "y": 0.738 },
-					{ "time": 1.8667 },
-					{ "time": 2.0667, "y": 0.738 },
-					{ "time": 2.3333 }
-				]
-			},
-			"sport-whistle 3": {
-				"scale": [
-					{},
-					{ "time": 0.2333, "y": 0.738 },
-					{ "time": 0.5 },
-					{ "time": 0.7, "y": 0.738 },
-					{ "time": 0.9667 },
-					{ "time": 1.1667, "y": 0.738 },
-					{ "time": 1.4 },
-					{ "time": 1.6333, "y": 0.738 },
-					{ "time": 1.8667 },
-					{ "time": 2.0667, "y": 0.738 },
-					{ "time": 2.3333 }
-				]
-			},
-			"ball-dust": {
-				"rotate": [
-					{ "angle": -30.27 }
-				],
-				"translate": [
-					{ "x": -5.63, "y": -9.85 },
-					{ "time": 2.3333, "x": -18.76, "y": 0.94 }
-				],
-				"scale": [
-					{ "x": 0.413, "y": 0.413 },
-					{ "time": 2.3333, "x": 0.497, "y": 0.497 }
 				]
 			}
 		}
 	},
 	"home-win": {
 		"slots": {
-			"ball": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball" }
-				]
-			},
-			"ball-blur 1": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball blur 1" }
-				]
-			},
-			"ball-blur 2": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball blur 2" }
-				]
-			},
-			"ball-dust": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.6667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "ball dust" }
-				]
-			},
-			"fire-dot": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.1667, "color": "ffffff00" },
-					{ "time": 0.5, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "fire dot" }
-				]
-			},
-			"fire-line": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.5, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "fire line" }
-				]
-			},
 			"home-win BG": {
 				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				],
@@ -655,82 +98,6 @@
 					{ "name": "home win BG" }
 				]
 			},
-			"motion-light/line run_01": {
-				"attachment": [
-					{ "time": 0.1667, "name": "motion light/line run_01" },
-					{ "time": 0.2, "name": "motion light/line run_02" },
-					{ "time": 0.2333, "name": "motion light/line run_03" },
-					{ "time": 0.2667, "name": "motion light/line run_04" },
-					{ "time": 0.3, "name": "motion light/line run_05" },
-					{ "time": 0.3333, "name": "motion light/line run_06" },
-					{ "time": 0.3667, "name": "motion light/line run_01" },
-					{ "time": 0.4, "name": "motion light/line run_02" },
-					{ "time": 0.4333, "name": "motion light/line run_03" },
-					{ "time": 0.4667, "name": "motion light/line run_04" },
-					{ "time": 0.5, "name": "motion light/line run_05" },
-					{ "time": 0.5333, "name": "motion light/line run_06" },
-					{ "time": 0.5667, "name": "motion light/line run_01" },
-					{ "time": 0.6, "name": "motion light/line run_02" },
-					{ "time": 0.6333, "name": "motion light/line run_03" },
-					{ "time": 0.6667, "name": "motion light/line run_04" },
-					{ "time": 0.7, "name": "motion light/line run_05" },
-					{ "time": 0.7333, "name": "motion light/line run_06" },
-					{ "time": 0.7667, "name": "motion light/line run_01" },
-					{ "time": 0.8, "name": "motion light/line run_02" },
-					{ "time": 0.8333, "name": "motion light/line run_03" },
-					{ "time": 0.8667, "name": "motion light/line run_04" },
-					{ "time": 0.9, "name": "motion light/line run_05" },
-					{ "time": 0.9333, "name": "motion light/line run_06" },
-					{ "time": 0.9667, "name": "motion light/line run_01" },
-					{ "time": 1, "name": "motion light/line run_02" },
-					{ "time": 1.0333, "name": "motion light/line run_03" },
-					{ "time": 1.0667, "name": "motion light/line run_04" },
-					{ "time": 1.1, "name": "motion light/line run_05" },
-					{ "time": 1.1333, "name": "motion light/line run_06" },
-					{ "time": 1.1667, "name": "motion light/line run_01" },
-					{ "time": 1.2, "name": "motion light/line run_02" },
-					{ "time": 1.2333, "name": "motion light/line run_03" },
-					{ "time": 1.2667, "name": "motion light/line run_04" },
-					{ "time": 1.3, "name": "motion light/line run_05" },
-					{ "time": 1.3333, "name": "motion light/line run_06" },
-					{ "time": 1.3667, "name": "motion light/line run_01" },
-					{ "time": 1.4, "name": "motion light/line run_02" },
-					{ "time": 1.4333, "name": "motion light/line run_03" },
-					{ "time": 1.4667, "name": "motion light/line run_04" },
-					{ "time": 1.5, "name": "motion light/line run_05" },
-					{ "time": 1.5333, "name": "motion light/line run_06" },
-					{ "time": 1.5667, "name": "motion light/line run_01" },
-					{ "time": 1.6, "name": "motion light/line run_02" },
-					{ "time": 1.6333, "name": "motion light/line run_03" },
-					{ "time": 1.6667, "name": "motion light/line run_04" },
-					{ "time": 1.7, "name": "motion light/line run_05" },
-					{ "time": 1.7333, "name": "motion light/line run_06" },
-					{ "time": 1.7667, "name": "motion light/line run_01" },
-					{ "time": 1.8, "name": "motion light/line run_02" },
-					{ "time": 1.8333, "name": "motion light/line run_03" },
-					{ "time": 1.8667, "name": "motion light/line run_04" },
-					{ "time": 1.9, "name": "motion light/line run_05" },
-					{ "time": 1.9333, "name": "motion light/line run_06" },
-					{ "time": 1.9667, "name": "motion light/line run_01" },
-					{ "time": 2, "name": "motion light/line run_02" },
-					{ "time": 2.0333, "name": "motion light/line run_03" },
-					{ "time": 2.0667, "name": "motion light/line run_04" },
-					{ "time": 2.1, "name": "motion light/line run_05" },
-					{ "time": 2.1333, "name": "motion light/line run_06" },
-					{ "time": 2.1667, "name": null }
-				]
-			},
-			"sport-net": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 1.8333, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "sport net" }
-				]
-			},
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
@@ -741,81 +108,11 @@
 			}
 		},
 		"bones": {
-			"popupBG": {
-				"scale": [
-					{ "x": 0, "curve": 0.25, "c3": 0.75 },
-					{ "time": 0.1667 }
-				]
-			},
 			"text-team-win": {
 				"translate": [
 					{ "x": -149.43, "curve": 0.7, "c2": 0.9, "c3": 0.75 },
 					{ "time": 0.3333, "x": -12.15 },
 					{ "time": 2.3333, "x": 10.35 }
-				]
-			},
-			"ball": {
-				"rotate": [
-					{ "curve": 0.696, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "angle": 180 },
-					{ "time": 2.3333, "angle": 160 }
-				],
-				"translate": [
-					{ "x": -146.15, "curve": 0.627, "c2": 0.89, "c3": 0.75 },
-					{ "time": 0.3333, "x": -10.73 },
-					{ "time": 2.3333, "x": 13.29 }
-				]
-			},
-			"ball-blur 1": {
-				"translate": [
-					{ "x": -137.97, "curve": 0.579, "c2": 0.82, "c3": 0.75 },
-					{ "time": 0.3333, "x": -8.18 },
-					{ "time": 2.3333, "x": 1.02 }
-				]
-			},
-			"ball-blur 2": {
-				"translate": [
-					{ "x": -80.74, "curve": "stepped" },
-					{ "time": 0.3333, "x": -80.74 },
-					{ "time": 2.3333, "x": 30.15 }
-				]
-			},
-			"ball-dust": {
-				"translate": [
-					{ "x": -2.04 },
-					{ "time": 2.3333 }
-				],
-				"scale": [
-					{ "x": 0.851, "y": 0.851 },
-					{ "time": 2.3333 }
-				]
-			},
-			"effect-dot": {
-				"rotate": [
-					{},
-					{ "time": 1.1667, "angle": 180 },
-					{ "time": 2.3333 }
-				],
-				"translate": [
-					{ "time": 0.1667, "x": -12.7 },
-					{ "time": 2.3333, "x": 10.22 }
-				]
-			},
-			"effect-line": {
-				"translate": [
-					{ "x": -70.01 },
-					{ "time": 2.3333, "x": 0.51 }
-				]
-			},
-			"sport-net": {
-				"translate": [
-					{ "x": -139.45, "curve": 0.635, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "x": -10.22 },
-					{ "time": 2.3333, "x": 14.82 }
-				],
-				"shear": [
-					{},
-					{ "time": 2.3333, "y": -9.71 }
 				]
 			}
 		}

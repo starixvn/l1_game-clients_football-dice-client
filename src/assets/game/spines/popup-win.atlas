@@ -1,160 +1,27 @@
 
 popup-win.png
-size: 1974,474
+size: 1486,166
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 away win BG
-  rotate: true
-  xy: 2, 2
-  size: 470, 164
-  orig: 497, 168
-  offset: 17, 3
-  index: -1
-ball
   rotate: false
-  xy: 816, 88
-  size: 70, 70
-  orig: 72, 72
-  offset: 1, 1
-  index: -1
-ball blur 1
-  rotate: false
-  xy: 712, 10
-  size: 94, 70
-  orig: 96, 72
-  offset: 1, 1
-  index: -1
-ball blur 2
-  rotate: false
-  xy: 500, 11
-  size: 210, 67
-  orig: 222, 70
-  offset: 5, 1
-  index: -1
-ball dust
-  rotate: false
-  xy: 1209, 353
-  size: 221, 119
-  orig: 228, 127
-  offset: 2, 6
+  xy: 2, 8
+  size: 508, 156
+  orig: 512, 156
+  offset: 4, 0
   index: -1
 draw win BG
-  rotate: true
-  xy: 168, 2
-  size: 470, 164
-  orig: 497, 168
-  offset: 17, 3
-  index: -1
-fire dot
-  rotate: true
-  xy: 1598, 177
-  size: 188, 186
-  orig: 203, 206
-  offset: 7, 11
-  index: -1
-fire line
   rotate: false
-  xy: 1291, 54
-  size: 367, 105
-  orig: 404, 118
-  offset: 29, 7
+  xy: 1022, 2
+  size: 462, 162
+  orig: 495, 163
+  offset: 20, 0
   index: -1
 home win BG
-  rotate: true
-  xy: 334, 2
-  size: 470, 164
-  orig: 497, 168
-  offset: 17, 3
-  index: -1
-ice dot
-  rotate: true
-  xy: 1786, 177
-  size: 188, 186
-  orig: 203, 206
-  offset: 7, 11
-  index: -1
-ice line
   rotate: false
-  xy: 1598, 367
-  size: 367, 105
-  orig: 404, 118
-  offset: 29, 7
-  index: -1
-motion light/line run_01
-  rotate: false
-  xy: 816, 317
-  size: 391, 155
-  orig: 550, 200
-  offset: 88, 28
-  index: -1
-motion light/line run_02
-  rotate: true
-  xy: 500, 80
-  size: 392, 156
-  orig: 550, 200
-  offset: 89, 28
-  index: -1
-motion light/line run_03
-  rotate: true
-  xy: 658, 82
-  size: 390, 156
-  orig: 550, 200
-  offset: 90, 28
-  index: -1
-motion light/line run_04
-  rotate: false
-  xy: 1207, 161
-  size: 389, 154
-  orig: 550, 200
-  offset: 91, 28
-  index: -1
-motion light/line run_05
-  rotate: false
-  xy: 901, 3
-  size: 388, 155
-  orig: 550, 200
-  offset: 90, 28
-  index: -1
-motion light/line run_06
-  rotate: false
-  xy: 816, 160
-  size: 389, 155
-  orig: 550, 200
-  offset: 90, 28
-  index: -1
-sport net
-  rotate: false
-  xy: 1660, 9
-  size: 195, 166
-  orig: 204, 174
-  offset: 1, 7
-  index: -1
-sport whistle
-  rotate: true
-  xy: 808, 8
-  size: 72, 70
-  orig: 74, 72
-  offset: 1, 1
-  index: -1
-sport whistle 1
-  rotate: true
-  xy: 880, 27
-  size: 22, 18
-  orig: 24, 20
-  offset: 1, 1
-  index: -1
-sport whistle 2
-  rotate: false
-  xy: 880, 51
-  size: 19, 35
-  orig: 21, 37
-  offset: 1, 1
-  index: -1
-sport whistle 3
-  rotate: false
-  xy: 880, 2
-  size: 17, 23
-  orig: 19, 25
-  offset: 1, 1
+  xy: 512, 8
+  size: 508, 156
+  orig: 512, 156
+  offset: 0, 0
   index: -1
