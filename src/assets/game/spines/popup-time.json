@@ -1,35 +1,34 @@
 {
-"skeleton": { "hash": "lc1FCIGfcjxben+jaSlSu4nxyfk", "spine": "3.8.99", "x": -112.42, "y": -40.52, "width": 225, "height": 83.1 },
+"skeleton": { "hash": "m4uTScPkue36rGavb+P93kVEMDk", "spine": "3.8.99", "x": -112.42, "y": -39.11, "width": 225, "height": 81.69 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "time", "parent": "root", "x": -0.01, "y": 42.35 },
 	{ "name": "control-all", "parent": "time", "x": 0.01, "y": -42.35 },
 	{ "name": "effect-time light", "parent": "control-all", "x": 1.08, "y": 34.3 },
 	{ "name": "time-base 1", "parent": "control-all", "x": 75.95, "y": 35.32 },
-	{ "name": "time-base 2", "parent": "control-all", "x": 66.05, "y": -0.71 },
-	{ "name": "time-number", "parent": "time-base 2", "x": -65.56, "y": -1.79 },
-	{ "name": "text", "parent": "time-base 1", "x": -75.95, "y": -1.28 }
+	{ "name": "time-base 2", "parent": "control-all", "x": 66.05, "y": 0.7 },
+	{ "name": "time-number", "parent": "time-base 2", "x": -65.56, "y": -1.79 }
 ],
 "slots": [
 	{ "name": "time-clipping", "bone": "time", "attachment": "time-clipping" },
 	{ "name": "time-base 2", "bone": "time-base 2", "attachment": "time base 2" },
 	{ "name": "time-base 1", "bone": "time-base 1", "attachment": "time base 1" },
 	{ "name": "effect-time light", "bone": "effect-time light", "blend": "screen" },
-	{ "name": "time", "bone": "text" },
-	{ "name": "effect-time frame", "bone": "time-base 2", "blend": "screen" }
+	{ "name": "effect-time frame", "bone": "time-base 2", "blend": "screen" },
+	{ "name": "dot", "bone": "time-number", "attachment": "dot" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"dot": {
+				"dot": { "x": 160.56, "y": -46.37, "width": 1, "height": 1 }
+			},
 			"effect-time frame": {
 				"effect time frame": { "x": -66.81, "y": -5.14, "width": 222, "height": 66 }
 			},
 			"effect-time light": {
 				"effect time light": { "x": -0.44, "y": -0.32, "width": 137, "height": 35 }
-			},
-			"time": {
-				"time": { "x": -0.09, "y": 0.44, "width": 27, "height": 10 }
 			},
 			"time-base 1": {
 				"time base 1": { "x": -75.87, "y": -1.34, "width": 225, "height": 19 }

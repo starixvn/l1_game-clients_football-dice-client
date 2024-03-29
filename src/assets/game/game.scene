@@ -2261,7 +2261,7 @@
         "__id__": 111
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 115
@@ -3132,7 +3132,7 @@
     },
     "defaultSkin": "default",
     "defaultAnimation": "",
-    "_premultipliedAlpha": true,
+    "_premultipliedAlpha": false,
     "_timeScale": 1,
     "_preCacheMode": 0,
     "_cacheMode": 0,
