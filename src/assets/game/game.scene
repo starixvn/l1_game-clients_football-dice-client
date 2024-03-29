@@ -60,7 +60,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 515
+      "__id__": 513
     },
     "_id": "4229fd91-1ded-407f-b130-7b678b820c27"
   },
@@ -1032,7 +1032,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -2.003,
-      "y": 25.579,
+      "y": 12.948999999999998,
       "z": 0
     },
     "_lrot": {
@@ -1261,7 +1261,7 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 61.421,
+    "_top": 51.051,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -1304,7 +1304,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 4,
-      "y": 260,
+      "y": 270,
       "z": 0
     }
   },
@@ -1451,7 +1451,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 360
+      "height": 347
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1483,7 +1483,7 @@
     "_paddingTop": 0,
     "_paddingBottom": 0,
     "_spacingX": 0,
-    "_spacingY": -20,
+    "_spacingY": -10,
     "_verticalDirection": 1,
     "_horizontalDirection": 0,
     "_constraint": 0,
@@ -4888,7 +4888,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 144,
+      "y": 138.095,
       "z": 0
     }
   },
@@ -7614,7 +7614,9 @@
     },
     "lblMinBet": null,
     "lblMaxBet": null,
-    "gameAnimation": null,
+    "nodeGameAnimation": {
+      "__id__": 5
+    },
     "logoSkeletons": [
       null,
       null
@@ -7734,9 +7736,6 @@
       },
       {
         "__id__": 511
-      },
-      {
-        "__id__": 513
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -8505,28 +8504,6 @@
     },
     "sourceInfo": null,
     "propertyPath": [
-      "gameAnimation"
-    ],
-    "target": {
-      "__id__": 5
-    },
-    "targetInfo": {
-      "__id__": 506
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "7eB2jXRblFP48PqD5zVuR0"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 437
-    },
-    "sourceInfo": null,
-    "propertyPath": [
       "logoSkeletons",
       "0"
     ],
@@ -8534,7 +8511,7 @@
       "__id__": 280
     },
     "targetInfo": {
-      "__id__": 508
+      "__id__": 506
     }
   },
   {
@@ -8557,7 +8534,7 @@
       "__id__": 280
     },
     "targetInfo": {
-      "__id__": 510
+      "__id__": 508
     }
   },
   {
@@ -8579,7 +8556,7 @@
       "__id__": 39
     },
     "targetInfo": {
-      "__id__": 512
+      "__id__": 510
     }
   },
   {
@@ -8601,7 +8578,7 @@
       "__id__": 254
     },
     "targetInfo": {
-      "__id__": 514
+      "__id__": 512
     }
   },
   {
@@ -8613,25 +8590,25 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 516
+      "__id__": 514
     },
     "shadows": {
-      "__id__": 517
+      "__id__": 515
     },
     "_skybox": {
-      "__id__": 518
+      "__id__": 516
     },
     "fog": {
-      "__id__": 519
+      "__id__": 517
     },
     "octree": {
-      "__id__": 520
+      "__id__": 518
     },
     "skin": {
-      "__id__": 521
+      "__id__": 519
     },
     "lightProbeInfo": {
-      "__id__": 522
+      "__id__": 520
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false

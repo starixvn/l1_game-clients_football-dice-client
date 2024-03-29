@@ -15,9 +15,6 @@ export class ScoreTable extends ObserverComponent {
     lblAwayScore: Label = null;
 
     @property(sp.Skeleton)
-    skeletonLogo: sp.Skeleton = null;
-
-    @property(sp.Skeleton)
     skeletonHomeScore: sp.Skeleton = null;
 
     @property(sp.Skeleton)
@@ -48,9 +45,5 @@ export class ScoreTable extends ObserverComponent {
             this.skeletonAwayScore.setAnimation(0, "number-out", false);
             this.skeletonHomeScore.setAnimation(0, "number-out", false);
         }
-    }
-
-    runAnimLogoScoreTable() {
-        this.skeletonLogo.setAnimation(0, "move-out-in", false);
     }
 }

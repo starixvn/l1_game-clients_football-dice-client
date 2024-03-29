@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, _decorator, sp, v3 } from "cc";
+import { Label, Node, _decorator, sp, v3 } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -27,8 +27,8 @@ export default class Game extends GameComponent {
     @property({ type: Label, override: true, visible: false })
     lblMaxBet: Label = null;
 
-    @property(FootballDiceAnimation)
-    gameAnimation: FootballDiceAnimation = null;
+    @property(Node)
+    nodeGameAnimation: Node = null;
 
     @property({ type: sp.Skeleton })
     logoSkeletons: sp.Skeleton[] = [];
@@ -50,9 +50,12 @@ export default class Game extends GameComponent {
     isLoading = true;
 
     protected clientRoundId = -1;
+    private gameAnimation: FootballDiceAnimation = null;
 
     onLoad() {
         super.onLoad();
+        this.gameAnimation = this.nodeGameAnimation.getComponent(FootballDiceAnimation);
+        //this.gameAnimation.node.on("aa", (score) => {})
     }
 
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
@@ -91,7 +94,6 @@ export default class Game extends GameComponent {
             await this.gameAnimation.zoomInCamera(hasAnimation);
             if (hasAnimation) {
                 this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
-                this.scoreTable.runAnimLogoScoreTable();
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.matchStartAnimation(true);
