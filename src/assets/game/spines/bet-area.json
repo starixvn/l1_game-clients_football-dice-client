@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "tPXolEnMTYzuUbeTdFUbYtMH110", "spine": "3.8.99" },
+"skeleton": { "hash": "jTLK3Ue0kC5V4F1inL64bVVHYJA", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "base", "parent": "root", "x": 0.66, "y": -90.86 },
@@ -138,13 +138,13 @@
 		"name": "default",
 		"attachments": {
 			"bg-blue": {
-				"BG blue": { "x": 260.32, "y": 95.86, "width": 562, "height": 315 }
+				"BG blue": { "x": 258.84, "y": 95.86, "width": 521, "height": 273 }
 			},
 			"bg-draw": {
-				"BG draw": { "x": -0.16, "y": 74.4, "width": 285, "height": 230 }
+				"BG draw": { "x": -0.66, "y": 74.86, "width": 292, "height": 229 }
 			},
 			"bg-red": {
-				"BG red": { "x": -260.17, "y": 95.86, "width": 564, "height": 315 }
+				"BG red": { "x": -260.16, "y": 95.86, "width": 521, "height": 273 }
 			},
 			"light-blue": {
 				"light blue": { "x": 262.41, "y": -118.71, "width": 520, "height": 273 }
@@ -216,10 +216,10 @@
 				"light dot": { "x": 2.51, "y": 0.14, "width": 162, "height": 162 }
 			},
 			"light-draw": {
-				"light draw": { "x": 1.08, "y": 8.11, "width": 291, "height": 239 }
+				"light draw": { "x": 1.58, "y": 7.75, "width": 294, "height": 236 }
 			},
 			"light-frame": {
-				"light frame": { "x": 21.29, "y": 4.54, "width": 536, "height": 285 }
+				"light frame": { "x": 20.14, "y": 4.2, "width": 532, "height": 283 }
 			},
 			"light-frame draw": {
 				"light frame draw": { "x": 1.66, "y": -140.79, "width": 279, "height": 225 }
@@ -240,8 +240,8 @@
 				"light-line clipping": {
 					"type": "clipping",
 					"end": "light-line4",
-					"vertexCount": 28,
-					"vertices": [ -251.4, -10.54, 751.54, -10.41, 756.25, -11.27, 761.36, -13.85, 765.29, -17.71, 767.67, -21.75, 769.75, -26.99, 770.5, -32.19, 770.72, -260.59, 769.65, -266.03, 767.49, -270.76, 764.79, -275.05, 760.43, -278.9, 755.4, -281.52, 749.13, -282.11, -249.61, -281.94, -254.63, -281.35, -259.38, -279.11, -262.94, -276.22, -265.65, -272.68, -267.97, -268.1, -269.49, -262.72, -269.23, -30.15, -268.29, -25.79, -266.38, -21.33, -263.9, -17.58, -260.38, -14.22, -256.26, -11.76 ]
+					"vertexCount": 20,
+					"vertices": [ -266.53, -23.08, -263.11, -17.4, -257.55, -12.43, -250.38, -10.66, 751.6, -10.63, 758.21, -12.87, 763.49, -17.29, 767.72, -23.24, 769.32, -29.51, 769.38, -260.55, 767.98, -268.48, 763.29, -275.52, 756.46, -280.54, 749.09, -281.68, -251.41, -281.54, -257.29, -279.89, -262.84, -275.1, -266.56, -269.35, -268.64, -262.86, -268.63, -30.18 ]
 				}
 			},
 			"light-red": {
@@ -1533,10 +1533,7 @@
 		"bones": {
 			"light-frame": {
 				"translate": [
-					{ "x": 0.95 }
-				],
-				"scale": [
-					{ "x": 0.995 }
+					{ "x": 2.03 }
 				]
 			},
 			"effect": {
@@ -4810,11 +4807,6 @@
 					{ "name": "light frame" }
 				]
 			},
-			"light-line clipping": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
 			"light-red": {
 				"color": [
 					{ "color": "ffffff00" },
@@ -5604,9 +5596,6 @@
 			"light-frame": {
 				"translate": [
 					{ "x": 0.48 }
-				],
-				"scale": [
-					{ "x": 0.995 }
 				]
 			},
 			"light-dot": {
@@ -6479,26 +6468,6 @@
 	},
 	"light-flash": {
 		"slots": {
-			"light-blue": {
-				"color": [
-					{ "time": 1.2333, "color": "ffffff00" },
-					{ "time": 1.8, "color": "ffffff1a" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 1.2333, "name": "light blue" }
-				]
-			},
-			"light-frame draw": {
-				"color": [
-					{ "time": 0.7, "color": "ffffff00" },
-					{ "time": 1.2333, "color": "ffffff1d" },
-					{ "time": 1.8, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 0.7333, "name": "light frame draw" }
-				]
-			},
 			"light-line": {
 				"color": [
 					{ "color": "ffffff04" },
@@ -6538,16 +6507,6 @@
 				"attachment": [
 					{ "time": 0.1667, "name": "light line" },
 					{ "time": 8, "name": "light line" }
-				]
-			},
-			"light-red": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.7, "color": "ffffff1e" },
-					{ "time": 1.2333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "light red" }
 				]
 			}
 		},
