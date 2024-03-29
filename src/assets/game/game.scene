@@ -2261,7 +2261,7 @@
         "__id__": 111
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 115
@@ -2780,7 +2780,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0.4900054931640625,
-      "y": -2.5,
+      "y": -1.0899999141693115,
       "z": 0
     },
     "_lrot": {
@@ -3174,7 +3174,7 @@
       "__id__": 129
     },
     "heightOffset": 30,
-    "animated": true,
+    "animated": false,
     "_id": "fa2xM55/BF4rPA+tf55pGV"
   },
   {
