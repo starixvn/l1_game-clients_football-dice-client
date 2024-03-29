@@ -33,8 +33,8 @@ export default class Game extends GameComponent {
     @property({ type: sp.Skeleton })
     logoSkeletons: sp.Skeleton[] = [];
 
-    @property(ScoreTable)
-    scoreTable: ScoreTable = null;
+    @property({ type: ScoreTable })
+    scorePanel: ScoreTable[] = [];
 
     @property(WinningAnimation)
     nodeWinningAnimation: WinningAnimation = null;
@@ -55,7 +55,12 @@ export default class Game extends GameComponent {
     onLoad() {
         super.onLoad();
         this.gameAnimation = this.nodeGameAnimation.getComponent(FootballDiceAnimation);
-        //this.gameAnimation.node.on("aa", (score) => {})
+        this.gameAnimation.node.on(this.gameAnimation.HOME_SCORE_REAL_TIME, (score: number) => {
+            this.scorePanel[0].updateScoreTable(score);
+        });
+        this.gameAnimation.node.on(this.gameAnimation.AWAY_SCORE_REAL_TIME, (score: number) => {
+            this.scorePanel[1].updateScoreTable(score);
+        });
     }
 
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
@@ -103,7 +108,6 @@ export default class Game extends GameComponent {
             await this.gameAnimation.setResult(result, hasAnimation);
 
             if (hasAnimation) {
-                this.scoreTable.updateScoreTable(result);
                 await FunctionUtils.delay(1000);
                 this.nodeWinningAnimation.setAnimation(settlementResult);
             }

@@ -66,6 +66,8 @@ export class FootballDiceAnimation extends Component {
     private readonly DicesLowestY = -2.25;
     private readonly BaseLowestY = -0.3;
     private readonly BaseLowY = -0.2;
+    HOME_SCORE_REAL_TIME = "home-real-time";
+    AWAY_SCORE_REAL_TIME = "away-real-time";
 
     onLoad() {
         this.loadAnimation();
@@ -284,17 +286,24 @@ export class FootballDiceAnimation extends Component {
             const randomAnimationIndex = this.testAnimationIndex;
             this.changeTestAnimationIndex();
             console.log("========= animation index ", randomAnimationIndex);
-
+            let recordGroup, animationData;
+            let homeScore = 0,
+                awayScore = 0;
             Object.keys(result).forEach((team) => {
-                const recordGroup = team === "home" ? this.redDiceGroup : this.blueDiceGroup;
-                const animationData =
-                    team === "home" ? this.homeAnimations[randomAnimationIndex] : this.awayAnimations[randomAnimationIndex];
+                if (team === "home") {
+                    recordGroup = this.redDiceGroup;
+                    animationData = this.homeAnimations[randomAnimationIndex];
+                } else {
+                    recordGroup = this.blueDiceGroup;
+                    animationData = this.awayAnimations[randomAnimationIndex];
+                }
 
                 const dices = recordGroup.getComponentsInChildren(Dice);
 
                 result[team].forEach((value, index) => {
                     const dice = dices[index];
                     dice.setResult(value, animationData.fu[dice.cube.name], 1);
+                    team === "home" ? (homeScore += value) : (awayScore += value);
                 });
 
                 if (animated) {
@@ -313,8 +322,20 @@ export class FootballDiceAnimation extends Component {
                 };
 
             if (animated) {
-                this.redBaseGroup.startReplay(this.baseRecord.home, true, onComplete(this.redDiceGroup, this.nodeBaseHome, null));
-                this.blueBaseGroup.startReplay(this.baseRecord.away, true, onComplete(this.blueDiceGroup, this.nodeBaseAway, resolve));
+                this.redBaseGroup.startReplay(
+                    this.baseRecord.home,
+                    true,
+                    onComplete(this.redDiceGroup, this.nodeBaseHome, () => {
+                        this.node.emit(this.HOME_SCORE_REAL_TIME, homeScore);
+                    })
+                );
+                this.blueBaseGroup.startReplay(
+                    this.baseRecord.away,
+                    true,
+                    onComplete(this.blueDiceGroup, this.nodeBaseAway, () => {
+                        this.node.emit(this.AWAY_SCORE_REAL_TIME, awayScore);
+                    })
+                );
             } else {
                 onComplete(this.redDiceGroup, this.nodeBaseHome, null, false)();
                 onComplete(this.blueDiceGroup, this.nodeBaseAway, resolve, false)();
