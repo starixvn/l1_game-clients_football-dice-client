@@ -286,6 +286,7 @@ export class FootballDiceAnimation extends Component {
             const randomAnimationIndex = this.testAnimationIndex;
             this.changeTestAnimationIndex();
             console.log("========= animation index ", randomAnimationIndex);
+            console.log("========= result ", [...result.home, ...result.away]);
             let recordGroup, animationData;
             let homeScore = 0,
                 awayScore = 0;

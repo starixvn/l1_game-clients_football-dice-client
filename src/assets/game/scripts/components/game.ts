@@ -11,7 +11,7 @@ import "./../../../resources/i18n";
 import { FootballDiceBetAreas } from "./football-dice-bet-areas";
 import { ScoreTable } from "./score-table";
 import { WinningAnimation } from "./winning-animation";
-const { Rounds, Translator, Settlements } = gc;
+const { Rounds, Translator, RoundHistories } = gc;
 
 startGame(settings.name, containerOptions, siteConfigs);
 
@@ -51,6 +51,7 @@ export default class Game extends GameComponent {
 
     protected clientRoundId = -1;
     private gameAnimation: FootballDiceAnimation = null;
+    protected override enableFixHandleFinish = true;
 
     onLoad() {
         super.onLoad();
@@ -75,6 +76,19 @@ export default class Game extends GameComponent {
     @render(gc.App.AppStore, (store) => store.isLoading)
     updateLoading(isLoading: boolean) {
         this.isLoading = isLoading;
+    }
+
+    @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
+    renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
+        if (!firstJoinGameHistory) {
+            return;
+        }
+        const lastRound = firstJoinGameHistory.roundHistory;
+        if (lastRound) {
+            console.log("render static result from last round history");
+            const { result, settlementResult } = lastRound;
+            this.showResult(result, false, settlementResult);
+        }
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
