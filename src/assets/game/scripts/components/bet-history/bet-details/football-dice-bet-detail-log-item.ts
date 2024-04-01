@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { _decorator } from "cc";
+import { Color, _decorator } from "cc";
 import BetDetailLogItem, {
     BetDetailLogItemType,
 } from "../../../../../../extensions/shared-components/assets/game/bet-history/scripts/components/bet-detail/bet-detail-log-item";
@@ -8,6 +8,7 @@ const { FormatUtils } = gc;
 
 @ccclass
 export class FootballDiceBetLogItem extends BetDetailLogItem {
+    private WIN_COLOR = "ffff00";
     setData(data: BetDetailLogItemType) {
         super.setData(data);
         const { choice, amount } = data.betDetailsLog;
@@ -16,5 +17,10 @@ export class FootballDiceBetLogItem extends BetDetailLogItem {
         this.lblOdds.string = odds.toString();
         const win = settlementResult[`${choice}`] ? odds * +amount : 0;
         this.lblWin.string = FormatUtils.numberWithCommas(win, 2);
+        if (win > 0) {
+            this.lblOdds.color = new Color().fromHEX(this.WIN_COLOR);
+            this.lblAmount.color = new Color().fromHEX(this.WIN_COLOR);
+            this.lblChoice.color = new Color().fromHEX(this.WIN_COLOR);
+        }
     }
 }
