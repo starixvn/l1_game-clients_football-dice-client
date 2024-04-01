@@ -96,6 +96,7 @@ export default class Game extends GameComponent {
         if (result) {
             console.time("total show result in ");
             console.time("zoomin");
+            const scores = this.calculateScore(result);
             await this.gameAnimation.zoomInCamera(hasAnimation);
             if (hasAnimation) {
                 this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
@@ -106,13 +107,27 @@ export default class Game extends GameComponent {
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, hasAnimation);
-
+            if (!hasAnimation) {
+                this.scorePanel[0].updateScoreTable(scores[0]);
+                this.scorePanel[1].updateScoreTable(scores[1]);
+            }
             if (hasAnimation) {
                 await FunctionUtils.delay(1000);
                 this.nodeWinningAnimation.setAnimation(settlementResult);
             }
             console.timeEnd("total show result in ");
         }
+    }
+
+    calculateScore(result: gc.GameServiceMessage.TResult) {
+        let homeScore = 0,
+            awayScore = 0;
+        Object.keys(result).forEach((team) => {
+            result[team].forEach((value) => {
+                team === "home" ? (homeScore += value) : (awayScore += value);
+            });
+        });
+        return [homeScore, awayScore];
     }
 
     private startLogoAnimation() {
