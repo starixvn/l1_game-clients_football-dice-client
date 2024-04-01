@@ -334,6 +334,7 @@ export class FootballDiceAnimation extends Component {
                     true,
                     onComplete(this.blueDiceGroup, this.nodeBaseAway, () => {
                         this.node.emit(this.AWAY_SCORE_REAL_TIME, awayScore);
+                        resolve();
                     })
                 );
             } else {
