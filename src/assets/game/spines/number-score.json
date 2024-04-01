@@ -1,8 +1,8 @@
 {
-"skeleton": { "hash": "bB1Kfdd8kfwcZfPLeufotSCBESo", "spine": "3.8.99" },
+"skeleton": { "hash": "U91O+ahqWuLlkL45lzkvT2T9Kfc", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
-	{ "name": "number", "parent": "root", "y": -5.44 },
+	{ "name": "number", "parent": "root" },
 	{ "name": "number-0", "parent": "root" }
 ],
 "slots": [
@@ -44,7 +44,7 @@
 			"number-0": {
 				"translate": [
 					{ "curve": 0.319, "c2": -0.08, "c3": 0.62, "c4": 0.19 },
-					{ "time": 0.6667, "y": -39.71 }
+					{ "time": 0.6667, "y": -40 }
 				]
 			}
 		}
@@ -54,7 +54,7 @@
 			"number": {
 				"translate": [
 					{ "curve": 0.319, "c2": -0.08, "c3": 0.62, "c4": 0.19 },
-					{ "time": 0.6667, "y": -39.71 }
+					{ "time": 0.6667, "y": -40 }
 				]
 			},
 			"number-0": {
