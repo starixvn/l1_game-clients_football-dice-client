@@ -88,6 +88,10 @@ export default class Game extends GameComponent {
             console.log("render static result from last round history");
             const { result, settlementResult } = lastRound;
             this.showResult(result, false, settlementResult);
+            if (!firstJoinGameHistory.animationHighlight) {
+                this.gameAnimation.modeDownBases(false);
+                this.gameAnimation.zoomOutCamera(false);
+            }
         }
     }
 

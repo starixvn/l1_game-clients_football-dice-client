@@ -69,6 +69,8 @@ export class FootballDiceAnimation extends Component {
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
 
+    private nodeCamera: Node = null;
+
     onLoad() {
         this.loadAnimation();
         game.frameRate = 60;
@@ -159,11 +161,12 @@ export class FootballDiceAnimation extends Component {
         this.currentRecordGroup.startRecord();
     }
 
-    modeDownBases() {
+    modeDownBases(animated = true) {
+        const duration = animated ? this.MoveDownDuration : 0;
         [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
             tween(node)
                 .to(
-                    this.MoveDownDuration,
+                    duration,
                     {
                         position: v3(0, this.BaseLowestY, 0),
                         eulerAngles: v3(),
@@ -177,7 +180,7 @@ export class FootballDiceAnimation extends Component {
                 const position = v3(item.node.position.x, this.DicesLowestY, item.node.position.z);
                 tween(item.node)
                     .to(
-                        this.MoveDownDuration,
+                        duration,
                         {
                             position: position,
                         },
@@ -347,17 +350,33 @@ export class FootballDiceAnimation extends Component {
 
     zoomInCamera(animated = true) {
         return new Promise<void>((resolve) => {
-            this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
             if (!animated) {
+                const node = this.getCameraNode();
+                node.position = v3(5.661, 8.54, 0);
+                node.eulerAngles = v3(29.006, 90, 0);
                 resolve();
             } else {
+                this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
                 this.scheduleOnce(resolve, this.zoomInDuration / 1000);
             }
         });
     }
 
-    zoomOutCamera() {
-        this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
+    getCameraNode() {
+        if (!this.nodeCamera) {
+            this.nodeCamera = this.cameraAnimation.node.getChildByName("camera");
+        }
+        return this.nodeCamera;
+    }
+
+    zoomOutCamera(animated = true) {
+        if (animated) {
+            this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
+        } else {
+            const node = this.getCameraNode();
+            node.position = v3(13.871, 14.013, 0);
+            node.eulerAngles = v3(38.598, 90, 0);
+        }
     }
 
     stopDiceSimulator() {
