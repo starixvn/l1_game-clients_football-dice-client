@@ -15,7 +15,7 @@ const defaultConfig: gc.Configs.SiteConfigs = {
     ssl: true,
     subDomain: "l1-proxy1",
     env: "LOCAL",
-    subGuideDomain: "l1-guide-3",
+    subGuideDomain: "l1-guide-1",
     SGConnectSubDomain: "connectsite",
     enableMsgpackParserAllGames: false,
     enableMsgpackParserOnNotification: false,
