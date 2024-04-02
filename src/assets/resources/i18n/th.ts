@@ -120,7 +120,7 @@ export const languages = {
         "pf_copy_unsucessful": "ฟังก์ชันคัดลอกใช้งานไม่ได้ชั่วคราว",
         "pf_fairness": "ยุติธรรม",
         "pf_header_client_seed": "Client Seed",
-        "pf_header_combined_sha512_hash": "รวมแฮช SHA512",
+        "pf_header_combined_sha512_hash": "รวมกัน SHA512 hash",
         "pf_header_server_seed": "Server Seed",
         "pf_header_server_seed_sha256": "Server Seed SHA256 ",
         "pf_new_client_seed_para_1": "Seed ของคุณ",
@@ -139,7 +139,7 @@ export const languages = {
         "pf_title_provably_fair_settings": "ตั้งค่าPROVABLY FAIR",
         "pf_title_verification": "การยืนยัน",
         "pf_verification_para_1": "ผลลัพธ์สุดท้าย",
-        "pf_verification_para_2": "ใช้ {value} หลักแรกจาก SHA512:",
+        "pf_verification_para_2": "ใช้ตัวอักษร {value} ตัวแรกจาก SHA512:",
         "pf_verification_para_3": "แปลงเป็นทศนิยม",
         "pf_verification_para_4": "คำนวณผลลัพธ์สุดท้าย",
         "promotion": "โปรโมชั่น",
@@ -159,16 +159,16 @@ export const languages = {
         "win": "ชนะ"
     },
     "FootballDice": {
-        "away_win": "ทีมเยือนชนะ !!!",
-        "bet_history_away": "Away",
-        "bet_history_home": "Home",
+        "away_win": "ทีมเยือนชนะ",
+        "bet_history_away": "ทีมเยือน)",
+        "bet_history_home": "(เจ้าบ้าน",
         "draw_win": "เสมอ",
         "game_icon_name": "ลูกเต๋าฟุตบอล",
         "game_name": "ลูกเต๋าฟุตบอล",
         "glossary_away": "ทีมเยือน",
         "glossary_draw": "เสมอ",
-        "glossary_home": "เจ้าบ้าน",
-        "home_win": "เจ้าบ้านชนะ !!!",
+        "glossary_home": "ทีมเหย้า",
+        "home_win": "เจ้าบ้านชนะ",
         "match_starts": "เริ่มการแข่งขัน"
     }
 };

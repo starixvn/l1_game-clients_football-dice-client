@@ -108,7 +108,7 @@ export const languages = {
         "pf_button_clear": "Clear ",
         "pf_button_save": "Save",
         "pf_button_verify": "Verify",
-        "pf_client_seed_para_1": "(Can not change seed after bet is accepted)",
+        "pf_client_seed_para_1": "(Cannot change seed after bet is accepted)",
         "pf_client_seed_para_2": "Random on every new round",
         "pf_client_seed_para_3": "Manual input",
         "pf_client_seed_para_4": "Random",
@@ -139,7 +139,7 @@ export const languages = {
         "pf_title_provably_fair_settings": "PROVABLY FAIR SETTINGS",
         "pf_title_verification": "VERIFICATION",
         "pf_verification_para_1": "Final Result",
-        "pf_verification_para_2": "Take first {value} digits from SHA512:",
+        "pf_verification_para_2": "Take first {value} characters from SHA512:",
         "pf_verification_para_3": "Convert to Decimal ",
         "pf_verification_para_4": "Calculate Final Result",
         "promotion": "Promotions",
@@ -159,17 +159,22 @@ export const languages = {
         "win": "Win"
     },
     "FootballDice": {
-        "away_win": "AWAY WINS !!!",
+        "away_win": "AWAY WINS",
         "bet_history_away": "Away)",
         "bet_history_home": "(Home",
-        "draw_win": "DRAW !!!",
-        "game_icon_name": "Football Dice",
+        "draw_win": "DRAW",
+        "game_icon_name": "FOOTBALL DICE",
         "game_name": "Football Dice",
         "glossary_away": "Away",
         "glossary_draw": "Draw",
         "glossary_home": "Home",
-        "home_win": "HOME WINS !!!",
-        "match_starts": "MATCH STARTS"
+        "home_win": "HOME WINS",
+        "match_starts": "MATCH STARTS",
+        "pf_ home_dice_2": "Home - Dice 2",
+        "pf_away_dice_1": "Away - Dice 1",
+        "pf_away_dice_2": "Away - Dice 2",
+        "pf_home_dice_1": "Home - Dice 1",
+        "pf_verification_para_3": "Convert each group of 8 characters in the SHA512 to Decimal"
     }
 };
 

@@ -138,7 +138,7 @@ export const languages = {
         "pf_title_provably_fair_settings": "CÀI ĐẶT PROVABLY FAIR",
         "pf_title_verification": "XÁC MINH",
         "pf_verification_para_1": "Kết Quả Cuối Cùng",
-        "pf_verification_para_2": "Lấy {value} ký tự đầu tiên trong chuỗi SHA512",
+        "pf_verification_para_2": "Lấy {value} ký tự đầu tiên trong chuỗi SHA512:",
         "pf_verification_para_3": "Đổi Sang Hệ Thập Phân",
         "pf_verification_para_4": "Tính Kết Quả ",
         "promotion": "Khuyến Mãi",
@@ -158,17 +158,22 @@ export const languages = {
         "win": "Thắng"
     },
     "FootballDice": {
-        "away_win": "ĐỘI KHÁCH THẮNG !!!",
+        "away_win": "ĐỘI KHÁCH THẮNG",
         "bet_history_away": "Đội Khách)",
         "bet_history_home": "(Đội Nhà",
-        "draw_win": "HÒA !!!",
-        "game_icon_name": "Xí Ngầu Bàn Thắng",
-        "game_name": "Xí Ngầu Bàn Thắng",
+        "draw_win": "HÒA",
+        "game_icon_name": "XÍ NGẦU TÚC CẦU",
+        "game_name": "Xí Ngầu Túc Cầu",
         "glossary_away": "Đội Khách",
         "glossary_draw": "Hòa",
         "glossary_home": "Đội Nhà",
-        "home_win": "ĐỘI NHÀ THẮNG !!!",
-        "match_starts": "TRẬN ĐẤU BẮT ĐẦU"
+        "home_win": "ĐỘI NHÀ THẮNG",
+        "match_starts": "TRẬN ĐẤU BẮT ĐẦU",
+        "pf_ home_dice_2": "Đội Nhà - Xúc Xắc 2",
+        "pf_away_dice_1": "Đội Khách - Xúc Xắc 1",
+        "pf_away_dice_2": "Đội Khách - Xúc Xắc 2",
+        "pf_home_dice_1": "Đội Nhà - Xúc Xắc 1",
+        "pf_verification_para_3": "Chuyển đổi nhóm 8 ký tự trong chuỗi SHA512 sang hệ thập phân"
     }
 };
 

@@ -139,7 +139,7 @@ export const languages = {
         "pf_title_provably_fair_settings": "PENGATURAN YANG TERBUKTI ADIL",
         "pf_title_verification": "Verifikasi",
         "pf_verification_para_1": "Hasil Akhir",
-        "pf_verification_para_2": "Ambil digit {value} pertama dari SHA512:",
+        "pf_verification_para_2": "Ambil karakter {value} pertama dari SHA512:",
         "pf_verification_para_3": "Konversikan ke Desimal",
         "pf_verification_para_4": "Hitung Hasil Akhir",
         "promotion": "Promosi",
@@ -159,16 +159,16 @@ export const languages = {
         "win": "Menang"
     },
     "FootballDice": {
-        "away_win": "TIM TANDANG MENANG!!!",
-        "bet_history_away": "Away",
-        "bet_history_home": "Home",
+        "away_win": "TIM TANDANG MENANG",
+        "bet_history_away": "Tim tandang)",
+        "bet_history_home": "(Tim kandang",
         "draw_win": "Seri",
         "game_icon_name": "Dadu Sepak Bola",
-        "game_name": "Dadu Sepak Bola",
-        "glossary_away": "Tim tandang",
+        "game_name": "Football Dice",
+        "glossary_away": "Tandang",
         "glossary_draw": "Seri",
-        "glossary_home": "Tim kandang",
-        "home_win": "TIM KANDANG MENANG!!!",
+        "glossary_home": "Kandang",
+        "home_win": "TIM KANDANG MENANG",
         "match_starts": "PERTANDINGAN DIMULAI"
     }
 };

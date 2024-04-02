@@ -139,7 +139,7 @@ export const languages = {
         "pf_title_provably_fair_settings": "可证明公平的环境",
         "pf_title_verification": "确认",
         "pf_verification_para_1": "最后结果",
-        "pf_verification_para_2": "从 SHA512 中获取前 {value} 位：",
+        "pf_verification_para_2": "从 SHA512 中获取前 {value} 个字符:",
         "pf_verification_para_3": "转换为十进制",
         "pf_verification_para_4": "计算最终结果",
         "promotion": "促销活动",
@@ -159,16 +159,16 @@ export const languages = {
         "win": "赢"
     },
     "FootballDice": {
-        "away_win": "客队胜！！！",
-        "bet_history_away": "Away",
-        "bet_history_home": "Home",
+        "away_win": "客队胜",
+        "bet_history_away": "客队)",
+        "bet_history_home": "(主队",
         "draw_win": "和",
         "game_icon_name": "足球骰子",
         "game_name": "足球骰子",
         "glossary_away": "客队",
         "glossary_draw": "平",
         "glossary_home": "主队",
-        "home_win": "主队胜！！！",
+        "home_win": "主队胜",
         "match_starts": "比赛开始"
     }
 };
