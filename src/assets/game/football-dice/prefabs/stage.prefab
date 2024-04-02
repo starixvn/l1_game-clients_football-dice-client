@@ -254,7 +254,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -375,7 +375,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -496,7 +496,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -617,7 +617,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -738,7 +738,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -859,7 +859,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -980,7 +980,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1098,7 +1098,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1219,7 +1219,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1340,7 +1340,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1461,7 +1461,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1582,7 +1582,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -1703,7 +1703,7 @@
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
+    "_shadowReceivingMode": 0,
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_reflectionProbeId": -1,
@@ -2549,10 +2549,7 @@
         "__expectedType__": "cc.AnimationClip"
       }
     ],
-    "_defaultClip": {
-      "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@965bc",
-      "__expectedType__": "cc.AnimationClip"
-    },
+    "_defaultClip": null,
     "_id": ""
   },
   {
@@ -5491,8 +5488,8 @@
       "__id__": 260
     },
     "_visibility": -325058561,
-    "_illuminanceHDR": 65000,
-    "_illuminance": 65000,
+    "_illuminanceHDR": 30000,
+    "_illuminance": 30000,
     "_illuminanceLDR": 1.6927083333333335,
     "_shadowEnabled": true,
     "_shadowPcf": 2,
