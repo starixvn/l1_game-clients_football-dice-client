@@ -553,26 +553,6 @@
       ],
       "subMetas": {}
     },
-    "0e8ac": {
-      "importer": "gltf-embeded-image",
-      "uuid": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@0e8ac",
-      "displayName": "",
-      "id": "0e8ac",
-      "name": "base-dice-red-normal.image",
-      "userData": {
-        "gltfIndex": 7,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
     "2140f": {
       "importer": "gltf-embeded-image",
       "uuid": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@2140f",
@@ -580,7 +560,7 @@
       "id": "2140f",
       "name": "base-dice-red.image",
       "userData": {
-        "gltfIndex": 8,
+        "gltfIndex": 7,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": true,
         "type": "texture"
@@ -600,7 +580,7 @@
       "id": "7f8a7",
       "name": "base-dice-blue.image",
       "userData": {
-        "gltfIndex": 9,
+        "gltfIndex": 8,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": true,
         "type": "texture"
@@ -620,7 +600,7 @@
       "id": "64d1b",
       "name": "BG neon.image",
       "userData": {
-        "gltfIndex": 10,
+        "gltfIndex": 9,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": false,
         "type": "texture"
@@ -640,7 +620,7 @@
       "id": "cf1e2",
       "name": "base1.image",
       "userData": {
-        "gltfIndex": 11,
+        "gltfIndex": 10,
         "fixAlphaTransparencyArtifacts": true,
         "hasAlpha": true,
         "type": "texture"
@@ -805,7 +785,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@0e8ac"
+        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@2140f"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -828,7 +808,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@2140f"
+        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@7f8a7"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -851,7 +831,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@7f8a7"
+        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@64d1b"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -866,29 +846,6 @@
       "displayName": "",
       "id": "f7e17",
       "name": "UnnamedTexture-10.texture",
-      "userData": {
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "linear",
-        "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@64d1b"
-      },
-      "ver": "1.0.22",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "a2905": {
-      "importer": "texture",
-      "uuid": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@a2905",
-      "displayName": "",
-      "id": "a2905",
-      "name": "UnnamedTexture-11.texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
@@ -1130,10 +1087,6 @@
         "uri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@e8ee1"
       },
       {
-        "name": "base-dice-red-normal",
-        "uri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@0e8ac"
-      },
-      {
         "name": "base-dice-red",
         "uri": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@2140f"
       },
@@ -1200,8 +1153,7 @@
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@006bd",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@531b0",
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@9c3d2",
-        "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@f7e17",
-        "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@a2905"
+        "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@f7e17"
       ],
       "materials": [
         "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@3aa88",
@@ -1674,7 +1626,6 @@
         "_techIdx": 0,
         "_defines": [
           {
-            "USE_NORMAL_MAP": true,
             "USE_ALBEDO_MAP": true
           },
           {},
@@ -1751,7 +1702,7 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@531b0",
+              "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@006bd",
               "__expectedType__": "cc.Texture2D"
             },
             "normalMap": {
@@ -1855,7 +1806,7 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@9c3d2",
+              "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@531b0",
               "__expectedType__": "cc.Texture2D"
             }
           },
