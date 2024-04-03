@@ -193,7 +193,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 15.6796875,
+      "width": 38.53125,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -229,7 +229,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "LẺ",
+    "_string": "HOME",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 12,
@@ -326,7 +326,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 58.83984375,
+      "x": 70.265625,
       "y": -4.417,
       "z": 0
     },
@@ -1114,7 +1114,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 137.6796875,
+      "width": 160.53125,
       "height": 58
     },
     "_anchorPoint": {
@@ -1430,6 +1430,9 @@
     },
     "roundId": {
       "__id__": 57
+    },
+    "lblResult": {
+      "__id__": 6
     },
     "homeDices": [
       {

@@ -1,10 +1,14 @@
 import gc from "@sg/game-client-base";
-import { _decorator, Color, Sprite, SpriteAtlas } from "cc";
+import { _decorator, Color, Label, Sprite, SpriteAtlas } from "cc";
 import { LedLightTooltip } from "../../../../extensions/shared-components/assets/game/led-light/scripts/components/led-light-tooltip";
 const { ccclass, property } = _decorator;
+const { Translator } = gc;
 
 @ccclass
 export class FootballDiceLedLightTooltip extends LedLightTooltip {
+    @property(Label)
+    lblResult: Label = null;
+
     @property({ type: Sprite })
     homeDices: Sprite[] = [];
 
@@ -18,7 +22,7 @@ export class FootballDiceLedLightTooltip extends LedLightTooltip {
         this.result.string = ledLightInfo.result.toString();
         Object.keys(ledLightInfo.settlementResult).forEach((choice) => {
             if (ledLightInfo.settlementResult[choice]) {
-                this.result.string = choice.toUpperCase();
+                this.result.string = Translator.gameTranslate(`glossary_${choice}`).toUpperCase();
                 if (choice === "home") {
                     this.result.color = new Color().fromHEX("c33257");
                 } else if (choice === "away") {
