@@ -11,7 +11,7 @@
     "6c48a": {
       "importer": "texture",
       "uuid": "b15b3960-ae0d-4754-a9ef-95a5fd26d618@6c48a",
-      "displayName": "main-altas",
+      "displayName": "main-atlas",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -35,20 +35,20 @@
     "f9941": {
       "importer": "sprite-frame",
       "uuid": "b15b3960-ae0d-4754-a9ef-95a5fd26d618@f9941",
-      "displayName": "main-altas",
+      "displayName": "main-atlas",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": 0,
-        "offsetY": 117.5,
-        "trimX": 2,
-        "trimY": 2,
-        "width": 508,
-        "height": 785,
-        "rawWidth": 512,
+        "offsetX": -20.5,
+        "offsetY": 177.5,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 983,
+        "height": 669,
+        "rawWidth": 1024,
         "rawHeight": 1024,
         "borderTop": 0,
         "borderBottom": 0,
@@ -61,17 +61,17 @@
         "meshType": 0,
         "vertices": {
           "rawPosition": [
-            -254,
-            -392.5,
+            -491.5,
+            -334.5,
             0,
-            254,
-            -392.5,
+            491.5,
+            -334.5,
             0,
-            -254,
-            392.5,
+            -491.5,
+            334.5,
             0,
-            254,
-            392.5,
+            491.5,
+            334.5,
             0
           ],
           "indexes": [
@@ -83,33 +83,33 @@
             3
           ],
           "uv": [
-            2,
-            1022,
-            510,
-            1022,
-            2,
-            237,
-            510,
-            237
+            0,
+            1024,
+            983,
+            1024,
+            0,
+            355,
+            983,
+            355
           ],
           "nuv": [
-            0.00390625,
-            0.2314453125,
-            0.99609375,
-            0.2314453125,
-            0.00390625,
-            0.998046875,
-            0.99609375,
-            0.998046875
+            0,
+            0.3466796875,
+            0.9599609375,
+            0.3466796875,
+            0,
+            1,
+            0.9599609375,
+            1
           ],
           "minPos": [
-            -254,
-            -392.5,
+            -491.5,
+            -334.5,
             0
           ],
           "maxPos": [
-            254,
-            392.5,
+            491.5,
+            334.5,
             0
           ]
         },

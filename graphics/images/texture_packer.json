@@ -9,7 +9,7 @@
                     "options": {
                         "params": ["--texture-format", "png"],
                         "sheet_extension": "png",
-                        "output_path": ["main-altas"]
+                        "output_path": ["main-atlas"]
                     }
                 }
             ]
@@ -22,8 +22,9 @@
             ["--pack-mode", "Best"],
             ["--shape-padding", 0],
             ["--format", "cocos2d"],
-            ["--algorithm", "MaxRects"],
+            ["--algorithm", "Basic"],
             ["--basic-sort-by", "Name"],
+            ["--basic-order", "Ascending"],
             ["--opt", "RGBA8888"],
             ["--max-height", 2048],
             ["--size-constraints", "POT"],
@@ -31,7 +32,7 @@
             ["--alpha-handling", "KeepTransparentPixels"],
             ["--max-width", 2048],
             ["--trim-mode", "Trim"],
-            ["--border-padding", 2],
+            ["--border-padding", 0],
             ["--extrude", 1]
         ],
         "rotation": true
