@@ -77,6 +77,8 @@
     "body": {
       "__id__": 1
     },
+    "refundChoices": "draw",
+    "refundRatio": 1,
     "_id": ""
   },
   {
