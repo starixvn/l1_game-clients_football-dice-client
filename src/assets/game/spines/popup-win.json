@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "96qNQlCe8ffbbROmZADTnyU2PzQ", "spine": "3.8.99" },
+"skeleton": { "hash": "jiSlNVv9tAGiNfw54+as3wqtnDY", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "popupBG", "parent": "root", "x": 0.13, "y": 0.71 },
@@ -14,9 +14,9 @@
 		"name": "default",
 		"attachments": {
 			"home-win BG": {
-				"away win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 156 },
+				"away win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 182 },
 				"draw win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 163 },
-				"home win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 156 }
+				"home win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 172 }
 			}
 		}
 	}
@@ -38,7 +38,7 @@
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				]
@@ -70,7 +70,7 @@
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				]
@@ -101,7 +101,7 @@
 			"text-team-win": {
 				"color": [
 					{ "color": "ffffff00" },
-					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
 					{ "time": 2, "color": "ffffffff" },
 					{ "time": 2.3333, "color": "ffffff00" }
 				]
