@@ -1,6 +1,6 @@
 {
 	"skeleton": {
-		"hash": "yF68Yp7xIbK/sSnBN4wOoAZPeCo",
+		"hash": "LxLEPutGgBJfzoaKrM816++47v0",
 		"spine": "3.8.99",
 		"x": -111,
 		"y": -101,
@@ -338,8 +338,7 @@
 		{
 			"name": "splash-png/splash_1",
 			"bone": "effect-splash1",
-			"color": "ffffffa5",
-			"blend": "additive"
+			"color": "ffffff57"
 		},
 		{
 			"name": "effect-particle-top",
