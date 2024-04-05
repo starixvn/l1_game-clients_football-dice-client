@@ -1,9 +1,9 @@
 {
-"skeleton": { "hash": "jiSlNVv9tAGiNfw54+as3wqtnDY", "spine": "3.8.99" },
+"skeleton": { "hash": "LydagjtMDVrH1DHBlR7VdOhC0MM", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "popupBG", "parent": "root", "x": 0.13, "y": 0.71 },
-	{ "name": "text-team-win", "parent": "root", "x": -1.44, "y": 60.74 }
+	{ "name": "text-team-win", "parent": "root", "x": -0.18, "y": 55.72 }
 ],
 "slots": [
 	{ "name": "home-win BG", "bone": "popupBG" },
@@ -14,8 +14,8 @@
 		"name": "default",
 		"attachments": {
 			"home-win BG": {
-				"away win BG": { "x": -13.63, "y": 3.29, "width": 512, "height": 182 },
-				"draw win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 163 },
+				"away win BG": { "x": -13.63, "y": 3.29, "width": 502, "height": 156 },
+				"draw win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 156 },
 				"home win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 172 }
 			}
 		}
@@ -78,6 +78,9 @@
 		},
 		"bones": {
 			"text-team-win": {
+				"translate": [
+					{ "x": 1.25 }
+				],
 				"scale": [
 					{ "x": 0.95, "y": 0.95 },
 					{ "time": 2.3333, "x": 1.05, "y": 1.05 }
