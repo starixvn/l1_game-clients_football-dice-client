@@ -120,11 +120,13 @@ export default class Game extends GameComponent {
                 this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
+                this.playStartMatchSound();
                 this.matchStartAnimation(true);
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, hasAnimation);
+            this.playEndMatchSound();
             if (!hasAnimation) {
                 this.scorePanel[0].updateScoreTable(scores[0]);
                 this.scorePanel[1].updateScoreTable(scores[1]);
@@ -136,6 +138,12 @@ export default class Game extends GameComponent {
             console.timeEnd("total show result in ");
         }
     }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
+    playStartMatchSound() {}
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-end-match"))
+    playEndMatchSound() {}
 
     calculateScore(result: gc.GameServiceMessage.TResult) {
         let homeScore = 0,
