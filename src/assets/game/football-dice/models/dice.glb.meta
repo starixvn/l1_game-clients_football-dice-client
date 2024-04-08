@@ -415,6 +415,12 @@
           {}
         ]
       }
+    },
+    "meshOptimizer": {
+      "enable": true,
+      "simplifyOptions": {
+        "targetRatio": 0.4
+      }
     }
   }
 }

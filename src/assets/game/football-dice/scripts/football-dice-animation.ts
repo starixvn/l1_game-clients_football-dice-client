@@ -42,34 +42,41 @@ export class FootballDiceAnimation extends Component {
     @property(Node)
     nodeBaseAway: Node = null;
 
-    testAnimationIndex = 0;
+    private testAnimationIndex = 0;
 
-    recordTimes = 20;
-    recordCount = 0;
+    private recordTimes = 20;
+    private recordCount = 0;
 
-    records = {
+    private records = {
         home: [],
         away: [],
     };
 
-    baseRecord = {
+    private baseRecord = {
         home: null,
         away: null,
     };
 
-    currentRecordGroup: RecordGroup = null;
+    private currentRecordGroup: RecordGroup = null;
     private homeAnimations: Record[] = [];
     private awayAnimations: Record[] = [];
+    private nodeCamera: Node = null;
     private readonly zoomInDuration = 1667;
-    private readonly MoveDownDuration = 0.4;
-    private readonly MoveUpDuration = 1;
-    private readonly DicesLowestY = -2.25;
-    private readonly BaseLowestY = -0.3;
-    private readonly BaseLowY = -0.2;
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
 
-    private nodeCamera: Node = null;
+    private readonly offsets = {
+        DicesLowestY: -2.25,
+        BaseLowestY: -0.3,
+        BaseLowY: -0.2,
+    };
+
+    private readonly duration = {
+        shakeHome: 8,
+        shakeAway: 12,
+        moveDown: 0.4,
+        moveUp: 1,
+    };
 
     onLoad() {
         this.loadAnimation();
@@ -162,13 +169,13 @@ export class FootballDiceAnimation extends Component {
     }
 
     modeDownBases(animated = true) {
-        const duration = animated ? this.MoveDownDuration : 0;
+        const duration = animated ? this.duration.moveDown : 0;
         [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
             tween(node)
                 .to(
                     duration,
                     {
-                        position: v3(0, this.BaseLowestY, 0),
+                        position: v3(0, this.offsets.BaseLowestY, 0),
                         eulerAngles: v3(),
                     },
                     { easing: "sineIn" }
@@ -177,7 +184,7 @@ export class FootballDiceAnimation extends Component {
         });
         [this.redDiceGroup, this.blueDiceGroup].forEach((diceGroup) => {
             diceGroup.items.map((item) => {
-                const position = v3(item.node.position.x, this.DicesLowestY, item.node.position.z);
+                const position = v3(item.node.position.x, this.offsets.DicesLowestY, item.node.position.z);
                 tween(item.node)
                     .to(
                         duration,
@@ -192,11 +199,11 @@ export class FootballDiceAnimation extends Component {
     }
 
     private playHomeAnimation(onComplete?: () => void) {
-        this.playBaseAnimation(this.nodeBaseHome, 6, onComplete);
+        this.playBaseAnimation(this.nodeBaseHome, this.duration.shakeHome, onComplete);
     }
 
     private playAwayAnimation(onComplete?: () => void) {
-        this.playBaseAnimation(this.nodeBaseAway, 8, onComplete);
+        this.playBaseAnimation(this.nodeBaseAway, this.duration.shakeAway, onComplete);
     }
 
     private playBaseAnimation(node: Node, duration: number, onComplete?: () => void) {
@@ -221,7 +228,7 @@ export class FootballDiceAnimation extends Component {
                 .call(() => {
                     this.moveUpDicesBase(diceGroup, baseNode, animated);
                 })
-                .delay(this.MoveUpDuration)
+                .delay(this.duration.moveUp)
                 .call(() => resolve())
                 .start();
         });
@@ -384,10 +391,10 @@ export class FootballDiceAnimation extends Component {
     }
 
     generateMoveDownTween(node: Node) {
-        const y2 = this.BaseLowestY;
+        const y2 = this.offsets.BaseLowestY;
 
         return tween(node).to(
-            this.MoveDownDuration,
+            this.duration.moveDown,
             {
                 position: v3(0, y2, 0),
                 eulerAngles: v3(),
@@ -402,7 +409,7 @@ export class FootballDiceAnimation extends Component {
             if (animated) {
                 tween(item.node)
                     .to(
-                        this.MoveUpDuration,
+                        this.duration.moveUp,
                         {
                             position: position,
                         },
@@ -416,7 +423,7 @@ export class FootballDiceAnimation extends Component {
         if (animated) {
             tween(baseNode)
                 .to(
-                    this.MoveUpDuration,
+                    this.duration.moveUp,
                     {
                         position: v3(),
                         eulerAngles: v3(),
@@ -434,7 +441,7 @@ export class FootballDiceAnimation extends Component {
         const shakeCount = 3;
         const padding = 0.02;
         const offsetRotation = 1;
-        const y1 = this.BaseLowestY;
+        const y1 = this.offsets.BaseLowestY;
 
         const rotations = [v3(offsetRotation, 0, 0), v3(0, 0, offsetRotation)];
 
@@ -465,8 +472,8 @@ export class FootballDiceAnimation extends Component {
         const shakeCount = Math.floor(totalDuration / stepShake);
         const padding = 0.02;
         const offsetRotation = 4;
-        const y1 = this.BaseLowestY;
-        const y2 = this.BaseLowY;
+        const y1 = this.offsets.BaseLowestY;
+        const y2 = this.offsets.BaseLowY;
 
         const rotations = [
             v3(offsetRotation, 0, 0),

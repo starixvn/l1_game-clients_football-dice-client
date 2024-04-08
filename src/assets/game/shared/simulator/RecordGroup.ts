@@ -1,4 +1,5 @@
 import { Component, _decorator, sys } from "cc";
+import { PREVIEW } from "cc/env";
 import { RecordData, RecordItem } from "./RecordItem";
 const { ccclass, property } = _decorator;
 interface RecordGroupData {
@@ -80,7 +81,9 @@ export class RecordGroup extends Component {
     }
 
     stopReplay() {
-        // console.timeEnd(this.node.name + " replay in ");
+        if (PREVIEW) {
+            console.timeEnd(this.node.name + " replay in ");
+        }
         this.currentGroupData = null;
         this.enableReplay = false;
         this.onCompleteReplay && this.onCompleteReplay();
@@ -89,7 +92,9 @@ export class RecordGroup extends Component {
     startReplay(groupData: RecordGroupData, stopSimulator = true, onComplete?: () => void) {
         this.currentGroupData = groupData;
         this.items.forEach((item) => (stopSimulator ? item.stopSimulator() : item.startSimulator()));
-        // console.time(this.node.name + " replay in ");
+        if (PREVIEW) {
+            console.time(this.node.name + " replay in ");
+        }
         this.enableReplay = true;
         this.deltaTime = 0;
         this.onCompleteReplay = onComplete;
