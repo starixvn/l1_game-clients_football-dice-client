@@ -36,8 +36,8 @@ export default class Game extends GameComponent {
     @property({ type: ScoreTable })
     scorePanel: ScoreTable[] = [];
 
-    @property(WinningAnimation)
-    nodeWinningAnimation: WinningAnimation = null;
+    @property(Node)
+    nodeWinningAnimation: Node = null;
 
     @property(sp.Skeleton)
     matchStartSkeletons: sp.Skeleton = null;
@@ -133,7 +133,7 @@ export default class Game extends GameComponent {
             }
             if (hasAnimation) {
                 await FunctionUtils.delay(1000);
-                this.nodeWinningAnimation.setAnimation(settlementResult);
+                this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
             }
             console.timeEnd("total show result in ");
         }
