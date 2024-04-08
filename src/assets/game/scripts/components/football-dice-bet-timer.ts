@@ -11,11 +11,21 @@ const { observer, render, handle } = Observer;
 @ccclass
 export class FootballDiceBetTimer extends BetTimer {
     @render(RoundTimeStore, (store) => store.isInRoundTime)
-    async setVisibility(isInRoundTime: boolean) {
+    setAnimEndTimer(isInRoundTime: boolean) {
         this.lblDigitFirst.node.active = this.lblDigitSecond.node.active = isInRoundTime ? true : false;
-        const anim = isInRoundTime ? "input-time" : "output-time";
+        !isInRoundTime && this.setAnimBetTimer("output-time");
+    }
+
+    @render(RoundTimeStore, (store) => store.isStartRound)
+    setAnimStartTimer(isStartRound: boolean) {
+        if (isStartRound) {
+            this.node.active = true;
+            this.setAnimBetTimer("input-time");
+        }
+    }
+
+    async setAnimBetTimer(anim: string) {
         const skeleton = this.node.getComponent(sp.Skeleton);
         await AnimationUtils.playSpine(skeleton, anim, false, 0.5);
-        super.setVisibility(isInRoundTime);
     }
 }
