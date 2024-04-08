@@ -89,8 +89,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -1.440002679824829,
-      "y": 60.7400016784668,
+      "x": -0.18000243604183197,
+      "y": 55.720001220703125,
       "z": 0
     },
     "_lrot": {
@@ -130,7 +130,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
+      "width": 495,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -173,7 +173,7 @@
     "_fontSize": 30,
     "_fontFamily": "Arial",
     "_lineHeight": 30,
-    "_overflow": 0,
+    "_overflow": 1,
     "_enableWrapText": true,
     "_font": {
       "__uuid__": "41a12541-a4db-4259-b803-4c477054c858",
@@ -259,7 +259,7 @@
       "__uuid__": "e75db22b-844a-4406-82b7-8130b8084eac",
       "__expectedType__": "sp.SkeletonData"
     },
-    "defaultSkin": "default",
+    "defaultSkin": "",
     "defaultAnimation": "",
     "_premultipliedAlpha": true,
     "_timeScale": 1,
