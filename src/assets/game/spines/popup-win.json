@@ -1,124 +1,269 @@
 {
-"skeleton": { "hash": "LydagjtMDVrH1DHBlR7VdOhC0MM", "spine": "3.8.99" },
-"bones": [
-	{ "name": "root" },
-	{ "name": "popupBG", "parent": "root", "x": 0.13, "y": 0.71 },
-	{ "name": "text-team-win", "parent": "root", "x": -0.18, "y": 55.72 }
-],
-"slots": [
-	{ "name": "home-win BG", "bone": "popupBG" },
-	{ "name": "text-team-win", "bone": "text-team-win" }
-],
-"skins": [
-	{
-		"name": "default",
-		"attachments": {
-			"home-win BG": {
-				"away win BG": { "x": -13.63, "y": 3.29, "width": 502, "height": 156 },
-				"draw win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 156 },
-				"home win BG": { "x": -13.63, "y": 3.29, "width": 495, "height": 172 }
+	"skeleton": {
+		"hash": "LydagjtMDVrH1DHBlR7VdOhC0MM",
+		"spine": "3.8.99"
+	},
+	"bones": [
+		{
+			"name": "root"
+		},
+		{
+			"name": "popupBG",
+			"parent": "root",
+			"x": 0.13,
+			"y": 0.71
+		},
+		{
+			"name": "text-team-win",
+			"parent": "root",
+			"x": -0.18,
+			"y": 55.72
+		}
+	],
+	"slots": [
+		{
+			"name": "home-win BG",
+			"bone": "popupBG"
+		},
+		{
+			"name": "text-team-win",
+			"bone": "text-team-win"
+		}
+	],
+	"skins": [
+		{
+			"name": "default",
+			"attachments": {
+				"home-win BG": {
+					"away win BG": {
+						"x": -13.63,
+						"y": 3.29,
+						"width": 502,
+						"height": 172
+					},
+					"draw win BG": {
+						"x": -13.63,
+						"y": 3.29,
+						"width": 495,
+						"height": 172
+					},
+					"home win BG": {
+						"x": -13.63,
+						"y": 3.29,
+						"width": 495,
+						"height": 172
+					}
+				}
+			}
+		}
+	],
+	"animations": {
+		"away-win": {
+			"slots": {
+				"home-win BG": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.1667,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					],
+					"attachment": [
+						{
+							"name": "away win BG"
+						}
+					]
+				},
+				"text-team-win": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.2,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					]
+				}
+			},
+			"bones": {
+				"text-team-win": {
+					"translate": [
+						{
+							"x": 150.96,
+							"curve": 0.7,
+							"c2": 0.9,
+							"c3": 0.75
+						},
+						{
+							"time": 0.3333,
+							"x": 25.05
+						},
+						{
+							"time": 2.3333,
+							"x": -7.32
+						}
+					]
+				}
+			}
+		},
+		"draw-win": {
+			"slots": {
+				"home-win BG": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.1667,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					],
+					"attachment": [
+						{
+							"name": "draw win BG"
+						}
+					]
+				},
+				"text-team-win": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.2,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					]
+				}
+			},
+			"bones": {
+				"text-team-win": {
+					"translate": [
+						{
+							"x": 1.25
+						}
+					],
+					"scale": [
+						{
+							"x": 0.95,
+							"y": 0.95
+						},
+						{
+							"time": 2.3333,
+							"x": 1.05,
+							"y": 1.05
+						}
+					]
+				}
+			}
+		},
+		"home-win": {
+			"slots": {
+				"home-win BG": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.1667,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					],
+					"attachment": [
+						{
+							"name": "home win BG"
+						}
+					]
+				},
+				"text-team-win": {
+					"color": [
+						{
+							"color": "ffffff00"
+						},
+						{
+							"time": 0.2,
+							"color": "ffffffff",
+							"curve": "stepped"
+						},
+						{
+							"time": 2,
+							"color": "ffffffff"
+						},
+						{
+							"time": 2.3333,
+							"color": "ffffff00"
+						}
+					]
+				}
+			},
+			"bones": {
+				"text-team-win": {
+					"translate": [
+						{
+							"x": -149.43,
+							"curve": 0.7,
+							"c2": 0.9,
+							"c3": 0.75
+						},
+						{
+							"time": 0.3333,
+							"x": -12.15
+						},
+						{
+							"time": 2.3333,
+							"x": 10.35
+						}
+					]
+				}
 			}
 		}
 	}
-],
-"animations": {
-	"away-win": {
-		"slots": {
-			"home-win BG": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "away win BG" }
-				]
-			},
-			"text-team-win": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				]
-			}
-		},
-		"bones": {
-			"text-team-win": {
-				"translate": [
-					{ "x": 150.96, "curve": 0.7, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "x": 25.05 },
-					{ "time": 2.3333, "x": -7.32 }
-				]
-			}
-		}
-	},
-	"draw-win": {
-		"slots": {
-			"home-win BG": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "draw win BG" }
-				]
-			},
-			"text-team-win": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				]
-			}
-		},
-		"bones": {
-			"text-team-win": {
-				"translate": [
-					{ "x": 1.25 }
-				],
-				"scale": [
-					{ "x": 0.95, "y": 0.95 },
-					{ "time": 2.3333, "x": 1.05, "y": 1.05 }
-				]
-			}
-		}
-	},
-	"home-win": {
-		"slots": {
-			"home-win BG": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "name": "home win BG" }
-				]
-			},
-			"text-team-win": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.2, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2, "color": "ffffffff" },
-					{ "time": 2.3333, "color": "ffffff00" }
-				]
-			}
-		},
-		"bones": {
-			"text-team-win": {
-				"translate": [
-					{ "x": -149.43, "curve": 0.7, "c2": 0.9, "c3": 0.75 },
-					{ "time": 0.3333, "x": -12.15 },
-					{ "time": 2.3333, "x": 10.35 }
-				]
-			}
-		}
-	}
-}
 }
