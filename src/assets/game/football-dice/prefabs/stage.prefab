@@ -1658,7 +1658,7 @@
       "z": 0
     },
     "_mesh": {
-      "__uuid__": "",
+      "__uuid__": "37f3ad94-0b5b-466b-bad7-dcc018b9bc84@4ac11",
       "__expectedType__": "cc.Mesh"
     },
     "_convex": true,
@@ -1964,7 +1964,7 @@
       "z": 0
     },
     "_mesh": {
-      "__uuid__": "",
+      "__uuid__": "37f3ad94-0b5b-466b-bad7-dcc018b9bc84@4ac11",
       "__expectedType__": "cc.Mesh"
     },
     "_convex": true,
@@ -2641,7 +2641,7 @@
       "z": 0
     },
     "_mesh": {
-      "__uuid__": "",
+      "__uuid__": "37f3ad94-0b5b-466b-bad7-dcc018b9bc84@4ac11",
       "__expectedType__": "cc.Mesh"
     },
     "_convex": true,
@@ -2972,7 +2972,7 @@
       "z": 0
     },
     "_mesh": {
-      "__uuid__": "",
+      "__uuid__": "37f3ad94-0b5b-466b-bad7-dcc018b9bc84@4ac11",
       "__expectedType__": "cc.Mesh"
     },
     "_convex": true,
@@ -3089,7 +3089,7 @@
       "1"
     ],
     "value": {
-      "__uuid__": "df265d41-2b1d-4bc0-853b-1d7b4d2883b2@f3bae",
+      "__uuid__": "",
       "__expectedType__": "cc.Material"
     }
   },
