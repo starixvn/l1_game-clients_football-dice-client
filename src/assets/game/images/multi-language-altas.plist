@@ -4,276 +4,6 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>away_en.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{153,36}</string>
-                <key>spriteSourceSize</key>
-                <string>{153,36}</string>
-                <key>textureRect</key>
-                <string>{{358,118},{153,36}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>away_id.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{178,67}</string>
-                <key>spriteSourceSize</key>
-                <string>{178,67}</string>
-                <key>textureRect</key>
-                <string>{{3,73},{178,67}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>away_th.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{148,38}</string>
-                <key>spriteSourceSize</key>
-                <string>{148,38}</string>
-                <key>textureRect</key>
-                <string>{{192,242},{148,38}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>away_vi.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{132,79}</string>
-                <key>spriteSourceSize</key>
-                <string>{132,79}</string>
-                <key>textureRect</key>
-                <string>{{396,156},{132,79}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>away_zh_cn.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{48,47}</string>
-                <key>spriteSourceSize</key>
-                <string>{48,47}</string>
-                <key>textureRect</key>
-                <string>{{342,273},{48,47}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>away_zh_tw.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{48,47}</string>
-                <key>spriteSourceSize</key>
-                <string>{48,47}</string>
-                <key>textureRect</key>
-                <string>{{342,273},{48,47}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>draw_en.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{133,30}</string>
-                <key>spriteSourceSize</key>
-                <string>{133,30}</string>
-                <key>textureRect</key>
-                <string>{{477,280},{133,30}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>draw_id.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{90,31}</string>
-                <key>spriteSourceSize</key>
-                <string>{90,31}</string>
-                <key>textureRect</key>
-                <string>{{417,3},{90,31}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>draw_th.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{122,32}</string>
-                <key>spriteSourceSize</key>
-                <string>{122,32}</string>
-                <key>textureRect</key>
-                <string>{{477,156},{122,32}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>draw_vi.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{94,38}</string>
-                <key>spriteSourceSize</key>
-                <string>{94,38}</string>
-                <key>textureRect</key>
-                <string>{{396,116},{94,38}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>draw_zh_cn.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{78,40}</string>
-                <key>spriteSourceSize</key>
-                <string>{78,40}</string>
-                <key>textureRect</key>
-                <string>{{3,415},{78,40}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>draw_zh_tw.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{78,40}</string>
-                <key>spriteSourceSize</key>
-                <string>{78,40}</string>
-                <key>textureRect</key>
-                <string>{{3,415},{78,40}}</string>
-                <key>textureRotated</key>
-                <true/>
-            </dict>
-            <key>home_en.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{153,37}</string>
-                <key>spriteSourceSize</key>
-                <string>{153,37}</string>
-                <key>textureRect</key>
-                <string>{{3,142},{153,37}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>home_id.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{180,67}</string>
-                <key>spriteSourceSize</key>
-                <string>{180,67}</string>
-                <key>textureRect</key>
-                <string>{{214,49},{180,67}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>home_th.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{142,39}</string>
-                <key>spriteSourceSize</key>
-                <string>{142,39}</string>
-                <key>textureRect</key>
-                <string>{{192,282},{142,39}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>home_vi.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{84,78}</string>
-                <key>spriteSourceSize</key>
-                <string>{84,78}</string>
-                <key>textureRect</key>
-                <string>{{417,36},{84,78}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>home_zh_cn.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{46,46}</string>
-                <key>spriteSourceSize</key>
-                <string>{46,46}</string>
-                <key>textureRect</key>
-                <string>{{392,290},{46,46}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>home_zh_tw.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{46,46}</string>
-                <key>spriteSourceSize</key>
-                <string>{46,46}</string>
-                <key>textureRect</key>
-                <string>{{392,290},{46,46}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
             <key>match_start_en.png</key>
             <dict>
                 <key>aliases</key>
@@ -285,11 +15,11 @@
                 <key>spriteSourceSize</key>
                 <string>{209,78}</string>
                 <key>textureRect</key>
-                <string>{{45,415},{145,76}}</string>
+                <string>{{154,224},{145,76}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
-            <key>match_start_in.png</key>
+            <key>match_start_id.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -315,7 +45,7 @@
                 <key>spriteSourceSize</key>
                 <string>{209,78}</string>
                 <key>textureRect</key>
-                <string>{{214,3},{201,44}}</string>
+                <string>{{3,73},{201,44}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -330,7 +60,7 @@
                 <key>spriteSourceSize</key>
                 <string>{209,78}</string>
                 <key>textureRect</key>
-                <string>{{183,118},{173,78}}</string>
+                <string>{{3,119},{173,78}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -345,9 +75,9 @@
                 <key>spriteSourceSize</key>
                 <string>{209,78}</string>
                 <key>textureRect</key>
-                <string>{{3,181},{149,44}}</string>
+                <string>{{206,73},{149,44}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>match_start_zh_tw.png</key>
             <dict>
@@ -360,7 +90,7 @@
                 <key>spriteSourceSize</key>
                 <string>{209,78}</string>
                 <key>textureRect</key>
-                <string>{{192,198},{149,42}}</string>
+                <string>{{3,199},{149,42}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -376,9 +106,9 @@
             <key>realTextureFileName</key>
             <string>multi-language-altas.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f6b9246ea252ef66378c0fc901c6b914:5369bb2c5412451f5c31e73573096b5c:b6dc6a1557fde689c6a132a06f4ae18c$</string>
+            <string>$TexturePacker:SmartUpdate:ceabccb6e5b4aadd7951b5e95e97507d:0c306978cfe46742f704191c7e03301e:b6dc6a1557fde689c6a132a06f4ae18c$</string>
             <key>textureFileName</key>
             <string>multi-language-altas.png</string>
         </dict>
