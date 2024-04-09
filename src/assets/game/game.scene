@@ -9803,7 +9803,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 49.5390625,
+      "width": 51.375,
       "height": 30.240000000000002
     }
   },
@@ -9823,7 +9823,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 49.0390625,
+      "width": 51.5859375,
       "height": 50.4
     }
   },
@@ -9843,7 +9843,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 46.1171875,
+      "width": 49.0546875,
       "height": 30.240000000000002
     }
   },
@@ -15178,6 +15178,9 @@
     },
     "matchStartSkeletons": {
       "__id__": 348
+    },
+    "nodeScoreBoard": {
+      "__id__": 370
     },
     "betAreas": {
       "__id__": 182

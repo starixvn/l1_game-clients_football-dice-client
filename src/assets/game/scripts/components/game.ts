@@ -3,6 +3,7 @@ import { Label, Node, _decorator, sp, v3 } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
+import { ScoreboardCollapseExpandContent } from "../../../../extensions/shared-components/assets/game/scoreboards/scripts/components/scoreboard-collapse-expand-content";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
@@ -42,6 +43,9 @@ export default class Game extends GameComponent {
     @property(sp.Skeleton)
     matchStartSkeletons: sp.Skeleton = null;
 
+    @property(Node)
+    nodeScoreBoard: Node = null;
+
     @property(FootballDiceBetAreas)
     betAreas: FootballDiceBetAreas = null;
 
@@ -52,10 +56,12 @@ export default class Game extends GameComponent {
     protected clientRoundId = -1;
     private gameAnimation: FootballDiceAnimation = null;
     protected override enableFixHandleFinish = true;
+    private scorebboardComp: ScoreboardCollapseExpandContent = null;
 
     onLoad() {
         super.onLoad();
         this.gameAnimation = this.nodeGameAnimation.getComponent(FootballDiceAnimation);
+        this.scorebboardComp = this.nodeScoreBoard.getComponent(ScoreboardCollapseExpandContent);
         this.gameAnimation.node.on(this.gameAnimation.HOME_SCORE_REAL_TIME, (score: number) => {
             this.scorePanel[0].updateScoreTable(score);
         });
@@ -88,9 +94,13 @@ export default class Game extends GameComponent {
             console.log("render static result from last round history");
             const { result, settlementResult } = lastRound;
             this.showResult(result, false, settlementResult);
+
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
                 this.gameAnimation.zoomOutCamera(false);
+                this.scorebboardComp.renderExpandScoreboard(false);
+            } else {
+                this.scorebboardComp.renderCollapseScoreboard(false);
             }
         }
     }
@@ -116,12 +126,14 @@ export default class Game extends GameComponent {
             console.time("zoomin");
             const scores = this.calculateScore(result);
             await this.gameAnimation.zoomInCamera(hasAnimation);
+
             if (hasAnimation) {
                 this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
                 this.matchStartAnimation(true);
+                this.scorebboardComp.renderCollapseScoreboard(true);
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
