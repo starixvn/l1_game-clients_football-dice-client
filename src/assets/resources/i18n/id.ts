@@ -164,12 +164,17 @@ export const languages = {
         "bet_history_home": "(Tim kandang",
         "draw_win": "Seri",
         "game_icon_name": "Dadu Sepak Bola",
-        "game_name": "Football Dice",
+        "game_name": "Dadu Sepak Bola",
         "glossary_away": "Tandang",
         "glossary_draw": "Seri",
         "glossary_home": "Kandang",
         "home_win": "TIM KANDANG MENANG",
-        "match_starts": "PERTANDINGAN DIMULAI"
+        "match_starts": "PERTANDINGAN DIMULAI",
+        "pf_ home_dice_2": "Kandang - Dadu 2",
+        "pf_away_dice_1": "Tandang - Dadu 1",
+        "pf_away_dice_2": "Tandang - Dadu 2",
+        "pf_home_dice_1": "Kandang - Dadu 1",
+        "pf_verification_para_3": "Ubah setiap kelompok yang terdiri dari 8 karakter pada SHA512 menjadi Desimal"
     }
 };
 

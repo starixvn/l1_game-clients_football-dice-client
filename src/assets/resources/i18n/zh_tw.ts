@@ -169,7 +169,12 @@ export const languages = {
         "glossary_draw": "平",
         "glossary_home": "主隊",
         "home_win": "主隊勝",
-        "match_starts": "比賽開始"
+        "match_starts": "比賽開始",
+        "pf_ home_dice_2": "主隊 - 骰子 2",
+        "pf_away_dice_1": "客隊 - 骰子 1",
+        "pf_away_dice_2": "客隊 - 骰子 2",
+        "pf_home_dice_1": "主隊 - 骰子 1",
+        "pf_verification_para_3": "將 SHA512 中的每組 8 個字元轉換為小數"
     }
 };
 

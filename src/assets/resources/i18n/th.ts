@@ -169,7 +169,12 @@ export const languages = {
         "glossary_draw": "เสมอ",
         "glossary_home": "ทีมเหย้า",
         "home_win": "เจ้าบ้านชนะ",
-        "match_starts": "เริ่มการแข่งขัน"
+        "match_starts": "เริ่มการแข่งขัน",
+        "pf_ home_dice_2": "ทีมเหย้า - ลูกเต๋า 2",
+        "pf_away_dice_1": "ทีมเยือน - ลูกเต๋า 1",
+        "pf_away_dice_2": "ทีมเยือน - ลูกเต๋า 2",
+        "pf_home_dice_1": "ทีมเหย้า - ลูกเต๋า 1",
+        "pf_verification_para_3": "แปลงตัวอักษร 8 ตัวแต่ละกลุ่มใน SHA512 ให้เป็นทศนิยม"
     }
 };
 
