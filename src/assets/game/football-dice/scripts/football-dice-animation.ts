@@ -287,19 +287,20 @@ export class FootballDiceAnimation extends Component {
         const result = { home: [randomDice(), randomDice()], away: [randomDice(), randomDice()] };
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
-        await this.setResult(result);
+        const score = { home: 0, away: 0 };
+        await this.setResult(result, score);
         console.timeEnd("test result in ");
     }
 
-    setResult(result: any, animated = true) {
+    setResult(result: any, score: { home; away }, animated = true) {
         return new Promise<void>((resolve, reject) => {
+            const { home, away } = score;
             const randomAnimationIndex = this.testAnimationIndex;
             this.changeTestAnimationIndex();
             console.log("========= animation index ", randomAnimationIndex);
             console.log("========= result ", [...result.home, ...result.away]);
             let recordGroup, animationData;
-            let homeScore = 0,
-                awayScore = 0;
+
             Object.keys(result).forEach((team) => {
                 if (team === "home") {
                     recordGroup = this.redDiceGroup;
@@ -314,7 +315,6 @@ export class FootballDiceAnimation extends Component {
                 result[team].forEach((value, index) => {
                     const dice = dices[index];
                     dice.setResult(value, animationData.fu[dice.cube.name], 1);
-                    team === "home" ? (homeScore += value) : (awayScore += value);
                 });
 
                 if (animated) {
@@ -337,14 +337,14 @@ export class FootballDiceAnimation extends Component {
                     this.baseRecord.home,
                     true,
                     onComplete(this.redDiceGroup, this.nodeBaseHome, () => {
-                        this.node.emit(this.HOME_SCORE_REAL_TIME, homeScore);
+                        this.node.emit(this.HOME_SCORE_REAL_TIME, home);
                     })
                 );
                 this.blueBaseGroup.startReplay(
                     this.baseRecord.away,
                     true,
                     onComplete(this.blueDiceGroup, this.nodeBaseAway, () => {
-                        this.node.emit(this.AWAY_SCORE_REAL_TIME, awayScore);
+                        this.node.emit(this.AWAY_SCORE_REAL_TIME, away);
                         resolve();
                     })
                 );

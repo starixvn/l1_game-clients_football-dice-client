@@ -99,6 +99,7 @@ export default class Game extends GameComponent {
                 this.gameAnimation.modeDownBases(false);
                 this.gameAnimation.zoomOutCamera(false);
                 this.scorebboardComp.renderExpandScoreboard(false);
+                this.updateScorePanel({ home: 0, away: 0 }, false);
             } else {
                 this.scorebboardComp.renderCollapseScoreboard(false);
             }
@@ -124,7 +125,7 @@ export default class Game extends GameComponent {
         if (result) {
             console.time("total show result in ");
             console.time("zoomin");
-            const scores = this.calculateScore(result);
+            const score = this.calculateScore(result);
             await this.gameAnimation.zoomInCamera(hasAnimation);
 
             if (hasAnimation) {
@@ -137,11 +138,10 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
-            await this.gameAnimation.setResult(result, hasAnimation);
+            await this.gameAnimation.setResult(result, score, hasAnimation);
             this.playEndMatchSound();
             if (!hasAnimation) {
-                this.scorePanel[0].updateScoreTable(scores[0]);
-                this.scorePanel[1].updateScoreTable(scores[1]);
+                this.updateScorePanel(score, false);
             }
             if (hasAnimation) {
                 await FunctionUtils.delay(1000);
@@ -151,6 +151,12 @@ export default class Game extends GameComponent {
         }
     }
 
+    updateScorePanel(score: { home: number; away: number }, animated = true) {
+        const { home, away } = score;
+        this.scorePanel[0].updateScoreTable(home, animated);
+        this.scorePanel[1].updateScoreTable(away, animated);
+    }
+
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
     playStartMatchSound() {}
 
@@ -158,14 +164,14 @@ export default class Game extends GameComponent {
     playEndMatchSound() {}
 
     calculateScore(result: gc.GameServiceMessage.TResult) {
-        let homeScore = 0,
-            awayScore = 0;
+        let home = 0,
+            away = 0;
         Object.keys(result).forEach((team) => {
             result[team].forEach((value) => {
-                team === "home" ? (homeScore += value) : (awayScore += value);
+                team === "home" ? (home += value) : (away += value);
             });
         });
-        return [homeScore, awayScore];
+        return { home, away };
     }
 
     private startLogoAnimation() {

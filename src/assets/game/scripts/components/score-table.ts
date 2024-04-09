@@ -14,9 +14,12 @@ export class ScoreTable extends ObserverComponent {
     @property(sp.Skeleton)
     skeletonScore: sp.Skeleton = null;
 
-    updateScoreTable(score: number) {
+    updateScoreTable(score: number, animated = true) {
         this.lblScore.string = score.toString();
-        this.skeletonScore.setAnimation(0, "number-in", false);
+        const entry = this.skeletonScore.setAnimation(0, "number-in", false);
+        if (!animated) {
+            entry.animationStart = entry.animationEnd;
+        }
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
