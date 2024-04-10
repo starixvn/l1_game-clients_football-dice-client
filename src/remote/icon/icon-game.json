@@ -1,11 +1,11 @@
 {
 	"skeleton": {
-		"hash": "LxLEPutGgBJfzoaKrM816++47v0",
+		"hash": "5BaXsi/p25vWNoE1X9Myl3ODqL0",
 		"spine": "3.8.99",
-		"x": -111,
-		"y": -101,
-		"width": 216,
-		"height": 216
+		"x": -100.38,
+		"y": -89.73,
+		"width": 195.99,
+		"height": 197.06
 	},
 	"bones": [
 		{
@@ -190,11 +190,6 @@
 	],
 	"slots": [
 		{
-			"name": "icon-frame",
-			"bone": "control-all",
-			"attachment": "icon frame"
-		},
-		{
 			"name": "clipping",
 			"bone": "control-all",
 			"attachment": "clipping"
@@ -350,11 +345,6 @@
 			"name": "transform-ball-png/ball to dice_00",
 			"bone": "transform-ball-png/ball to dice_00",
 			"attachment": "transform ball png/ball to dice_00"
-		},
-		{
-			"name": "top-filter-icon",
-			"bone": "control-all",
-			"attachment": "top filter icon"
 		}
 	],
 	"skins": [
@@ -609,14 +599,6 @@
 						"height": 229
 					}
 				},
-				"icon-frame": {
-					"icon frame": {
-						"x": -1.27,
-						"y": 81.6,
-						"width": 216,
-						"height": 216
-					}
-				},
 				"icon-team": {
 					"icon team": {
 						"x": -69.33,
@@ -717,14 +699,6 @@
 					"splash png/splash_9": {
 						"type": "linkedmesh",
 						"parent": "splash png/splash_1"
-					}
-				},
-				"top-filter-icon": {
-					"top filter icon": {
-						"x": -2.27,
-						"y": 81.1,
-						"width": 214,
-						"height": 201
 					}
 				},
 				"transform-ball-png/ball to dice_00": {
