@@ -13,7 +13,6 @@ export class FootballDiceBetTimer extends BetTimer {
     @render(RoundTimeStore, (store) => store.isInRoundTime)
     setAnimEndTimer(isInRoundTime: boolean) {
         this.lblDigitFirst.node.active = this.lblDigitSecond.node.active = isInRoundTime ? true : false;
-        !isInRoundTime && this.setAnimBetTimer("output-time");
     }
 
     @render(RoundTimeStore, (store) => store.isStartRound)
