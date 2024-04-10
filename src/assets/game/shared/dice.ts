@@ -36,10 +36,10 @@ export default class Dice extends Component {
                 return;
         }
 
-        let internalRotate = new Quat();
+        const internalRotate = new Quat();
         Quat.rotationTo(internalRotate, Vec3.UP, upVector);
 
-        let rotateToOrigin = new Quat();
+        const rotateToOrigin = new Quat();
         Quat.rotationTo(rotateToOrigin, Vec3.UP, cubeUpVector);
 
         const multiply = new Quat();

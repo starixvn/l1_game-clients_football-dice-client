@@ -9,7 +9,7 @@ interface RecordGroupData {
 export class RecordGroup extends Component {
     items: RecordItem[] = [];
     data: RecordGroupData[] = [];
-    private intervalTime = 0.016667;
+    private readonly intervalTime = 0.016667;
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
     private onCompleteReplay = () => {};
@@ -71,7 +71,7 @@ export class RecordGroup extends Component {
         if (index >= groupData[this.items[0].node.name].length) {
             return false;
         }
-        this.items.map((item) => {
+        this.items.forEach((item) => {
             const key = item.node.name;
             const records = groupData[key];
             item.play(records[index]);
@@ -111,7 +111,6 @@ export class RecordGroup extends Component {
         }
         if (this.enableRecord) {
             this.record();
-            return;
         }
     }
 

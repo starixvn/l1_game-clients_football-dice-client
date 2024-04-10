@@ -164,14 +164,16 @@ export default class Game extends GameComponent {
     playEndMatchSound() {}
 
     calculateScore(result: gc.GameServiceMessage.TResult) {
-        let home = 0,
-            away = 0;
+        const score = {
+            home: 0,
+            away: 0,
+        };
         Object.keys(result).forEach((team) => {
             result[team].forEach((value) => {
-                team === "home" ? (home += value) : (away += value);
+                score[team] += value;
             });
         });
-        return { home, away };
+        return score;
     }
 
     private startLogoAnimation() {

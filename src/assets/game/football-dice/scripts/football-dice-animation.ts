@@ -44,10 +44,10 @@ export class FootballDiceAnimation extends Component {
 
     private testAnimationIndex = 0;
 
-    private recordTimes = 20;
+    private readonly recordTimes = 20;
     private recordCount = 0;
 
-    private records = {
+    private readonly records = {
         home: [],
         away: [],
     };
@@ -108,28 +108,34 @@ export class FootballDiceAnimation extends Component {
     startShake(isHome: boolean) {
         this.recordCount++;
         const needRecordBase = true;
+
+        const config = {
+            home: {
+                doAnimation: this.playHomeAnimation,
+                baseGroup: this.redBaseGroup,
+                baseRecord: this.baseRecord.home,
+            },
+            away: {
+                doAnimation: this.playAwayAnimation,
+                baseGroup: this.blueBaseGroup,
+                baseRecord: this.baseRecord.away,
+            },
+        };
+
+        const currentConfig = isHome ? config.home : config.away;
+        const { baseGroup } = currentConfig;
+
         const onComplete = () => {
             const success = this.checkValidRecord();
 
             this.currentRecordGroup.stopRecord();
             if (needRecordBase) {
-                if (isHome) {
-                    this.redBaseGroup.stopRecord();
-                    this.baseRecord.home = this.redBaseGroup.getLastRecord();
-                } else {
-                    this.blueBaseGroup.stopRecord();
-                    this.baseRecord.away = this.blueBaseGroup.getLastRecord();
-                }
+                baseGroup.stopRecord();
+                this.baseRecord[isHome ? "home" : "away"] = baseGroup.getLastRecord();
             }
 
             if (success) {
-                const data = this.saveRecord();
-                this.records[isHome ? "home" : "away"].push(data);
-                if (isHome) {
-                    this.homeAnimations = this.records.home;
-                } else {
-                    this.awayAnimations = this.records.away;
-                }
+                this.onSuccessRecord(isHome);
             } else {
                 this.recordCount--;
             }
@@ -137,35 +143,48 @@ export class FootballDiceAnimation extends Component {
             if (this.recordCount < this.recordTimes) {
                 setTimeout(() => this.startShake(isHome), 1000);
             } else {
-                if (isHome) {
-                    setTimeout(() => this.startRecordAway(), 1000);
-                } else {
-                    console.log("Record finished!");
-                    console.log("records ", {
-                        ...this.records,
-                        base: this.baseRecord,
-                    });
-                }
+                this.onFinalRecord(isHome);
             }
         };
+        this.onStartRecord(currentConfig, needRecordBase, onComplete);
+    }
+
+    private onStartRecord(config: any, needRecordBase: boolean, onComplete: () => void) {
         const dices = this.currentRecordGroup.getComponentsInChildren(Dice);
         dices.forEach((d) => d.resetCubePosition());
-        if (isHome) {
-            if (needRecordBase) {
-                this.playHomeAnimation(onComplete);
-                this.redBaseGroup.startRecord();
-            } else {
-                this.redBaseGroup.startReplay(this.baseRecord.home, false, onComplete);
-            }
+
+        const { doAnimation, baseGroup, baseRecord } = config;
+
+        if (needRecordBase) {
+            doAnimation(onComplete);
+            baseGroup.startRecord();
         } else {
-            if (needRecordBase) {
-                this.playAwayAnimation(onComplete);
-                this.blueBaseGroup.startRecord();
-            } else {
-                this.blueBaseGroup.startReplay(this.baseRecord.away, false, onComplete);
-            }
+            baseGroup.startReplay(baseRecord, false, onComplete);
         }
         this.currentRecordGroup.startRecord();
+    }
+
+    private onFinalRecord(isHome: boolean) {
+        if (isHome) {
+            setTimeout(() => this.startRecordAway(), 1000);
+        } else {
+            console.log("Record finished!");
+            console.log("records ", {
+                ...this.records,
+                base: this.baseRecord,
+            });
+        }
+    }
+
+    private onSuccessRecord(isHome: boolean) {
+        const data = this.saveRecord();
+        this.records[isHome ? "home" : "away"].push(data);
+        this.grantNewRecordToAnimation();
+    }
+
+    private grantNewRecordToAnimation() {
+        this.homeAnimations = this.records.home;
+        this.awayAnimations = this.records.away;
     }
 
     modeDownBases(animated = true) {
@@ -183,7 +202,7 @@ export class FootballDiceAnimation extends Component {
                 .start();
         });
         [this.redDiceGroup, this.blueDiceGroup].forEach((diceGroup) => {
-            diceGroup.items.map((item) => {
+            diceGroup.items.forEach((item) => {
                 const position = v3(item.node.position.x, this.offsets.DicesLowestY, item.node.position.z);
                 tween(item.node)
                     .to(
@@ -404,7 +423,7 @@ export class FootballDiceAnimation extends Component {
     }
 
     moveUpDicesBase(diceGroup: RecordGroup, baseNode: Node, animated = true) {
-        diceGroup.items.map((item) => {
+        diceGroup.items.forEach((item) => {
             const position = v3(item.node.position.x, 0, item.node.position.z);
             if (animated) {
                 tween(item.node)

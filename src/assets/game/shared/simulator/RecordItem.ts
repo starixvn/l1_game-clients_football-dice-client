@@ -72,7 +72,7 @@ export class RecordItem extends Component {
             p: this.trimVector(this.node.position),
             e: this.trimVector(this.node.eulerAngles),
         };
-        let recordData = { p: v3(data.p), e: v3(data.e) };
+        const recordData = { p: v3(data.p), e: v3(data.e) };
         if (this.lastData) {
             Object.keys(this.lastData.p).forEach((key) => {
                 if (this.lastData.p[key] === data.p[key]) {
