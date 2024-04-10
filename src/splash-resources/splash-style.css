@@ -3,25 +3,25 @@
 }
 
 .splash-container .splash_game_name_vi {
-    background-image: url("./game_name_vi.png?v=2");
+    background-image: url("./game_name_vi.png?v=3");
 }
 
 .splash-container .splash_game_name_en {
-    background-image: url("./game_name_en.png?v=2");
+    background-image: url("./game_name_en.png?v=3");
 }
 
 .splash-container .splash_game_name_id {
-    background-image: url("./game_name_id.png?v=1");
+    background-image: url("./game_name_id.png?v=3");
 }
 
 .splash-container .splash_game_name_th {
-    background-image: url("./game_name_th.png?v=1");
+    background-image: url("./game_name_th.png?v=3");
 }
 
 .splash-container .splash_game_name_zh_cn {
-    background-image: url("./game_name_zh_cn.png?v=1");
+    background-image: url("./game_name_zh_cn.png?v=3");
 }
 
 .splash-container .splash_game_name_zh_tw {
-    background-image: url("./game_name_zh_tw.png?v=1");
+    background-image: url("./game_name_zh_tw.png?v=3");
 }
