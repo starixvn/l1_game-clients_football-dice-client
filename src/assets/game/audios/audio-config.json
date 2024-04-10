@@ -14,6 +14,11 @@
         "type": "sfx"
     },
 
+    "starting-round": {
+        "bundle": "shared-bundle",
+        "path": "starting-round"
+    },
+
     //remove sounds
     "receive-finish": {},
     "draw-single-card": {},
@@ -29,5 +34,12 @@
     "start-betting_zh_cn": {},
     "stop-betting_zh_cn": {},
     "start-betting_zh_tw": {},
-    "stop-betting_zh_tw": {}
+    "stop-betting_zh_tw": {},
+    "bgm-song1": {},
+    "bgm-song2": {},
+    "bgm-song3": {},
+    "bgm-song4": {},
+    "bgm-song5": {},
+    "bgm-song6": {},
+    "bgm-song7": {}
 }
