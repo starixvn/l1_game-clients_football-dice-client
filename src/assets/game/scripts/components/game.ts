@@ -85,7 +85,7 @@ export default class Game extends GameComponent {
     }
 
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
-    renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
+    async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
         if (!firstJoinGameHistory) {
             return;
         }
@@ -93,7 +93,7 @@ export default class Game extends GameComponent {
         if (lastRound) {
             console.log("render static result from last round history");
             const { result, settlementResult } = lastRound;
-            this.showResult(result, false, settlementResult);
+            await this.showResult(result, false, settlementResult);
 
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
