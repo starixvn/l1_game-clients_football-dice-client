@@ -111,12 +111,12 @@ export class FootballDiceAnimation extends Component {
 
         const config = {
             home: {
-                doAnimation: this.playHomeAnimation,
+                doAnimation: this.playHomeAnimation.bind(this),
                 baseGroup: this.redBaseGroup,
                 baseRecord: this.baseRecord.home,
             },
             away: {
-                doAnimation: this.playAwayAnimation,
+                doAnimation: this.playAwayAnimation.bind(this),
                 baseGroup: this.blueBaseGroup,
                 baseRecord: this.baseRecord.away,
             },
