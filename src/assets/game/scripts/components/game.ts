@@ -59,9 +59,10 @@ export default class Game extends GameComponent {
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
 
     onLoad() {
+        this.scorebboardComp = this.nodeScoreBoard.getComponent(ScoreboardCollapseExpandContent);
+        this.scorebboardComp.renderCollapseScoreboard(false);
         super.onLoad();
         this.gameAnimation = this.nodeGameAnimation.getComponent(FootballDiceAnimation);
-        this.scorebboardComp = this.nodeScoreBoard.getComponent(ScoreboardCollapseExpandContent);
         this.gameAnimation.node.on(this.gameAnimation.HOME_SCORE_REAL_TIME, (score: number) => {
             this.scorePanel[0].updateScoreTable(score);
         });
