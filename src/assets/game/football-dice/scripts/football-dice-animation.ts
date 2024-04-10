@@ -80,7 +80,7 @@ export class FootballDiceAnimation extends Component {
 
     onLoad() {
         this.loadAnimation();
-        game.frameRate = 60;
+        game.frameRate = 30;
     }
 
     loadAnimation() {
