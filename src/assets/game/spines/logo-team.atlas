@@ -1,362 +1,356 @@
 
 logo-team.png
-size: 1991,2048
+size: 1946,189
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 away logo/logo away_0
   rotate: false
-  xy: 203, 148
+  xy: 210, 27
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 home logo/logo home_0
   rotate: false
-  xy: 203, 148
+  xy: 210, 27
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 away logo/logo away_1
   rotate: false
-  xy: 2, 1645
-  size: 393, 401
-  orig: 480, 450
-  offset: 67, 22
+  xy: 2, 66
+  size: 118, 121
+  orig: 144, 135
+  offset: 20, 6
   index: -1
 away logo/logo away_10
-  rotate: false
-  xy: 1176, 494
-  size: 283, 307
-  orig: 480, 450
-  offset: 20, 68
+  rotate: true
+  xy: 616, 6
+  size: 85, 93
+  orig: 144, 135
+  offset: 6, 20
   index: -1
 away logo/logo away_11
   rotate: true
-  xy: 1682, 951
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 901, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_12
   rotate: true
-  xy: 1682, 674
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 996, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_13
   rotate: true
-  xy: 1682, 674
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 996, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_14
-  rotate: false
-  xy: 1265, 185
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  rotate: true
+  xy: 1091, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_15
   rotate: true
-  xy: 1542, 397
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 1186, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_16
-  rotate: false
-  xy: 1542, 88
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  rotate: true
+  xy: 1281, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_17
   rotate: true
-  xy: 1669, 1771
-  size: 275, 308
-  orig: 480, 450
-  offset: 26, 68
+  xy: 1376, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_18
   rotate: true
-  xy: 1669, 1494
-  size: 275, 308
-  orig: 480, 450
-  offset: 26, 68
+  xy: 1471, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_19
-  rotate: false
-  xy: 817, 1425
-  size: 275, 309
-  orig: 480, 450
-  offset: 26, 67
+  rotate: true
+  xy: 1566, 7
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_2
   rotate: false
-  xy: 2, 871
-  size: 334, 369
-  orig: 480, 450
-  offset: 79, 38
+  xy: 230, 76
+  size: 100, 111
+  orig: 144, 135
+  offset: 24, 11
   index: -1
 away logo/logo away_20
   rotate: true
-  xy: 659, 2
-  size: 277, 308
-  orig: 480, 450
-  offset: 26, 67
+  xy: 1661, 8
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_21
-  rotate: false
-  xy: 1389, 1738
-  size: 278, 308
-  orig: 480, 450
-  offset: 26, 67
+  rotate: true
+  xy: 711, 6
+  size: 85, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_22
+  rotate: true
+  xy: 806, 6
+  size: 85, 93
+  orig: 144, 135
+  offset: 7, 20
+  index: -1
+away logo/logo away_23
   rotate: false
-  xy: 1402, 806
-  size: 278, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 1679, 94
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
+  index: -1
+away logo/logo away_24
+  rotate: true
+  xy: 1756, 8
+  size: 84, 93
+  orig: 144, 135
+  offset: 7, 20
   index: -1
 away logo/logo away_3
-  rotate: false
-  xy: 203, 151
-  size: 221, 347
-  orig: 480, 450
-  offset: 119, 50
+  rotate: true
+  xy: 415, 7
+  size: 67, 104
+  orig: 144, 135
+  offset: 35, 15
   index: -1
 away logo/logo away_4
-  rotate: false
-  xy: 338, 907
-  size: 65, 333
-  orig: 480, 450
-  offset: 167, 57
+  rotate: true
+  xy: 110, 3
+  size: 20, 100
+  orig: 144, 135
+  offset: 50, 17
   index: -1
 away logo/logo away_5
   rotate: true
-  xy: 2, 17
-  size: 127, 323
-  orig: 480, 450
-  offset: 101, 62
+  xy: 110, 25
+  size: 39, 98
+  orig: 144, 135
+  offset: 30, 18
   index: -1
 away logo/logo away_6
-  rotate: false
-  xy: 397, 1729
-  size: 235, 317
-  orig: 480, 450
-  offset: 31, 64
+  rotate: true
+  xy: 317, 3
+  size: 71, 96
+  orig: 144, 135
+  offset: 9, 19
   index: -1
 away logo/logo away_7
   rotate: false
-  xy: 364, 593
-  size: 287, 312
-  orig: 480, 450
-  offset: 5, 66
+  xy: 489, 93
+  size: 87, 94
+  orig: 144, 135
+  offset: 1, 20
   index: -1
 away logo/logo away_8
   rotate: false
-  xy: 1343, 1427
-  size: 302, 308
-  orig: 480, 450
-  offset: 2, 67
+  xy: 1585, 94
+  size: 92, 93
+  orig: 144, 135
+  offset: 0, 20
   index: -1
 away logo/logo away_9
-  rotate: false
-  xy: 969, 174
-  size: 294, 307
-  orig: 480, 450
-  offset: 10, 68
+  rotate: true
+  xy: 521, 2
+  size: 89, 93
+  orig: 144, 135
+  offset: 3, 20
   index: -1
 home logo/logo home_1
   rotate: false
-  xy: 2, 1242
-  size: 351, 401
-  orig: 480, 450
-  offset: 49, 24
+  xy: 122, 66
+  size: 106, 121
+  orig: 144, 135
+  offset: 14, 7
   index: -1
 home logo/logo home_10
-  rotate: false
-  xy: 885, 1737
-  size: 253, 309
-  orig: 480, 450
-  offset: 192, 69
+  rotate: true
+  xy: 1851, 15
+  size: 77, 93
+  orig: 144, 135
+  offset: 57, 21
   index: -1
 home logo/logo home_11
   rotate: false
-  xy: 913, 1114
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 969, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_12
   rotate: false
-  xy: 1094, 1426
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1046, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_13
   rotate: false
-  xy: 902, 794
-  size: 249, 309
-  orig: 480, 450
-  offset: 192, 69
+  xy: 657, 93
+  size: 76, 94
+  orig: 144, 135
+  offset: 57, 20
   index: -1
 home logo/logo home_14
   rotate: false
-  xy: 675, 387
-  size: 250, 309
-  orig: 480, 450
-  offset: 191, 69
+  xy: 735, 93
+  size: 76, 94
+  orig: 144, 135
+  offset: 57, 20
   index: -1
 home logo/logo home_15
   rotate: false
-  xy: 565, 1417
-  size: 250, 310
-  orig: 480, 450
-  offset: 191, 69
+  xy: 813, 93
+  size: 76, 94
+  orig: 144, 135
+  offset: 57, 20
   index: -1
 home logo/logo home_16
   rotate: false
-  xy: 634, 1736
-  size: 249, 310
-  orig: 480, 450
-  offset: 192, 69
+  xy: 891, 93
+  size: 76, 94
+  orig: 144, 135
+  offset: 57, 20
   index: -1
 home logo/logo home_17
   rotate: false
-  xy: 426, 281
-  size: 247, 310
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1123, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_18
   rotate: false
-  xy: 653, 698
-  size: 247, 310
-  orig: 480, 450
-  offset: 194, 68
+  xy: 1200, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_19
   rotate: false
-  xy: 664, 1105
-  size: 247, 310
-  orig: 480, 450
-  offset: 194, 68
+  xy: 1277, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_2
   rotate: false
-  xy: 2, 500
-  size: 299, 369
-  orig: 480, 450
-  offset: 93, 40
+  xy: 332, 76
+  size: 90, 111
+  orig: 144, 135
+  offset: 28, 12
   index: -1
 home logo/logo home_20
   rotate: false
-  xy: 1140, 1737
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1354, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_21
   rotate: false
-  xy: 927, 483
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1431, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_22
   rotate: false
-  xy: 1153, 803
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1508, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_23
   rotate: false
-  xy: 1162, 1115
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1508, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_24
   rotate: false
-  xy: 1162, 1115
-  size: 247, 309
-  orig: 480, 450
-  offset: 194, 69
+  xy: 1508, 93
+  size: 75, 94
+  orig: 144, 135
+  offset: 58, 20
   index: -1
 home logo/logo home_3
-  rotate: false
-  xy: 2, 146
-  size: 199, 352
-  orig: 480, 450
-  offset: 158, 48
+  rotate: true
+  xy: 2, 3
+  size: 61, 106
+  orig: 144, 135
+  offset: 47, 14
   index: -1
 home logo/logo home_4
-  rotate: false
-  xy: 303, 529
-  size: 59, 340
-  orig: 480, 450
-  offset: 255, 54
+  rotate: true
+  xy: 212, 6
+  size: 19, 103
+  orig: 144, 135
+  offset: 76, 16
   index: -1
 home logo/logo home_5
   rotate: true
-  xy: 327, 35
-  size: 114, 330
-  orig: 480, 450
-  offset: 256, 59
+  xy: 210, 30
+  size: 34, 99
+  orig: 144, 135
+  offset: 77, 18
   index: -1
 home logo/logo home_6
   rotate: false
-  xy: 355, 1323
-  size: 208, 320
-  orig: 480, 450
-  offset: 222, 64
+  xy: 424, 91
+  size: 63, 96
+  orig: 144, 135
+  offset: 66, 19
   index: -1
 home logo/logo home_7
   rotate: false
-  xy: 405, 1010
-  size: 257, 311
-  orig: 480, 450
-  offset: 199, 68
-  index: -1
-home logo/logo home_9
-  rotate: true
-  xy: 1647, 1228
-  size: 264, 308
-  orig: 480, 450
-  offset: 190, 70
-  index: -1
-
-logo-team2.png
-size: 828,311
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-away logo/logo away_23
-  rotate: false
-  xy: 2, 2
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
-  index: -1
-away logo/logo away_24
-  rotate: false
-  xy: 279, 2
-  size: 275, 307
-  orig: 480, 450
-  offset: 26, 68
+  xy: 578, 93
+  size: 77, 94
+  orig: 144, 135
+  offset: 60, 20
   index: -1
 home logo/logo home_8
   rotate: false
-  xy: 556, 2
-  size: 270, 307
-  orig: 480, 450
-  offset: 190, 70
+  xy: 1765, 94
+  size: 81, 93
+  orig: 144, 135
+  offset: 57, 21
+  index: -1
+home logo/logo home_9
+  rotate: false
+  xy: 1848, 94
+  size: 80, 93
+  orig: 144, 135
+  offset: 57, 21
   index: -1

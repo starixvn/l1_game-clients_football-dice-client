@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "w8hxzFjzcNKAJY/xXu85VH2zwVA=", "spine": "3.8.75" },
+"skeleton": { "hash": "pbH0hy2M/mTnQY+poDRaU0egVkw", "spine": "3.8.99" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "away", "parent": "root" },
