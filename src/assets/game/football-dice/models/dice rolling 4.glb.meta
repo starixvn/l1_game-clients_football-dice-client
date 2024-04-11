@@ -140,7 +140,7 @@
       "name": "zoom-in.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -163,7 +163,7 @@
       "name": "zoom-out.animation",
       "userData": {
         "gltfIndex": 1,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -294,7 +294,7 @@
             "name": "zoom-in",
             "from": 0,
             "to": 1.6666666269302368,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "965bc"
           }
         ]
@@ -308,7 +308,7 @@
             "name": "zoom-out",
             "from": 0,
             "to": 2.3333332538604736,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "a2019"
           }
         ]
