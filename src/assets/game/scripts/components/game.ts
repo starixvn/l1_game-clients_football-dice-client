@@ -101,16 +101,16 @@ export default class Game extends GameComponent {
                 this.gameAnimation.zoomOutCamera(false);
                 this.scorebboardComp.renderExpandScoreboard(false);
                 this.updateScorePanel({ home: 0, away: 0 }, false);
+                this.betAreas.setAnimZoomBetChoices(v3(1, 1, 1), 1.5, false);
             } else {
                 this.scorebboardComp.renderCollapseScoreboard(false);
             }
         }
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.isShowResult)
-    async renderStartRound(isShowResult: boolean) {
-        if (isShowResult) {
-            await FunctionUtils.delay(2500);
+    @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
+    async renderStartRound(isStartRound: boolean) {
+        if (isStartRound) {
             this.gameAnimation.zoomOutCamera();
             this.matchStartAnimation(false);
             this.gameAnimation.modeDownBases();
@@ -127,10 +127,10 @@ export default class Game extends GameComponent {
             console.time("total show result in ");
             console.time("zoomin");
             const score = this.calculateScore(result);
+            this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, hasAnimation);
             await this.gameAnimation.zoomInCamera(hasAnimation);
 
             if (hasAnimation) {
-                this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1);
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();

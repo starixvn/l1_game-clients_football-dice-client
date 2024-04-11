@@ -36,7 +36,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 3.054,
       "y": 0,
       "z": 0
     },
@@ -1679,12 +1679,6 @@
     "mainAtlas": {
       "__uuid__": "2d67d332-0b65-4c26-aacf-03f54c9217cc",
       "__expectedType__": "cc.SpriteAtlas"
-    },
-    "nodeBg": {
-      "__id__": 3
-    },
-    "nodeContentWrapper": {
-      "__id__": 10
     },
     "_id": ""
   },
