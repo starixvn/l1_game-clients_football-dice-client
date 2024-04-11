@@ -652,7 +652,7 @@
     "_priority": 2,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 393,
+    "_orthoHeight": 488.75918762088975,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -676,7 +676,7 @@
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
-    "_visibility": 1108344832,
+    "_visibility": 34603008,
     "_targetTexture": null,
     "_postProcess": null,
     "_usePostProcess": false,
