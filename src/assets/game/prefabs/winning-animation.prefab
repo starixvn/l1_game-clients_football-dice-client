@@ -256,10 +256,10 @@
       "a": 255
     },
     "_skeletonData": {
-      "__uuid__": "e75db22b-844a-4406-82b7-8130b8084eac",
+      "__uuid__": "5bca62c5-0404-4596-b3ee-95cede3738cf",
       "__expectedType__": "sp.SkeletonData"
     },
-    "defaultSkin": "",
+    "defaultSkin": "default",
     "defaultAnimation": "",
     "_premultipliedAlpha": true,
     "_timeScale": 1,
