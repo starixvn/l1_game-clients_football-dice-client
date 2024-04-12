@@ -4,6 +4,10 @@ import { AnimationUtils } from "../../../../extensions/shared-components/assets/
 const { ccclass, property } = _decorator;
 const { Translator } = gc;
 
+export enum DrawSpecial {
+    DRAW12 = "draw12",
+}
+
 @ccclass
 export class WinningAnimation extends Component {
     @property(Label)
@@ -17,6 +21,7 @@ export class WinningAnimation extends Component {
         this.lblTeam.node.active = true;
         Object.keys(settlementResult).forEach((team) => {
             if (settlementResult[team]) {
+                team = team === DrawSpecial.DRAW12 ? "draw" : team;
                 teamWin = `${team}-win`;
                 this.lblTeam.string = Translator.gameTranslate(`${team}_win`);
             }
