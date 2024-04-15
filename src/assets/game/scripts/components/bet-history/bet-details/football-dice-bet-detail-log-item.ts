@@ -7,15 +7,22 @@ const { FormatUtils } = gc;
 
 @ccclass
 export class FootballDiceBetLogItem extends BetDetailLogItem {
-    parseOddByData(data) {
-        const { betDetailsLog, odds, settlementResult } = data;
-        const { choice } = betDetailsLog;
-        let choiceFinal = choice;
-        if ((choice === DrawSpecial.DRAW12 || choice === "draw") && settlementResult[DrawSpecial.DRAW12]) {
-            choiceFinal = DrawSpecial.DRAW12;
-        }
+    setData(data) {
+        super.setData(data);
 
-        const odd = odds[choiceFinal];
-        this.lblOdds.string = data.fractionalOddsFormat ? gc.FormatUtils.numberWithCommas(+odd - 1, 2) : odd.toString();
+        const { betDetailsLog, odds, settlementResult } = data;
+        const { choice, amount } = betDetailsLog;
+        if (choice === DrawSpecial.DRAW12 || choice === "draw") {
+            if (!settlementResult[DrawSpecial.DRAW12] && !settlementResult["draw"]) {
+                this.lblOdds.string = "-";
+                return;
+            } else {
+                if (settlementResult[DrawSpecial.DRAW12]) {
+                    const odd = odds[DrawSpecial.DRAW12];
+                    this.lblOdds.string = data.fractionalOddsFormat ? gc.FormatUtils.numberWithCommas(+odd - 1, 2) : odd.toString();
+                    this.lblWin.string = FormatUtils.numberWithCommas(odd * amount, 2);
+                }
+            }
+        }
     }
 }
