@@ -101,7 +101,7 @@ export default class Game extends GameComponent {
                 this.gameAnimation.zoomOutCamera(false);
                 this.scorebboardComp.renderExpandScoreboard(false);
                 this.updateScorePanel({ home: 0, away: 0 }, false);
-                this.betAreas.setAnimZoomBetChoices(v3(1, 1, 1), 1.5, false);
+                this.betAreas.setAnimZoomBetChoices(v3(1, 1, 1), 1, false);
             } else {
                 this.scorebboardComp.renderCollapseScoreboard(false);
             }

@@ -17,7 +17,7 @@ export class FootballDiceBetAreas extends ObserverComponent {
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
     async setAnimZoomOutBetChoices(isStartRound: boolean) {
         if (isStartRound) {
-            this.setAnimZoomBetChoices(v3(1, 1, 1), 1.5, true);
+            this.setAnimZoomBetChoices(v3(1, 1, 1), 1, true);
         }
     }
 
