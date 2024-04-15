@@ -30,7 +30,7 @@ export class FootballDiceOdd extends ObserverComponent {
         const widthTextStatic = this.lblTextStatic.getComponent(UITransform).width;
         const widthOdd = this.lblOdd.getComponent(UITransform).width;
         const widthSign = widthNode - widthTextStatic - widthOdd;
-        const numberSign = Math.floor(widthSign / 7.5);
+        const numberSign = Math.floor(widthSign / 8);
         for (let i = 0; i < numberSign; i++) {
             this.lblSign.string += ".";
         }
