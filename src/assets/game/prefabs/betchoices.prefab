@@ -6402,6 +6402,8 @@
     "__prefab": {
       "__id__": 274
     },
+    "enableFixSingleCamera3D": true,
+    "debugSample": null,
     "_id": ""
   },
   {
