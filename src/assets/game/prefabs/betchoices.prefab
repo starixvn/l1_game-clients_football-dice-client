@@ -44,13 +44,10 @@
       },
       {
         "__id__": 270
-      },
-      {
-        "__id__": 273
       }
     ],
     "_prefab": {
-      "__id__": 275
+      "__id__": 272
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -6319,78 +6316,6 @@
     "fileId": "55TJMXc5RDd4JLxlzAWFOZ"
   },
   {
-    "__type__": "cc.Button",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 271
-    },
-    "clickEvents": [
-      {
-        "__id__": 272
-      }
-    ],
-    "_interactable": true,
-    "_transition": 0,
-    "_normalColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_hoverColor": {
-      "__type__": "cc.Color",
-      "r": 211,
-      "g": 211,
-      "b": 211,
-      "a": 255
-    },
-    "_pressedColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_disabledColor": {
-      "__type__": "cc.Color",
-      "r": 124,
-      "g": 124,
-      "b": 124,
-      "a": 255
-    },
-    "_normalSprite": null,
-    "_hoverSprite": null,
-    "_pressedSprite": null,
-    "_disabledSprite": null,
-    "_duration": 0.1,
-    "_zoomScale": 1.2,
-    "_target": {
-      "__id__": 1
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "23wLCwBMRGlLLSJy8lXzUj"
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "",
-    "_componentId": "f049656dRpCHpU0glxin2Ix",
-    "handler": "handleBetItemClick",
-    "customEventData": ""
-  },
-  {
     "__type__": "f049656dRpCHpU0glxin2Ix",
     "_name": "",
     "_objFlags": 0,
@@ -6400,7 +6325,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 274
+      "__id__": 271
     },
     "enableFixSingleCamera3D": true,
     "debugSample": null,
