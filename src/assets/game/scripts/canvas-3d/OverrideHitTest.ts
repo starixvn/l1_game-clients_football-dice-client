@@ -31,11 +31,13 @@ UITransform.prototype.hitTest = function (screenPoint: Vec2, windowId = 0) {
         Vec3.set(v3WorldPt, screenPoint.x, screenPoint.y, 0); // vec3 screen pos
 
         // HACK: temporarily change to OTHOR to fix touch
-        if (!EDITOR) {
+        const isOrtho = camera.projectionType === Camera.ProjectionType.ORTHO;
+        const needChangeProjectionType = !isOrtho && !EDITOR;
+        if (needChangeProjectionType) {
             camera.projectionType = Camera.ProjectionType.ORTHO;
         }
         camera.screenToWorld(v3WorldPt, v3WorldPt);
-        if (!EDITOR) {
+        if (needChangeProjectionType) {
             camera.projectionType = Camera.ProjectionType.PERSPECTIVE;
         }
         Vec2.set(v2WorldPt, v3WorldPt.x, v3WorldPt.y);
