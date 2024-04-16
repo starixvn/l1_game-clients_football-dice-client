@@ -26,6 +26,7 @@ export class FootballDiceOdd extends ObserverComponent {
     }
 
     updateLayoutOdd() {
+        this.lblSign.string = "";
         const widthNode = this.node.getComponent(UITransform).width;
         const widthTextStatic = this.lblTextStatic.getComponent(UITransform).width;
         const widthOdd = this.lblOdd.getComponent(UITransform).width;
