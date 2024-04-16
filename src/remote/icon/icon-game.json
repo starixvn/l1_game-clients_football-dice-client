@@ -1,8 +1,8 @@
 {
-"skeleton": { "hash": "vvSB+rlEj6IlSKxMdJIL+kJg3FE", "spine": "3.8.99", "x": -97.86, "y": -98.46, "width": 195.99, "height": 197.06 },
+"skeleton": { "hash": "OIqe45tcWeXOfDw++PYBavWbpGs", "spine": "3.8.99", "x": -111, "y": -94, "width": 214, "height": 201.33 },
 "bones": [
 	{ "name": "root" },
-	{ "name": "control-all", "parent": "root", "x": 0.78, "y": -83.32 },
+	{ "name": "control-all", "parent": "root", "x": -1.73, "y": -74.6 },
 	{ "name": "control-ball-move", "parent": "control-all", "x": 3.87, "y": 56.29 },
 	{ "name": "electric-control", "parent": "control-ball-move", "x": -3.74, "y": 40.57 },
 	{ "name": "transform-ball-png/ball to dice_00", "parent": "control-ball-move", "x": -0.63, "y": 45.13, "scaleX": 0.7597, "scaleY": 0.7597 },
@@ -57,9 +57,10 @@
 	{ "name": "ball-light-dot16", "bone": "ball-light-dot16", "attachment": "ball light dot", "blend": "screen" },
 	{ "name": "ball-light-dot17", "bone": "ball-light-dot17", "attachment": "ball light dot", "blend": "screen" },
 	{ "name": "ball-light-dot18", "bone": "ball-light-dot18", "attachment": "ball light dot", "blend": "screen" },
-	{ "name": "splash-png/splash_1", "bone": "effect-splash1", "color": "ffffff6b", "blend": "additive" },
+	{ "name": "splash-png/splash_1", "bone": "effect-splash1", "color": "ffffff57" },
 	{ "name": "effect-particle-top", "bone": "effect-particle-top", "attachment": "effect particle top", "blend": "screen" },
-	{ "name": "transform-ball-png/ball to dice_00", "bone": "transform-ball-png/ball to dice_00", "attachment": "transform ball png/ball to dice_00" }
+	{ "name": "transform-ball-png/ball to dice_00", "bone": "transform-ball-png/ball to dice_00", "attachment": "transform ball png/ball to dice_00" },
+	{ "name": "top-filter-icon", "bone": "control-all", "attachment": "top filter icon" }
 ],
 "skins": [
 	{
@@ -162,6 +163,9 @@
 				"splash png/splash_8": { "type": "linkedmesh", "parent": "splash png/splash_1" },
 				"splash png/splash_9": { "type": "linkedmesh", "parent": "splash png/splash_1" }
 			},
+			"top-filter-icon": {
+				"top filter icon": { "x": -2.27, "y": 81.1, "width": 214, "height": 201 }
+			},
 			"transform-ball-png/ball to dice_00": {
 				"transform ball png/ball to dice_00": { "x": -4.75, "y": 3.94, "width": 160, "height": 160 },
 				"transform ball png/ball to dice_01": { "x": -4.75, "y": 3.94, "width": 160, "height": 160 },
@@ -178,7 +182,7 @@
 	}
 ],
 "animations": {
-	"show": {
+	"animation": {
 		"slots": {
 			"ball-light-dot": {
 				"color": [

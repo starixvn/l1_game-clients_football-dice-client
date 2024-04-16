@@ -1,180 +1,187 @@
 
 icon-game.png
-size: 687,1018
+size: 1305,548
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 BG
   rotate: false
-  xy: 2, 222
+  xy: 791, 343
   size: 203, 203
   orig: 205, 205
   offset: 0, 2
   index: -1
 ball light dot
   rotate: false
-  xy: 456, 58
+  xy: 1218, 66
   size: 70, 70
   orig: 82, 82
   offset: 6, 6
   index: -1
 effect light circle
   rotate: false
-  xy: 2, 656
+  xy: 2, 186
   size: 360, 360
   orig: 362, 362
   offset: 1, 1
   index: -1
 effect particle bot
-  rotate: false
-  xy: 364, 820
+  rotate: true
+  xy: 593, 331
   size: 215, 196
   orig: 217, 198
   offset: 1, 1
   index: -1
 effect particle top
-  rotate: false
-  xy: 2, 427
+  rotate: true
+  xy: 364, 306
   size: 240, 227
   orig: 242, 229
   offset: 1, 1
   index: -1
 icon team
   rotate: true
-  xy: 207, 247
+  xy: 2, 6
   size: 178, 50
   orig: 178, 50
   offset: 0, 0
   index: -1
 splash png/splash_1
-  rotate: true
-  xy: 244, 454
+  rotate: false
+  xy: 364, 204
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_2
-  rotate: false
-  xy: 364, 718
+  rotate: true
+  xy: 480, 2
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_3
   rotate: false
-  xy: 2, 120
+  xy: 566, 204
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_4
-  rotate: false
-  xy: 2, 18
+  rotate: true
+  xy: 582, 2
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_5
   rotate: true
-  xy: 581, 816
+  xy: 684, 2
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_6
-  rotate: false
-  xy: 364, 616
+  rotate: true
+  xy: 786, 3
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_7
   rotate: true
-  xy: 566, 614
+  xy: 888, 3
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_8
-  rotate: false
-  xy: 346, 514
+  rotate: true
+  xy: 996, 346
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
 splash png/splash_9
-  rotate: false
-  xy: 346, 412
+  rotate: true
+  xy: 990, 5
   size: 200, 100
   orig: 200, 100
   offset: 0, 0
   index: -1
+top filter icon
+  rotate: true
+  xy: 1098, 351
+  size: 195, 53
+  orig: 214, 201
+  offset: 11, 147
+  index: -1
 transform ball png/ball to dice_00
-  rotate: false
-  xy: 259, 270
+  rotate: true
+  xy: 54, 42
   size: 142, 140
   orig: 160, 160
   offset: 8, 11
   index: -1
 transform ball png/ball to dice_01
-  rotate: false
-  xy: 403, 270
+  rotate: true
+  xy: 196, 42
   size: 142, 140
   orig: 160, 160
   offset: 8, 11
   index: -1
 transform ball png/ball to dice_02
-  rotate: false
-  xy: 259, 128
+  rotate: true
+  xy: 338, 42
   size: 142, 140
   orig: 160, 160
   offset: 8, 11
   index: -1
 transform ball png/ball to dice_03
   rotate: false
-  xy: 403, 130
+  xy: 1163, 408
   size: 140, 138
   orig: 160, 160
   offset: 10, 11
   index: -1
 transform ball png/ball to dice_04
   rotate: true
-  xy: 547, 204
+  xy: 1163, 264
   size: 142, 138
   orig: 160, 160
   offset: 12, 8
   index: -1
 transform ball png/ball to dice_05
   rotate: false
-  xy: 548, 478
+  xy: 894, 207
   size: 137, 134
   orig: 160, 160
   offset: 14, 10
   index: -1
 transform ball png/ball to dice_06
-  rotate: false
-  xy: 548, 348
+  rotate: true
+  xy: 1033, 212
   size: 132, 128
   orig: 160, 160
   offset: 17, 13
   index: -1
 transform ball png/ball to dice_07
   rotate: false
-  xy: 545, 78
+  xy: 768, 205
   size: 124, 124
   orig: 160, 160
   offset: 22, 16
   index: -1
 transform ball png/ball to dice_08
   rotate: false
-  xy: 204, 2
+  xy: 1163, 138
   size: 124, 124
   orig: 160, 160
   offset: 22, 16
   index: -1
 transform ball png/ball to dice_09
   rotate: false
-  xy: 330, 2
+  xy: 1092, 12
   size: 124, 124
   orig: 160, 160
   offset: 22, 16
