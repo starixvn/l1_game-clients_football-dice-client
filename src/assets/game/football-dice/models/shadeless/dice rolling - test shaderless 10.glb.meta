@@ -2,37 +2,21 @@
   "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
-  "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f",
+  "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea",
   "files": [
     "__original-animation-0.cconb",
     "__original-animation-1.cconb"
   ],
   "subMetas": {
-    "90353": {
-      "importer": "gltf-scene",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@90353",
-      "displayName": "",
-      "id": "90353",
-      "name": "dice rolling 5.prefab",
-      "userData": {
-        "gltfIndex": 0
-      },
-      "ver": "1.0.14",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "313e0": {
+    "e3c4f": {
       "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@313e0",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@e3c4f",
       "displayName": "",
-      "id": "313e0",
-      "name": "Plane.002.mesh",
+      "id": "e3c4f",
+      "name": "base7.mesh",
       "userData": {
         "gltfIndex": 0,
-        "triangleCount": 773
+        "triangleCount": 3310
       },
       "ver": "1.1.1",
       "imported": true,
@@ -44,7 +28,7 @@
     },
     "0e0fe": {
       "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@0e0fe",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@0e0fe",
       "displayName": "",
       "id": "0e0fe",
       "name": "base-dice-red.mesh",
@@ -62,7 +46,7 @@
     },
     "ca09f": {
       "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@ca09f",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@ca09f",
       "displayName": "",
       "id": "ca09f",
       "name": "base-dice-blue.mesh",
@@ -78,51 +62,15 @@
       ],
       "subMetas": {}
     },
-    "3939b": {
+    "97b51": {
       "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@3939b",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@97b51",
       "displayName": "",
-      "id": "3939b",
-      "name": "base7-outline.mesh",
+      "id": "97b51",
+      "name": "Cube.003.mesh",
       "userData": {
         "gltfIndex": 3,
-        "triangleCount": 2
-      },
-      "ver": "1.1.1",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "41ac8": {
-      "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@41ac8",
-      "displayName": "",
-      "id": "41ac8",
-      "name": "Cube.001.mesh",
-      "userData": {
-        "gltfIndex": 4,
         "triangleCount": 12
-      },
-      "ver": "1.1.1",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "2f6d1": {
-      "importer": "gltf-mesh",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@2f6d1",
-      "displayName": "",
-      "id": "2f6d1",
-      "name": "Cube.mesh",
-      "userData": {
-        "gltfIndex": 5,
-        "triangleCount": 188
       },
       "ver": "1.1.1",
       "imported": true,
@@ -134,7 +82,7 @@
     },
     "965bc": {
       "importer": "gltf-animation",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@965bc",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@965bc",
       "displayName": "",
       "id": "965bc",
       "name": "zoom-in.animation",
@@ -157,7 +105,7 @@
     },
     "a2019": {
       "importer": "gltf-animation",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@a2019",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@a2019",
       "displayName": "",
       "id": "a2019",
       "name": "zoom-out.animation",
@@ -180,7 +128,7 @@
     },
     "a5ee6": {
       "importer": "gltf-embeded-image",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@a5ee6",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@a5ee6",
       "displayName": "",
       "id": "a5ee6",
       "name": "all-texture.image",
@@ -200,7 +148,7 @@
     },
     "3effa": {
       "importer": "texture",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@3effa",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@3effa",
       "displayName": "",
       "id": "3effa",
       "name": "UnnamedTexture-0.texture",
@@ -212,7 +160,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@a5ee6"
+        "imageUuidOrDatabaseUri": "4ec4ec40-2d56-4365-a80a-e082a46322ea@a5ee6"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -223,7 +171,7 @@
     },
     "221a5": {
       "importer": "texture",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@221a5",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@221a5",
       "displayName": "",
       "id": "221a5",
       "name": "UnnamedTexture-1.texture",
@@ -235,7 +183,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@a5ee6"
+        "imageUuidOrDatabaseUri": "4ec4ec40-2d56-4365-a80a-e082a46322ea@a5ee6"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -244,12 +192,12 @@
       ],
       "subMetas": {}
     },
-    "cb7f1": {
+    "222d4": {
       "importer": "gltf-material",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@cb7f1",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@222d4",
       "displayName": "",
-      "id": "cb7f1",
-      "name": "Material-1.material",
+      "id": "222d4",
+      "name": "material.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -260,14 +208,46 @@
       ],
       "subMetas": {}
     },
-    "f0a29": {
+    "188b3": {
       "importer": "gltf-material",
-      "uuid": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@f0a29",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@188b3",
       "displayName": "",
-      "id": "f0a29",
-      "name": "Material-2.material",
+      "id": "188b3",
+      "name": "base-dice-red.material",
       "userData": {
         "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "43aae": {
+      "importer": "gltf-material",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@43aae",
+      "displayName": "",
+      "id": "43aae",
+      "name": "base-dice-blue.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dc711": {
+      "importer": "gltf-scene",
+      "uuid": "4ec4ec40-2d56-4365-a80a-e082a46322ea@dc711",
+      "displayName": "",
+      "id": "dc711",
+      "name": "dice rolling - test shaderless 10.prefab",
+      "userData": {
+        "gltfIndex": 0
       },
       "ver": "1.0.14",
       "imported": true,
@@ -281,7 +261,7 @@
     "imageMetas": [
       {
         "name": "all-texture",
-        "uri": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@a5ee6"
+        "uri": "4ec4ec40-2d56-4365-a80a-e082a46322ea@a5ee6"
       }
     ],
     "animationImportSettings": [
@@ -314,7 +294,7 @@
         ]
       }
     ],
-    "redirect": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@90353",
+    "redirect": "4ec4ec40-2d56-4365-a80a-e082a46322ea@dc711",
     "lods": {
       "enable": false,
       "hasBuiltinLOD": false,
@@ -335,48 +315,42 @@
     },
     "assetFinder": {
       "meshes": [
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@313e0",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@0e0fe",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@ca09f",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@3939b",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@41ac8",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@2f6d1"
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@e3c4f",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@0e0fe",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@ca09f",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@97b51"
       ],
       "skeletons": [],
       "textures": [
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@3effa",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@221a5"
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@3effa",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@221a5"
       ],
       "materials": [
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@cb7f1",
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@f0a29"
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@222d4",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@188b3",
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@43aae"
       ],
       "scenes": [
-        "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@90353"
+        "4ec4ec40-2d56-4365-a80a-e082a46322ea@dc711"
       ]
     },
     "materials": {
-      "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@f0a29": {
+      "4ec4ec40-2d56-4365-a80a-e082a46322ea@222d4": {
         "__type__": "cc.Material",
         "_name": "",
         "_objFlags": 0,
         "__editorExtras__": {},
         "_native": "",
         "_effectAsset": {
-          "__uuid__": "c8f66d17-351a-48da-a12c-0212d28575c4",
+          "__uuid__": "a3cd009f-0ab0-420d-9278-b9fdab939bbc",
           "__expectedType__": "cc.EffectAsset"
         },
         "_techIdx": 0,
         "_defines": [
           {
-            "HAS_SECOND_UV": true,
-            "USE_ALBEDO_MAP": true,
-            "ALBEDO_UV": "v_uv1",
+            "USE_TEXTURE": true,
             "USE_ALPHA_TEST": true
           },
-          {},
-          {},
-          {},
           {},
           {}
         ],
@@ -409,46 +383,23 @@
                 {}
               ]
             }
-          },
-          {
-            "rasterizerState": {},
-            "depthStencilState": {},
-            "blendState": {
-              "targets": [
-                {}
-              ]
-            }
-          },
-          {
-            "rasterizerState": {},
-            "depthStencilState": {},
-            "blendState": {
-              "targets": [
-                {}
-              ]
-            }
-          },
-          {
-            "rasterizerState": {},
-            "depthStencilState": {},
-            "blendState": {
-              "targets": [
-                {}
-              ]
-            }
           }
         ],
         "_props": [
           {
-            "alphaThreshold": 0.10000000149011612,
             "mainTexture": {
-              "__uuid__": "5c802b1b-63f2-4edf-9a68-9bf1dc6d708f@3effa",
+              "__uuid__": "4ec4ec40-2d56-4365-a80a-e082a46322ea@3effa",
               "__expectedType__": "cc.Texture2D"
-            }
+            },
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 235,
+              "g": 235,
+              "b": 235,
+              "a": 255
+            },
+            "alphaThreshold": 0.10000000149011612
           },
-          {},
-          {},
-          {},
           {},
           {}
         ]
