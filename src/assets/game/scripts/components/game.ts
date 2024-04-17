@@ -94,7 +94,11 @@ export default class Game extends GameComponent {
         if (lastRound) {
             console.log("render static result from last round history");
             const { result, settlementResult } = lastRound;
-            await this.showResult(result, false, settlementResult);
+            const animationTime = firstJoinGameHistory.animationHighlight
+                ? settings.durations.wholeRound - firstJoinGameHistory.roundTime
+                : 0;
+            const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
+            await this.showResult(result, animated, settlementResult, animationTime);
 
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
@@ -120,17 +124,18 @@ export default class Game extends GameComponent {
     async showResult(
         result: gc.GameServiceMessage.TResult,
         hasAnimation: boolean,
-        settlementResult: gc.GameServiceMessage.TSettlementResult
+        settlementResult: gc.GameServiceMessage.TSettlementResult,
+        animationTime = 0
     ) {
-        console.log("=========================================================== show result animated ", hasAnimation);
         if (result) {
             console.time("total show result in ");
             console.time("zoomin");
+            const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
-            this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, hasAnimation);
-            await this.gameAnimation.zoomInCamera(hasAnimation);
+            this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, isAnimateFirstPhase);
+            await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
 
-            if (hasAnimation) {
+            if (isAnimateFirstPhase) {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
@@ -139,7 +144,7 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
-            await this.gameAnimation.setResult(result, score, hasAnimation);
+            await this.gameAnimation.setResult(result, score, hasAnimation, animationTime);
             this.playEndMatchSound();
             if (!hasAnimation) {
                 this.updateScorePanel(score, false);

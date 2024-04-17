@@ -311,7 +311,7 @@ export class FootballDiceAnimation extends Component {
         console.timeEnd("test result in ");
     }
 
-    setResult(result: any, score: { home; away }, animated = true) {
+    setResult(result: any, score: { home; away }, animated = true, animationTime = 0) {
         return new Promise<void>((resolve, reject) => {
             const { home, away } = score;
             const randomAnimationIndex = this.testAnimationIndex;
@@ -337,7 +337,7 @@ export class FootballDiceAnimation extends Component {
                 });
 
                 if (animated) {
-                    recordGroup.startReplay(animationData.t);
+                    recordGroup.startReplay(animationData.t, animationTime);
                 } else {
                     recordGroup.replayLastFrame(animationData.t);
                 }
@@ -354,6 +354,7 @@ export class FootballDiceAnimation extends Component {
             if (animated) {
                 this.redBaseGroup.startReplay(
                     this.baseRecord.home,
+                    animationTime,
                     true,
                     onComplete(this.redDiceGroup, this.nodeBaseHome, () => {
                         this.node.emit(this.HOME_SCORE_REAL_TIME, home);
@@ -361,6 +362,7 @@ export class FootballDiceAnimation extends Component {
                 );
                 this.blueBaseGroup.startReplay(
                     this.baseRecord.away,
+                    animationTime,
                     true,
                     onComplete(this.blueDiceGroup, this.nodeBaseAway, () => {
                         this.node.emit(this.AWAY_SCORE_REAL_TIME, away);

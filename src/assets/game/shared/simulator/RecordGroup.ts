@@ -89,14 +89,14 @@ export class RecordGroup extends Component {
         this.onCompleteReplay && this.onCompleteReplay();
     }
 
-    startReplay(groupData: RecordGroupData, stopSimulator = true, onComplete?: () => void) {
+    startReplay(groupData: RecordGroupData, initTime: number, stopSimulator = true, onComplete?: () => void) {
         this.currentGroupData = groupData;
         this.items.forEach((item) => (stopSimulator ? item.stopSimulator() : item.startSimulator()));
         if (PREVIEW) {
             console.time(this.node.name + " replay in ");
         }
         this.enableReplay = true;
-        this.deltaTime = 0;
+        this.deltaTime = initTime;
         this.onCompleteReplay = onComplete;
     }
 
