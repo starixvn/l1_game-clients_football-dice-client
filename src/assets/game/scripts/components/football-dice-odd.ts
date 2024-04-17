@@ -21,12 +21,15 @@ export class FootballDiceOdd extends ObserverComponent {
     renderOdds(roundOdds: gc.Rounds.RoundOdds) {
         const { odds, fractional } = roundOdds;
         const choice = this.node.name;
-        this.lblOdd && (this.lblOdd.string = gc.FormatUtils.formatOdds(odds[choice], fractional));
-        this.updateLayoutOdd();
+        const choiceOdd = odds[choice];
+        if (choiceOdd) {
+            this.lblOdd && (this.lblOdd.string = gc.FormatUtils.formatOdds(choiceOdd, fractional));
+            this.updateLayoutOdd();
+        }
     }
 
     updateLayoutOdd() {
-        this.lblSign.string = "";
+        this.lblOdd.updateRenderData();
         const widthNode = this.node.getComponent(UITransform).width;
         const widthTextStatic = this.lblTextStatic.getComponent(UITransform).width;
         const widthOdd = this.lblOdd.getComponent(UITransform).width;
