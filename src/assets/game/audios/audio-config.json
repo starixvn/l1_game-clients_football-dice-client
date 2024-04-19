@@ -1,9 +1,7 @@
 {
     "bgm-stadium": {
         "bundle": "resources",
-        "type": "music",
-        "isMusicGame": true,
-        "isLazyLoad": true
+        "type": "sfx"
     },
     "sfx-start-match": {
         "bundle": "resources",
@@ -13,12 +11,10 @@
         "bundle": "resources",
         "type": "sfx"
     },
-
     "starting-round": {
         "bundle": "shared-bundle",
         "path": "starting-round"
     },
-
     //remove sounds
     "receive-finish": {},
     "draw-single-card": {},

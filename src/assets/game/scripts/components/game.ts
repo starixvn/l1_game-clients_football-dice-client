@@ -139,12 +139,15 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
+                await FunctionUtils.delay(500);
+                this.playBgStadiumSound();
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
                 await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, score, hasAnimation, animationTime);
+            this.stopBgStadiumSound();
             this.playEndMatchSound();
             if (!hasAnimation) {
                 this.updateScorePanel(score, false);
@@ -168,6 +171,12 @@ export default class Game extends GameComponent {
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-end-match"))
     playEndMatchSound() {}
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playStoppableSFX("bgm-stadium"))
+    playBgStadiumSound() {}
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX("bgm-stadium"))
+    stopBgStadiumSound() {}
 
     calculateScore(result: gc.GameServiceMessage.TResult) {
         const score = {
