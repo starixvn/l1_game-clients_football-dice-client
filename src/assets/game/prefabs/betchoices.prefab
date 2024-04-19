@@ -449,7 +449,7 @@
       "b": 255,
       "a": 255
     },
-    "duration": 3,
+    "duration": 6,
     "emissionRate": 288.9423076923077,
     "life": 0.65,
     "lifeVar": 0.5,
@@ -2335,7 +2335,7 @@
       "b": 255,
       "a": 255
     },
-    "duration": 3,
+    "duration": 6,
     "emissionRate": 288.9423076923077,
     "life": 0.65,
     "lifeVar": 0.5,
@@ -4068,7 +4068,7 @@
       "b": 255,
       "a": 255
     },
-    "duration": 3,
+    "duration": 6,
     "emissionRate": 288.9423076923077,
     "life": 0.65,
     "lifeVar": 0.5,
