@@ -61,7 +61,7 @@ export class FootballDiceAnimation extends Component {
     private homeAnimations: Record[] = [];
     private awayAnimations: Record[] = [];
     private nodeCamera: Node = null;
-    private readonly zoomInDuration = 1667;
+    private readonly zoomCameraDuration = 1.5;
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
 
@@ -378,14 +378,26 @@ export class FootballDiceAnimation extends Component {
 
     zoomInCamera(animated = true) {
         return new Promise<void>((resolve) => {
-            if (!animated) {
-                const node = this.getCameraNode();
-                node.position = v3(5.661, 8.54, 0);
-                node.eulerAngles = v3(29.006, 90, 0);
-                resolve();
+            const position = v3(0, 0.810014, -10.213494);
+            const eulerAngles = v3(60.99314, -0.00001, -0.000009);
+            const node = this.node;
+
+            if (animated) {
+                tween(node)
+                    .to(
+                        this.zoomCameraDuration,
+                        {
+                            position,
+                            eulerAngles,
+                        },
+                        { easing: "sineInOut" }
+                    )
+                    .call(resolve)
+                    .start();
             } else {
-                this.cameraAnimation.play(AnimationIndex.ZOOM_IN);
-                this.scheduleOnce(resolve, this.zoomInDuration / 1000);
+                node.position = position;
+                node.eulerAngles = eulerAngles;
+                resolve();
             }
         });
     }
@@ -398,12 +410,23 @@ export class FootballDiceAnimation extends Component {
     }
 
     zoomOutCamera(animated = true) {
+        const node = this.node;
+        const position = v3(0, 2.09896, -19.604942);
+        const eulerAngles = v3(51.402377, -0.000009, -0.000014);
         if (animated) {
-            this.cameraAnimation.play(AnimationIndex.ZOOM_OUT);
+            tween(node)
+                .to(
+                    this.zoomCameraDuration,
+                    {
+                        position,
+                        eulerAngles,
+                    },
+                    { easing: "sineInOut" }
+                )
+                .start();
         } else {
-            const node = this.getCameraNode();
-            node.position = v3(13.871, 14.013, 0);
-            node.eulerAngles = v3(38.598, 90, 0);
+            node.position = position;
+            node.eulerAngles = eulerAngles;
         }
     }
 
