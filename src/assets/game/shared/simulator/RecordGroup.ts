@@ -68,8 +68,11 @@ export class RecordGroup extends Component {
     }
 
     tryReplay(groupData: RecordGroupData, index: number) {
-        if (index >= groupData[this.items[0].node.name].length) {
-            return false;
+        let success = true;
+        const maxStep = groupData[this.items[0].node.name].length - 1;
+        if (index > maxStep) {
+            success = false;
+            index = maxStep;
         }
         this.items.forEach((item) => {
             const key = item.node.name;
@@ -77,7 +80,7 @@ export class RecordGroup extends Component {
             item.play(records[index]);
         });
 
-        return true;
+        return success;
     }
 
     stopReplay() {
@@ -100,12 +103,14 @@ export class RecordGroup extends Component {
         this.onCompleteReplay = onComplete;
     }
 
+    calculateReplayStep() {
+        return Math.floor(this.deltaTime / this.intervalTime);
+    }
+
     update(dt: number) {
         if (this.enableReplay) {
             this.deltaTime += dt;
-
-            this.replayStep = Math.floor(this.deltaTime / this.intervalTime);
-
+            this.replayStep = this.calculateReplayStep();
             this.doingReplay();
             return;
         }
@@ -130,7 +135,7 @@ export class RecordGroup extends Component {
 
     replayLast() {
         const data = this.getLastRecord();
-        this.startReplay(data);
+        this.startReplay(data, 0);
     }
 
     saveRecord() {
