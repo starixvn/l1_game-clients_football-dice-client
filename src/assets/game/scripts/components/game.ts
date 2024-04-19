@@ -147,14 +147,14 @@ export default class Game extends GameComponent {
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, score, hasAnimation, animationTime);
-            this.stopBgStadiumSound();
-            this.playEndMatchSound();
-            if (!hasAnimation) {
-                this.updateScorePanel(score, false);
-            }
             if (hasAnimation) {
+                this.playEndMatchSound();
+                await FunctionUtils.delay(1000);
+                this.stopBgStadiumSound();
                 await FunctionUtils.delay(1000);
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
+            } else {
+                this.updateScorePanel(score, false);
             }
             console.timeEnd("total show result in ");
         }
@@ -169,7 +169,7 @@ export default class Game extends GameComponent {
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
     playStartMatchSound() {}
 
-    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-end-match"))
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
     playEndMatchSound() {}
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playStoppableSFX("bgm-stadium"))
