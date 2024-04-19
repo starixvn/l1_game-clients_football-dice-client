@@ -18,7 +18,6 @@ export class WinningAnimation extends Component {
 
     async setAnimation(settlementResult: gc.GameServiceMessage.TSettlementResult) {
         let teamWin = "";
-        this.lblTeam.node.active = true;
         Object.keys(settlementResult).forEach((team) => {
             if (settlementResult[team]) {
                 team = team === DrawSpecial.DRAW12 ? "draw" : team;
@@ -28,6 +27,5 @@ export class WinningAnimation extends Component {
         });
 
         await AnimationUtils.playSpine(this.nodeAnim, teamWin, false);
-        this.lblTeam.node.active = false;
     }
 }

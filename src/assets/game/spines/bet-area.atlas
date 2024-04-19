@@ -1,0 +1,13 @@
+
+bet-area.jpg
+size: 960,102
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light line
+  rotate: false
+  xy: 2, 2
+  size: 956, 98
+  orig: 992, 142
+  offset: 22, 22
+  index: -1
