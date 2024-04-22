@@ -178,6 +178,15 @@ export default class Game extends GameComponent {
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX("bgm-stadium"))
     stopBgStadiumSound() {}
 
+    @render(gc.UserSettings.UserSettingStore, (store) => store.sfxEnable)
+    stopSoundStoppableSFX(sfxEnable: boolean) {
+        if (!sfxEnable) {
+            this.stopBgStadiumSound();
+        } else {
+            this.playBgStadiumSound();
+        }
+    }
+
     calculateScore(result: gc.GameServiceMessage.TResult) {
         const score = {
             home: 0,
