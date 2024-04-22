@@ -28,6 +28,7 @@ export class Canvas3D extends Canvas {
         const scale = distance / distanceMax;
         canvasScale = scale;
         this.node.scale = v3(1, 1, 1).multiplyScalar(scale);
+        this.node.position = v3(0, 0, 0);
         this.cameraComponent.node.setWorldPosition(this.node.getWorldPosition().add(v3(0, 0, distance)));
         this.cameraComponent.node.setWorldRotation(this.node.getWorldRotation());
     }
