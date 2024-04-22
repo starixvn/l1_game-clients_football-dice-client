@@ -133,23 +133,21 @@ export default class Game extends GameComponent {
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
             this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, isAnimateFirstPhase);
+            this.updateScorePanel({ home: 0, away: 0 }, false);
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
 
             if (isAnimateFirstPhase) {
-                this.updateScorePanel({ home: 0, away: 0 }, false);
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
                 await FunctionUtils.delay(500);
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
-                await FunctionUtils.delay(300);
             }
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, score, hasAnimation, animationTime);
             if (hasAnimation) {
                 this.playEndMatchSound();
-                await FunctionUtils.delay(1000);
                 await FunctionUtils.delay(1000);
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
             } else {
