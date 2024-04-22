@@ -240,7 +240,7 @@
       }
     },
     "meshOptimizer": {
-      "enable": true,
+      "enable": false,
       "simplifyOptions": {
         "targetRatio": 0.4
       }
