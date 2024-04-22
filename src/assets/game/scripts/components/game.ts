@@ -141,7 +141,6 @@ export default class Game extends GameComponent {
                 this.startLogoAnimation();
                 this.playStartMatchSound();
                 await FunctionUtils.delay(500);
-                this.playBgStadiumSound();
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
                 await FunctionUtils.delay(300);
@@ -151,7 +150,6 @@ export default class Game extends GameComponent {
             if (hasAnimation) {
                 this.playEndMatchSound();
                 await FunctionUtils.delay(1000);
-                this.stopBgStadiumSound();
                 await FunctionUtils.delay(1000);
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
             } else {

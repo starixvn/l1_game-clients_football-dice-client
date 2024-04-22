@@ -1,7 +1,9 @@
 {
     "bgm-stadium": {
         "bundle": "resources",
-        "type": "sfx"
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
     },
     "sfx-start-match": {
         "bundle": "resources",
