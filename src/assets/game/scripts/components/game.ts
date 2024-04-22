@@ -136,6 +136,7 @@ export default class Game extends GameComponent {
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
 
             if (isAnimateFirstPhase) {
+                this.updateScorePanel({ home: 0, away: 0 }, false);
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
