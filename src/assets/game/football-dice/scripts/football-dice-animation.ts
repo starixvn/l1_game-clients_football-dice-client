@@ -1,4 +1,4 @@
-import { Animation, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
+import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
@@ -6,9 +6,9 @@ import { RecordGroup } from "../../shared/simulator/RecordGroup";
 import { RecordData } from "../../shared/simulator/RecordItem";
 const { ccclass, property } = _decorator;
 
-enum AnimationIndex {
-    ZOOM_IN = "zoom-in",
-    ZOOM_OUT = "zoom-out",
+enum TeamIndex {
+    Home = 0,
+    Away = 1,
 }
 
 interface Record {
@@ -18,35 +18,17 @@ interface Record {
 
 @ccclass
 export class FootballDiceAnimation extends Component {
-    @property(RecordGroup)
-    redDiceGroup: RecordGroup = null;
+    @property({ type: RecordGroup })
+    diceGroups: RecordGroup[] = [];
 
     @property(RecordGroup)
-    blueDiceGroup: RecordGroup = null;
-
-    @property(RecordGroup)
-    redBaseGroup: RecordGroup = null;
-
-    @property(RecordGroup)
-    blueBaseGroup: RecordGroup = null;
+    baseGroups: RecordGroup[] = [];
 
     @property(JsonAsset)
     animationJson: JsonAsset = null;
-
-    @property(Animation)
-    cameraAnimation: Animation = null;
-
-    @property(Node)
-    nodeBaseHome: Node = null;
-
-    @property(Node)
-    nodeBaseAway: Node = null;
-
     private testAnimationIndex = 0;
-
     private readonly recordTimes = 20;
     private recordCount = 0;
-
     private readonly records = {
         home: [],
         away: [],
@@ -77,6 +59,14 @@ export class FootballDiceAnimation extends Component {
         moveDown: 0.4,
         moveUp: 1,
     };
+
+    get nodeBaseHome() {
+        return this.baseGroups[TeamIndex.Home].items[0].node;
+    }
+
+    get nodeBaseAway() {
+        return this.baseGroups[TeamIndex.Away].items[0].node;
+    }
 
     onLoad() {
         this.loadAnimation();
@@ -112,12 +102,12 @@ export class FootballDiceAnimation extends Component {
         const config = {
             home: {
                 doAnimation: this.playHomeAnimation.bind(this),
-                baseGroup: this.redBaseGroup,
+                baseGroup: this.baseGroups[TeamIndex.Home],
                 baseRecord: this.baseRecord.home,
             },
             away: {
                 doAnimation: this.playAwayAnimation.bind(this),
-                baseGroup: this.blueBaseGroup,
+                baseGroup: this.baseGroups[TeamIndex.Away],
                 baseRecord: this.baseRecord.away,
             },
         };
@@ -189,19 +179,21 @@ export class FootballDiceAnimation extends Component {
 
     modeDownBases(animated = true) {
         const duration = animated ? this.duration.moveDown : 0;
-        [this.nodeBaseHome, this.nodeBaseAway].forEach((node) => {
-            tween(node)
-                .to(
-                    duration,
-                    {
-                        position: v3(0, this.offsets.BaseLowestY, 0),
-                        eulerAngles: v3(),
-                    },
-                    { easing: "sineIn" }
-                )
-                .start();
-        });
-        [this.redDiceGroup, this.blueDiceGroup].forEach((diceGroup) => {
+        this.baseGroups
+            .map((group) => group.items[0].node)
+            .forEach((node) => {
+                tween(node)
+                    .to(
+                        duration,
+                        {
+                            position: v3(0, this.offsets.BaseLowestY, 0),
+                            eulerAngles: v3(),
+                        },
+                        { easing: "sineIn" }
+                    )
+                    .start();
+            });
+        this.diceGroups.forEach((diceGroup) => {
             diceGroup.items.forEach((item) => {
                 const position = v3(item.node.position.x, this.offsets.DicesLowestY, item.node.position.z);
                 tween(item.node)
@@ -255,13 +247,13 @@ export class FootballDiceAnimation extends Component {
 
     startRecordHome() {
         this.recordCount = 0;
-        this.currentRecordGroup = this.redDiceGroup;
+        this.currentRecordGroup = this.diceGroups[TeamIndex.Home];
         this.startShake(true);
     }
 
     startRecordAway() {
         this.recordCount = 0;
-        this.currentRecordGroup = this.blueDiceGroup;
+        this.currentRecordGroup = this.diceGroups[TeamIndex.Away];
         this.startShake(false);
     }
 
@@ -322,10 +314,10 @@ export class FootballDiceAnimation extends Component {
 
             Object.keys(result).forEach((team) => {
                 if (team === "home") {
-                    recordGroup = this.redDiceGroup;
+                    recordGroup = this.diceGroups[TeamIndex.Home];
                     animationData = this.homeAnimations[randomAnimationIndex];
                 } else {
-                    recordGroup = this.blueDiceGroup;
+                    recordGroup = this.diceGroups[TeamIndex.Away];
                     animationData = this.awayAnimations[randomAnimationIndex];
                 }
 
@@ -352,26 +344,26 @@ export class FootballDiceAnimation extends Component {
                 };
 
             if (animated) {
-                this.redBaseGroup.startReplay(
+                this.baseGroups[TeamIndex.Home].startReplay(
                     this.baseRecord.home,
                     animationTime,
                     true,
-                    onComplete(this.redDiceGroup, this.nodeBaseHome, () => {
+                    onComplete(this.diceGroups[TeamIndex.Home], this.nodeBaseHome, () => {
                         this.node.emit(this.HOME_SCORE_REAL_TIME, home);
                     })
                 );
-                this.blueBaseGroup.startReplay(
+                this.baseGroups[TeamIndex.Away].startReplay(
                     this.baseRecord.away,
                     animationTime,
                     true,
-                    onComplete(this.blueDiceGroup, this.nodeBaseAway, () => {
+                    onComplete(this.diceGroups[TeamIndex.Away], this.nodeBaseAway, () => {
                         this.node.emit(this.AWAY_SCORE_REAL_TIME, away);
                         resolve();
                     })
                 );
             } else {
-                onComplete(this.redDiceGroup, this.nodeBaseHome, null, false)();
-                onComplete(this.blueDiceGroup, this.nodeBaseAway, resolve, false)();
+                onComplete(this.diceGroups[TeamIndex.Home], this.nodeBaseHome, null, false)();
+                onComplete(this.diceGroups[TeamIndex.Away], this.nodeBaseAway, resolve, false)();
             }
         });
     }
@@ -400,13 +392,6 @@ export class FootballDiceAnimation extends Component {
                 resolve();
             }
         });
-    }
-
-    getCameraNode() {
-        if (!this.nodeCamera) {
-            this.nodeCamera = this.cameraAnimation.node.getChildByName("camera");
-        }
-        return this.nodeCamera;
     }
 
     zoomOutCamera(animated = true) {
