@@ -372,7 +372,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -59.9,
+      "x": -75.578,
       "y": -54.005,
       "z": 0
     },
@@ -449,9 +449,9 @@
       "b": 255,
       "a": 255
     },
-    "duration": 6,
+    "duration": 1,
     "emissionRate": 288.9423076923077,
-    "life": 0.65,
+    "life": 0.7,
     "lifeVar": 0.5,
     "angle": 90,
     "angleVar": 23,
@@ -470,7 +470,7 @@
     },
     "posVar": {
       "__type__": "cc.Vec2",
-      "x": 60,
+      "x": 90,
       "y": 90
     },
     "emitterMode": 0,
@@ -505,7 +505,7 @@
       "__uuid__": "7548130b-d12c-460e-bf6c-c53ceaa20e9e@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
-    "_totalParticles": 601,
+    "_totalParticles": 1000,
     "_startColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -2335,9 +2335,9 @@
       "b": 255,
       "a": 255
     },
-    "duration": 6,
+    "duration": 1,
     "emissionRate": 288.9423076923077,
-    "life": 0.65,
+    "life": 0.7,
     "lifeVar": 0.5,
     "angle": 90,
     "angleVar": 23,
@@ -2356,7 +2356,7 @@
     },
     "posVar": {
       "__type__": "cc.Vec2",
-      "x": 60,
+      "x": 90,
       "y": 90
     },
     "emitterMode": 0,
@@ -2391,7 +2391,7 @@
       "__uuid__": "7548130b-d12c-460e-bf6c-c53ceaa20e9e@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
-    "_totalParticles": 601,
+    "_totalParticles": 1000,
     "_startColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -3991,7 +3991,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -1.938,
+      "x": 3.288,
       "y": -77.922,
       "z": 0
     },
@@ -4068,9 +4068,9 @@
       "b": 255,
       "a": 255
     },
-    "duration": 6,
+    "duration": 1,
     "emissionRate": 288.9423076923077,
-    "life": 0.65,
+    "life": 0.7,
     "lifeVar": 0.5,
     "angle": 90,
     "angleVar": 15,
@@ -4089,7 +4089,7 @@
     },
     "posVar": {
       "__type__": "cc.Vec2",
-      "x": 60,
+      "x": 90,
       "y": 50
     },
     "emitterMode": 0,
@@ -4124,7 +4124,7 @@
       "__uuid__": "7548130b-d12c-460e-bf6c-c53ceaa20e9e@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
-    "_totalParticles": 601,
+    "_totalParticles": 1000,
     "_startColor": {
       "__type__": "cc.Color",
       "r": 255,

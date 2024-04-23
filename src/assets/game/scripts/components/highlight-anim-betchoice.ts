@@ -7,6 +7,15 @@ export class HighlightAnimBetchoice extends Component {
     particleWin: ParticleSystem2D = null;
 
     protected onEnable() {
-        this.particleWin.resetSystem();
+        this.schedule(this.playParticle, 2.3);
+    }
+
+    playParticle() {
+        this.particleWin.resetSystem()
+    }
+
+    protected onDisable() {
+        this.unschedule(this.playParticle);
+        this.particleWin.stopSystem();
     }
 }
