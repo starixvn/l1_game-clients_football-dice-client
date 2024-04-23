@@ -36,7 +36,7 @@
         "_value": true
       },
       "physics": {
-        "_value": true,
+        "_value": false,
         "_option": "physics-ammo"
       },
       "physics-ammo": {
@@ -139,7 +139,6 @@
       "particle",
       "particle-2d",
       "physics-2d-box2d",
-      "physics-ammo",
       "primitive",
       "profiler",
       "spine",

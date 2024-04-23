@@ -1,4 +1,5 @@
 import { Animation, Collider, Component, RigidBody, Vec3, _decorator, v3 } from "cc";
+
 import { ActionNode } from "./action-node";
 const { ccclass, property } = _decorator;
 
@@ -19,6 +20,8 @@ export class RecordItem extends Component {
 
     lastData: RecordData;
 
+    private readonly enablePhysics = !!RigidBody && !!Collider;
+
     onLoad() {
         this.stopSimulator();
     }
@@ -33,6 +36,9 @@ export class RecordItem extends Component {
     }
 
     clearVelocity() {
+        if (!this.enablePhysics) {
+            return;
+        }
         const rigidBody = this.getComponent(RigidBody);
         if (rigidBody) {
             rigidBody.clearVelocity();
@@ -42,6 +48,13 @@ export class RecordItem extends Component {
     private changeSimulator(enabled: boolean) {
         const actionNode = this.getComponent(ActionNode);
         enabled ? actionNode?.startAction() : actionNode?.stopAction();
+
+        const animation = this.getComponent(Animation);
+        animation && (animation.enabled = enabled);
+
+        if (!this.enablePhysics) {
+            return;
+        }
 
         const collider = this.getComponent(Collider);
         collider && (collider.enabled = enabled);
@@ -54,9 +67,6 @@ export class RecordItem extends Component {
             rigidBody.useGravity = enabled;
             rigidBody.enabled = enabled;
         }
-
-        const animation = this.getComponent(Animation);
-        animation && (animation.enabled = enabled);
     }
 
     startSimulator() {
