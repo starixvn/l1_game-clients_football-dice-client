@@ -23,7 +23,7 @@ export class RecordGroup extends Component {
 
     get items() {
         if (!this._items) {
-            this._items = this.node.getComponentsInChildren(RecordItem);
+            this._items = [...this.node.getComponentsInChildren(RecordItem)];
         }
         return this._items;
     }

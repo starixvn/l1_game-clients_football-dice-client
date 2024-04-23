@@ -47,11 +47,14 @@ export class RecordAnimation extends Component {
                     nodeCollider.material = diceCollider.material;
                     nodeCollider.center = diceCollider.center;
                     nodeCollider.mesh = diceCollider.mesh;
+                    nodeCollider.convex = diceCollider.convex;
                 }
                 if (diceRigidBody) {
                     const nodeRigidBody = node.addComponent(RigidBody);
                     nodeRigidBody.group = diceRigidBody.group;
                     nodeRigidBody.type = diceRigidBody.type;
+                    nodeRigidBody.linearDamping = diceRigidBody.linearDamping;
+                    nodeRigidBody.allowSleep = diceRigidBody.allowSleep;
                 }
             });
     }
