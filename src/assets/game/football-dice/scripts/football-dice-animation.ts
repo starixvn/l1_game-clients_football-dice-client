@@ -68,6 +68,10 @@ export class FootballDiceAnimation extends Component {
         return this.baseGroups[TeamIndex.Away].items[0].node;
     }
 
+    get baseNodes() {
+        return [this.nodeBaseHome, this.nodeBaseAway];
+    }
+
     onLoad() {
         this.loadAnimation();
         game.frameRate = 30;

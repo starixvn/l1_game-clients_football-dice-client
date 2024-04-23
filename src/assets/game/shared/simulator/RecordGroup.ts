@@ -7,7 +7,7 @@ interface RecordGroupData {
 }
 @ccclass
 export class RecordGroup extends Component {
-    items: RecordItem[] = [];
+    private _items: RecordItem[];
     data: RecordGroupData[] = [];
     private readonly intervalTime = 0.016667;
     private replayStep = 0;
@@ -21,9 +21,14 @@ export class RecordGroup extends Component {
         return this.node.name;
     }
 
+    get items() {
+        if (!this._items) {
+            this._items = this.node.getComponentsInChildren(RecordItem);
+        }
+        return this._items;
+    }
+
     onLoad() {
-        const items = this.node.getComponentsInChildren(RecordItem);
-        this.items.push(...items);
         this.loadData();
     }
 
