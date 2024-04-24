@@ -1,4 +1,4 @@
-import { Animation, Collider, Component, RigidBody, Vec3, _decorator, v3 } from "cc";
+import { Animation, Collider, Component, RigidBody, Vec3, _decorator, tween, v3 } from "cc";
 
 import { ActionNode } from "./action-node";
 const { ccclass, property } = _decorator;
@@ -21,9 +21,14 @@ export class RecordItem extends Component {
     lastData: RecordData;
 
     private readonly enablePhysics = !!RigidBody && !!Collider;
+    private initAngularDamping = 0;
 
     onLoad() {
         this.stopSimulator();
+        const rigidBody = this.getComponent(RigidBody);
+        if (rigidBody) {
+            this.initAngularDamping = rigidBody.angularDamping;
+        }
     }
 
     resetData() {
@@ -45,6 +50,20 @@ export class RecordItem extends Component {
         }
     }
 
+    slowDownSimulator() {
+        const rigidBody = this.getComponent(RigidBody);
+        if (rigidBody) {
+            tween(rigidBody).to(1, { angularDamping: 1 }).start();
+        }
+    }
+
+    resetSimulator() {
+        const rigidBody = this.getComponent(RigidBody);
+        if (rigidBody) {
+            rigidBody.angularDamping = this.initAngularDamping;
+        }
+    }
+
     private changeSimulator(enabled: boolean) {
         const actionNode = this.getComponent(ActionNode);
         enabled ? actionNode?.startAction() : actionNode?.stopAction();
@@ -54,6 +73,10 @@ export class RecordItem extends Component {
 
         if (!this.enablePhysics) {
             return;
+        }
+
+        if (enabled) {
+            this.resetSimulator();
         }
 
         const collider = this.getComponent(Collider);

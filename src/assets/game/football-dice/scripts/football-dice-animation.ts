@@ -223,12 +223,21 @@ export class FootballDiceAnimation extends Component {
         this.playBaseAnimation(this.nodeBaseAway, this.duration.shakeAway, onComplete);
     }
 
+    private stopDiceBounce() {
+        this.currentRecordGroup.items.forEach((item) => item.slowDownSimulator());
+    }
+
     private playBaseAnimation(node: Node, duration: number, onComplete?: () => void) {
         const waitDiceStop = 1.5;
         tween(node)
             .sequence(this.generateShakeTween(node, duration), this.generateSlowShakeTween(node))
+            .call(() => {
+                this.stopDiceBounce();
+            })
             .delay(waitDiceStop)
-            .call(() => onComplete && onComplete())
+            .call(() => {
+                onComplete && onComplete();
+            })
             .start();
     }
 
@@ -480,7 +489,7 @@ export class FootballDiceAnimation extends Component {
         const offsetRotation = 1;
         const y1 = this.offsets.BaseLowestY;
 
-        const rotations = [v3(offsetRotation, 0, 0), v3(0, 0, offsetRotation)];
+        const rotations = [v3(offsetRotation, 0, 0), v3(0, 0, 0)];
 
         const positions = [v3(padding, 0, 0), v3(-padding, 0, 0)];
 
