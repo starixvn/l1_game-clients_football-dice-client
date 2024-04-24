@@ -100,6 +100,19 @@ export class RecordItem extends Component {
         return this.data;
     }
 
+    updateLastRecord() {
+        if (this.data.length === 0) {
+            return;
+        }
+        const data = {
+            p: this.trimVector(this.node.position),
+            e: this.trimVector(this.node.eulerAngles),
+        };
+        const recordData = { p: v3(data.p), e: v3(data.e) };
+        const lastIndex = this.data.length - 1;
+        this.data[lastIndex] = recordData;
+    }
+
     record() {
         const data = {
             p: this.trimVector(this.node.position),

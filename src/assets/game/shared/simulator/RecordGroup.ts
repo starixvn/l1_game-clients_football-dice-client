@@ -50,7 +50,12 @@ export class RecordGroup extends Component {
 
     stopRecord() {
         this.stopSimulator();
+        this.updateLastRecord();
         this.enableRecord = false;
+    }
+
+    updateLastRecord() {
+        this.items.forEach((item) => item.updateLastRecord());
     }
 
     stopSimulator() {
@@ -130,10 +135,8 @@ export class RecordGroup extends Component {
     }
 
     replayLastFrame(groupData: RecordGroupData) {
-        const numFrames = groupData[this.items[0].node.name].length;
-        for (let i = 0; i < numFrames; i++) {
-            this.tryReplay(groupData, i);
-        }
+        const last = groupData[this.items[0].node.name].length - 1;
+        this.tryReplay(groupData, last);
     }
 
     doingReplay() {

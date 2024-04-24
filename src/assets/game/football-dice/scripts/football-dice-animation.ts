@@ -315,7 +315,7 @@ export class FootballDiceAnimation extends Component {
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
         const score = { home: 0, away: 0 };
-        await this.setResult(result, score);
+        await this.setResult(result, score, false);
         console.timeEnd("test result in ");
     }
 
