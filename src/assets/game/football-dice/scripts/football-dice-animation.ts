@@ -75,8 +75,13 @@ export class FootballDiceAnimation extends Component {
     }
 
     onLoad() {
+        this.showAllDices(false);
         this.loadAnimation();
         game.frameRate = this.fpsReplay;
+    }
+
+    showAllDices(show = true) {
+        this.diceGroups.forEach((group) => (group.node.active = show));
     }
 
     loadAnimation() {
@@ -304,7 +309,7 @@ export class FootballDiceAnimation extends Component {
         this.testRoundId++;
     }
 
-    get animationCount (){
+    get animationCount() {
         return this.homeAnimations.length;
     }
 
@@ -323,10 +328,12 @@ export class FootballDiceAnimation extends Component {
 
     setResult(result: any, score: { home; away }, roundId: number, animated = true, animationTime = 0) {
         return new Promise<void>((resolve, reject) => {
+            this.showAllDices();
+
             game.frameRate = this.fpsReplay;
             const { home, away } = score;
             const animationIndex = roundId % this.animationCount;
-            
+
             console.log("========= animation index ", animationIndex);
             console.log("========= result ", [...result.home, ...result.away]);
             let recordGroup, animationData;
