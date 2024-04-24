@@ -9,7 +9,7 @@ interface RecordGroupData {
 export class RecordGroup extends Component {
     private _items: RecordItem[];
     data: RecordGroupData[] = [];
-    private readonly intervalTime = 0.016667;
+    private intervalTime = 0.033333; //fps 30
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
     private onCompleteReplay = () => {};
@@ -45,6 +45,7 @@ export class RecordGroup extends Component {
         this.items.forEach((item) => item.startSimulator());
         this.record();
         this.enableRecord = true;
+        this.deltaTime = 0;
     }
 
     stopRecord() {
@@ -120,7 +121,11 @@ export class RecordGroup extends Component {
             return;
         }
         if (this.enableRecord) {
-            this.record();
+            this.deltaTime += dt;
+            if (this.deltaTime > this.intervalTime) {
+                this.record();
+                this.deltaTime = this.deltaTime - this.intervalTime;
+            }
         }
     }
 

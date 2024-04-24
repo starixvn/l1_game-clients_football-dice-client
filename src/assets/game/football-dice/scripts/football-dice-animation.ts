@@ -42,7 +42,6 @@ export class FootballDiceAnimation extends Component {
     private currentRecordGroup: RecordGroup = null;
     private homeAnimations: Record[] = [];
     private awayAnimations: Record[] = [];
-    private nodeCamera: Node = null;
     private readonly zoomCameraDuration = 1.5;
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
@@ -60,6 +59,9 @@ export class FootballDiceAnimation extends Component {
         moveUp: 1,
     };
 
+    private readonly fpsReplay = 30;
+    private readonly fpsRecord = 60;
+
     get nodeBaseHome() {
         return this.baseGroups[TeamIndex.Home].items[0].node;
     }
@@ -74,7 +76,7 @@ export class FootballDiceAnimation extends Component {
 
     onLoad() {
         this.loadAnimation();
-        game.frameRate = 30;
+        game.frameRate = this.fpsReplay;
     }
 
     loadAnimation() {
@@ -250,6 +252,7 @@ export class FootballDiceAnimation extends Component {
     }
 
     startRecordHome() {
+        game.frameRate = this.fpsRecord;
         this.recordCount = 0;
         this.currentRecordGroup = this.diceGroups[TeamIndex.Home];
         this.startShake(true);
@@ -309,6 +312,7 @@ export class FootballDiceAnimation extends Component {
 
     setResult(result: any, score: { home; away }, animated = true, animationTime = 0) {
         return new Promise<void>((resolve, reject) => {
+            game.frameRate = this.fpsReplay;
             const { home, away } = score;
             const randomAnimationIndex = this.testAnimationIndex;
             this.changeTestAnimationIndex();
