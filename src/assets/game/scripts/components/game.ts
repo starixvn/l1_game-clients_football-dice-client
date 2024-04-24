@@ -12,7 +12,7 @@ import "./../../../resources/i18n";
 import { FootballDiceBetAreas } from "./football-dice-bet-areas";
 import { ScoreTable } from "./score-table";
 import { WinningAnimation } from "./winning-animation";
-const { Rounds, Translator, RoundHistories } = gc;
+const { Rounds, Translator, RoundHistories, Settlements } = gc;
 
 startGame(settings.name, containerOptions, siteConfigs);
 
@@ -94,12 +94,12 @@ export default class Game extends GameComponent {
         if (lastRound) {
             console.log("render static result from last round history");
             const { result, settlementResult } = lastRound;
+
             const animationTime = firstJoinGameHistory.animationHighlight
                 ? settings.durations.wholeRound - firstJoinGameHistory.roundTime
                 : 0;
             const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
             await this.showResult(result, animated, settlementResult, animationTime);
-
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
                 this.gameAnimation.zoomOutCamera(false);
@@ -108,6 +108,7 @@ export default class Game extends GameComponent {
                 this.betAreas.setAnimZoomBetChoices(v3(1, 1, 1), 1, false);
             } else {
                 this.scorebboardComp.renderCollapseScoreboard(false);
+                this.handleFinishShowResult();
             }
         }
     }
@@ -174,6 +175,9 @@ export default class Game extends GameComponent {
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX("bgm-stadium"))
     stopBgStadiumSound() {}
+
+    @handle(Settlements.SettlementUIHandlers.FinishedShowResult, (handle) => handle.handleFinishedShowResult())
+    handleFinishShowResult() {}
 
     @render(gc.UserSettings.UserSettingStore, (store) => store.sfxEnable)
     stopSoundStoppableSFX(sfxEnable: boolean) {
