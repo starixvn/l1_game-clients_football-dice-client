@@ -145,7 +145,7 @@ export default class Game extends GameComponent {
                 this.scorebboardComp.renderCollapseScoreboard(true);
             }
             console.timeEnd("zoomin");
-            await this.gameAnimation.setResult(result, score, hasAnimation, animationTime);
+            await this.gameAnimation.setResult(result, score, this.clientRoundId, hasAnimation, animationTime);
             if (hasAnimation) {
                 this.playEndMatchSound();
                 await FunctionUtils.delay(1000);

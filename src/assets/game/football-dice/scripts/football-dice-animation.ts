@@ -26,7 +26,7 @@ export class FootballDiceAnimation extends Component {
 
     @property(JsonAsset)
     animationJson: JsonAsset = null;
-    private testAnimationIndex = 0;
+    private testRoundId = 0;
     private readonly recordTimes = 20;
     private recordCount = 0;
     private readonly records = {
@@ -300,11 +300,12 @@ export class FootballDiceAnimation extends Component {
         return data;
     }
 
-    private changeTestAnimationIndex() {
-        this.testAnimationIndex++;
-        if (this.testAnimationIndex >= this.homeAnimations.length) {
-            this.testAnimationIndex = 0;
-        }
+    private changetestRoundId() {
+        this.testRoundId++;
+    }
+
+    get animationCount (){
+        return this.homeAnimations.length;
     }
 
     async randomTest() {
@@ -315,27 +316,28 @@ export class FootballDiceAnimation extends Component {
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
         const score = { home: 0, away: 0 };
-        await this.setResult(result, score, false);
+        this.changetestRoundId();
+        await this.setResult(result, score, this.testRoundId, false);
         console.timeEnd("test result in ");
     }
 
-    setResult(result: any, score: { home; away }, animated = true, animationTime = 0) {
+    setResult(result: any, score: { home; away }, roundId: number, animated = true, animationTime = 0) {
         return new Promise<void>((resolve, reject) => {
             game.frameRate = this.fpsReplay;
             const { home, away } = score;
-            const randomAnimationIndex = this.testAnimationIndex;
-            this.changeTestAnimationIndex();
-            console.log("========= animation index ", randomAnimationIndex);
+            const animationIndex = roundId % this.animationCount;
+            
+            console.log("========= animation index ", animationIndex);
             console.log("========= result ", [...result.home, ...result.away]);
             let recordGroup, animationData;
 
             Object.keys(result).forEach((team) => {
                 if (team === "home") {
                     recordGroup = this.diceGroups[TeamIndex.Home];
-                    animationData = this.homeAnimations[randomAnimationIndex];
+                    animationData = this.homeAnimations[animationIndex];
                 } else {
                     recordGroup = this.diceGroups[TeamIndex.Away];
-                    animationData = this.awayAnimations[randomAnimationIndex];
+                    animationData = this.awayAnimations[animationIndex];
                 }
 
                 const dices = recordGroup.getComponentsInChildren(Dice);
