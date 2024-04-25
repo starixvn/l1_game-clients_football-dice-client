@@ -17,8 +17,18 @@ export class FootballDiceBetAreas extends ObserverComponent {
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
     async setAnimZoomOutBetChoices(isStartRound: boolean) {
         if (isStartRound) {
-            this.setAnimZoomBetChoices(v3(1, 1, 1), 1, true);
+            this.zoomInBetChoices(true);
         }
+    }
+
+    zoomOutBetChoices(hasAnimation: boolean) {
+        this.playZoomOutSound();
+        this.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, hasAnimation);
+    }
+
+    zoomInBetChoices(hasAnimation: boolean) {
+        hasAnimation && this.playZoomInSound();
+        this.setAnimZoomBetChoices(v3(1, 1, 1), 1, hasAnimation);
     }
 
     setAnimZoomBetChoices(scaleRatio, time: number, hasAnimation: boolean) {
@@ -43,4 +53,10 @@ export class FootballDiceBetAreas extends ObserverComponent {
             layout.enabled = false;
         }
     }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("zoomin"))
+    playZoomInSound() {}
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("zoomin"))
+    playZoomOutSound() {}
 }

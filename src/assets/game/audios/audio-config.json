@@ -5,6 +5,38 @@
         "isMusicGame": true,
         "isLazyLoad": true
     },
+    "countdown-end": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "countdown-timer": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "dice-lifting": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "zoomin": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "zoomout": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "logoteam-rollingin": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "team-win": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "match-start": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
     "sfx-start-match": {
         "bundle": "resources",
         "type": "sfx"
@@ -13,12 +45,19 @@
         "bundle": "resources",
         "type": "sfx"
     },
+    "paymoney": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
     "starting-round": {
         "bundle": "shared-bundle",
         "path": "starting-round"
     },
+    "receive-finish": {
+        "bundle": "resources",
+        "path": "zoomout"
+    },
     //remove sounds
-    "receive-finish": {},
     "draw-single-card": {},
     "draw-single-domino-card": {},
     "start-betting_en": {},

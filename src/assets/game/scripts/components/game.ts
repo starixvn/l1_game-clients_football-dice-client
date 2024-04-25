@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, Node, _decorator, sp, v3 } from "cc";
+import { Label, Node, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -57,6 +57,8 @@ export default class Game extends GameComponent {
     private gameAnimation: FootballDiceAnimation = null;
     protected override enableFixHandleFinish = true;
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
+    private settlementStatus: gc.GameServiceMessage.Status = null;
+    private winningPlayers: gc.GameServiceMessage.TWinningPlayers = null;
 
     onLoad() {
         this.scorebboardComp = this.nodeScoreBoard.getComponent(ScoreboardCollapseExpandContent);
@@ -105,7 +107,7 @@ export default class Game extends GameComponent {
                 this.gameAnimation.zoomOutCamera(false);
                 this.scorebboardComp.renderExpandScoreboard(false);
                 this.updateScorePanel({ home: 0, away: 0 }, false);
-                this.betAreas.setAnimZoomBetChoices(v3(1, 1, 1), 1, false);
+                this.betAreas.zoomInBetChoices(false);
             } else {
                 this.scorebboardComp.renderCollapseScoreboard(false);
                 this.handleFinishShowResult();
@@ -133,14 +135,14 @@ export default class Game extends GameComponent {
             console.time("zoomin");
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
-            this.betAreas.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, isAnimateFirstPhase);
+            this.betAreas.zoomOutBetChoices(isAnimateFirstPhase);
             this.updateScorePanel({ home: 0, away: 0 }, false);
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
 
             if (isAnimateFirstPhase) {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
-                this.playStartMatchSound();
+                //this.playStartMatchSound();
                 await FunctionUtils.delay(500);
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
@@ -148,9 +150,13 @@ export default class Game extends GameComponent {
             console.timeEnd("zoomin");
             await this.gameAnimation.setResult(result, score, this.clientRoundId, hasAnimation, animationTime);
             if (hasAnimation) {
-                this.playEndMatchSound();
-                await FunctionUtils.delay(1000);
+                this.playSound("team-win");
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
+                if (this.winningPlayers || this.settlementStatus?.win) {
+                    this.scheduleOnce(() => {
+                        this.playSound("paymoney");
+                    }, 4);
+                }
             } else {
                 this.updateScorePanel(score, false);
             }
@@ -202,11 +208,34 @@ export default class Game extends GameComponent {
     }
 
     private startLogoAnimation() {
+        this.playSound("logoteam-rollingin");
         this.logoSkeletons.forEach((logo) => logo.setAnimation(0, `${logo.node.name}-logo`, false));
     }
 
     private matchStartAnimation(show: boolean) {
         this.matchStartSkeletons && (this.matchStartSkeletons.node.active = show);
-        show && this.matchStartSkeletons.setAnimation(0, "match-starts", false);
+        if (show) {
+            this.playSound("match-start");
+            this.matchStartSkeletons.setAnimation(0, "match-starts", false);
+        }
+    }
+
+    @render(Rounds.RoundTimeStore, (store) => store.roundTime)
+    playSoundCountDown(roundTime: number) {
+        if (roundTime > 0 && roundTime < 4) {
+            this.playSound("countdown-timer");
+        } else if (roundTime === 0) {
+            this.playSound("countdown-end");
+        }
+    }
+
+    @render(Settlements.SettlementStatusStore, (store) => store.settlementStatus)
+    handleSettleStatus(settlementStatus: gc.GameServiceMessage.Status) {
+        this.settlementStatus = settlementStatus;
+    }
+
+    @render(Settlements.SettlementStore, (store) => store.winningPlayers)
+    handleWinningPlayers(winningPlayers: any) {
+        this.winningPlayers = winningPlayers;
     }
 }
