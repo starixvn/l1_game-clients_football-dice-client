@@ -95,12 +95,16 @@ export default class Game extends GameComponent {
         const lastRound = firstJoinGameHistory.roundHistory;
         if (lastRound) {
             console.log("render static result from last round history");
-            const { result, settlementResult } = lastRound;
+            const { result, settlementResult, roundId } = lastRound;
 
             const animationTime = firstJoinGameHistory.animationHighlight
                 ? settings.durations.wholeRound - firstJoinGameHistory.roundTime
                 : 0;
             const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
+            if (!firstJoinGameHistory.animationHighlight && this.clientRoundId > roundId) {
+                this.clientRoundId = roundId;
+                console.log("clientRoundId", this.clientRoundId);
+            }
             await this.showResult(result, animated, settlementResult, animationTime);
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
