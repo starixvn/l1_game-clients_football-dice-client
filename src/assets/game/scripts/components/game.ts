@@ -53,6 +53,7 @@ export default class Game extends GameComponent {
     override containerOptions = containerOptions;
     isLoading = true;
 
+    protected roundIdDiceIndex = -1;
     protected clientRoundId = -1;
     private gameAnimation: FootballDiceAnimation = null;
     protected override enableFixHandleFinish = true;
@@ -76,6 +77,7 @@ export default class Game extends GameComponent {
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
     storeClientRoundId(clientRoundId: number) {
         this.clientRoundId = clientRoundId;
+        console.log("clientRoundId", this.clientRoundId);
     }
 
     getAudioKeyForLanguage(name: string): string {
@@ -101,10 +103,7 @@ export default class Game extends GameComponent {
                 ? settings.durations.wholeRound - firstJoinGameHistory.roundTime
                 : 0;
             const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
-            if (!firstJoinGameHistory.animationHighlight && this.clientRoundId > roundId) {
-                this.clientRoundId = roundId;
-                console.log("clientRoundId", this.clientRoundId);
-            }
+            this.roundIdDiceIndex = roundId;
             await this.showResult(result, animated, settlementResult, animationTime);
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
@@ -152,7 +151,13 @@ export default class Game extends GameComponent {
                 this.scorebboardComp.renderCollapseScoreboard(true);
             }
             console.timeEnd("zoomin");
-            await this.gameAnimation.setResult(result, score, this.clientRoundId, hasAnimation, animationTime);
+            await this.gameAnimation.setResult(
+                result,
+                score,
+                hasAnimation ? this.clientRoundId : this.roundIdDiceIndex,
+                hasAnimation,
+                animationTime
+            );
             if (hasAnimation) {
                 this.playSound("team-win");
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
