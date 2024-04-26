@@ -25,9 +25,11 @@ export class RecordItem extends Component {
 
     onLoad() {
         this.stopSimulator();
-        const rigidBody = this.getComponent(RigidBody);
-        if (rigidBody) {
-            this.initAngularDamping = rigidBody.angularDamping;
+        if (this.enablePhysics) {
+            const rigidBody = this.getComponent(RigidBody);
+            if (rigidBody) {
+                this.initAngularDamping = rigidBody.angularDamping;
+            }
         }
     }
 
