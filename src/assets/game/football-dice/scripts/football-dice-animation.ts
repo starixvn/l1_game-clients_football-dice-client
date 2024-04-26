@@ -45,6 +45,7 @@ export class FootballDiceAnimation extends Component {
     private readonly zoomCameraDuration = 1.5;
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
+    DICE_LIFTING_SOUND = "dice-lifting-sound";
 
     private readonly offsets = {
         DicesLowestY: -2.25,
@@ -365,6 +366,7 @@ export class FootballDiceAnimation extends Component {
                 (recordGroup, baseNode, complete, animated = true) =>
                 async () => {
                     animated && (await FunctionUtils.delay(300));
+                    this.node.emit(this.DICE_LIFTING_SOUND);
                     await this.moveUp(recordGroup, baseNode, animated);
                     complete && complete();
                 };

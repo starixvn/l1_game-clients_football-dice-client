@@ -72,6 +72,9 @@ export default class Game extends GameComponent {
         this.gameAnimation.node.on(this.gameAnimation.AWAY_SCORE_REAL_TIME, (score: number) => {
             this.scorePanel[1].updateScoreTable(score);
         });
+        this.gameAnimation.node.on(this.gameAnimation.DICE_LIFTING_SOUND, (score: number) => {
+            this.playSound("dice-lifting");
+        });
     }
 
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
