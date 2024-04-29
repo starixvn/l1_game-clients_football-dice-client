@@ -1,10 +1,4 @@
 {
-    "bgm-stadium": {
-        "bundle": "resources",
-        "type": "music",
-        "isMusicGame": true,
-        "isLazyLoad": true
-    },
     "countdown-end": {
         "bundle": "resources",
         "type": "sfx"
@@ -64,6 +58,30 @@
     "receive-finish": {
         "bundle": "resources",
         "path": "zoomout"
+    },
+    "bmg-song1": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
+    },
+    "bmg-song2": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
+    },
+    "bmg-song3": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
+    },
+    "bmg-song4": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
     },
     //remove sounds
     "draw-single-card": {},
