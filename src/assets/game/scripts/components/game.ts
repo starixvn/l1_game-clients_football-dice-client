@@ -148,7 +148,9 @@ export default class Game extends GameComponent {
             if (isAnimateFirstPhase) {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
-                //this.playStartMatchSound();
+                this.playStartMatchSound();
+                setTimeout(this.playCrowdGameSound, 1000);
+
                 await FunctionUtils.delay(500);
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
@@ -162,13 +164,14 @@ export default class Game extends GameComponent {
                 animationTime
             );
             if (hasAnimation) {
-                this.playSound("team-win");
+                this.stopCrowdGameSound();
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
-                if (this.winningPlayers || this.settlementStatus?.win) {
-                    this.scheduleOnce(() => {
-                        this.playSound("paymoney");
-                    }, 4);
+                if (this.settlementStatus?.win) {
+                    this.playSound("match-win");
+                } else {
+                    this.playSound("match-lose");
                 }
+                setTimeout(this.playEndMatchSound, 6000);
             } else {
                 this.updateScorePanel(score, false);
             }
@@ -182,17 +185,17 @@ export default class Game extends GameComponent {
         this.scorePanel[1].updateScoreTable(away, animated);
     }
 
-    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("whistle-begin-settle"))
     playStartMatchSound() {}
 
-    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("sfx-start-match"))
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("whistle-end-match"))
     playEndMatchSound() {}
 
-    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playStoppableSFX("bgm-stadium"))
-    playBgStadiumSound() {}
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playStoppableSFX("crowd-game"))
+    playCrowdGameSound() {}
 
-    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX("bgm-stadium"))
-    stopBgStadiumSound() {}
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.stopStoppableSFX("crowd-game"))
+    stopCrowdGameSound() {}
 
     @handle(Settlements.SettlementUIHandlers.FinishedShowResult, (handle) => handle.handleFinishedShowResult())
     handleFinishShowResult() {}
@@ -200,9 +203,9 @@ export default class Game extends GameComponent {
     @render(gc.UserSettings.UserSettingStore, (store) => store.sfxEnable)
     stopSoundStoppableSFX(sfxEnable: boolean) {
         if (!sfxEnable) {
-            this.stopBgStadiumSound();
+            this.stopCrowdGameSound();
         } else {
-            this.playBgStadiumSound();
+            this.playCrowdGameSound();
         }
     }
 

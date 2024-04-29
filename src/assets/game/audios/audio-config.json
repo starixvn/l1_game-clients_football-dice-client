@@ -29,7 +29,11 @@
         "bundle": "resources",
         "type": "sfx"
     },
-    "team-win": {
+    "match-win": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "match-lose": {
         "bundle": "resources",
         "type": "sfx"
     },
@@ -37,11 +41,15 @@
         "bundle": "resources",
         "type": "sfx"
     },
-    "sfx-start-match": {
+    "whistle-begin-settle": {
         "bundle": "resources",
         "type": "sfx"
     },
-    "sfx-end-match": {
+    "whistle-end-match": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
+    "crowd-game": {
         "bundle": "resources",
         "type": "sfx"
     },
