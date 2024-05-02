@@ -1,4 +1,4 @@
-import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
+import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, log, tween, v3 } from "cc";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
@@ -27,7 +27,7 @@ export class FootballDiceAnimation extends Component {
     @property(JsonAsset)
     animationJson: JsonAsset = null;
     private testRoundId = 0;
-    private readonly recordTimes = 20;
+    private readonly recordTimes = 2;
     private recordCount = 0;
     private readonly records = {
         home: [],
@@ -306,8 +306,9 @@ export class FootballDiceAnimation extends Component {
         return data;
     }
 
-    private changetestRoundId() {
-        this.testRoundId++;
+    private changetestRoundId(text, editbox, customEventData) {
+        this.testRoundId = +text;
+        log(`test round id ${this.testRoundId}`);
     }
 
     get animationCount() {
@@ -322,8 +323,7 @@ export class FootballDiceAnimation extends Component {
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
         const score = { home: 0, away: 0 };
-        this.changetestRoundId();
-        await this.setResult(result, score, this.testRoundId, false);
+        await this.setResult(result, score, this.testRoundId, true);
         console.timeEnd("test result in ");
     }
 
