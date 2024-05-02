@@ -90,7 +90,6 @@ export default class Game extends GameComponent {
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
     storeClientRoundId(clientRoundId: number) {
         this.clientRoundId = clientRoundId;
-        log("clientRoundId", this.clientRoundId);
     }
 
     getAudioKeyForLanguage(name: string): string {
@@ -183,17 +182,7 @@ export default class Game extends GameComponent {
             console.time("total show result in ");
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
-            hasAnimation &&
-                this.schedule(
-                    () => {
-                        this.volumnDefault -= this.STEP_VOULUME;
-                        this.audioContainer.updateVolumeMusicSource(this.volumnDefault);
-                        console.log("descrease", this.volumnDefault);
-                    },
-                    0.5,
-                    this.INTERVAL_PLAY_BG_MUSIC_COUNT,
-                    0
-                );
+            hasAnimation && this.audioContainer.updateVolumeMusicSource(0.1, 3);
             this.betAreas.zoomOutBetChoices(isAnimateFirstPhase);
             this.updateScorePanel({ home: 0, away: 0 }, false);
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
@@ -223,18 +212,11 @@ export default class Game extends GameComponent {
                 } else {
                     this.playSound("match-lose");
                 }
-                setTimeout(this.playEndMatchSound, 6000);
-
-                this.schedule(
-                    () => {
-                        this.volumnDefault += this.STEP_VOULUME;
-                        this.audioContainer.updateVolumeMusicSource(this.volumnDefault);
-                        console.log("incresase", this.volumnDefault);
-                    },
-                    1,
-                    this.INTERVAL_PLAY_BG_MUSIC_COUNT,
-                    3
-                );
+                const handleSoundEndMatch = () => {
+                    this.playEndMatchSound();
+                    this.audioContainer.updateVolumeMusicSource(0.5, 5);
+                };
+                setTimeout(handleSoundEndMatch, 6000);
             } else {
                 this.updateScorePanel(score, false);
             }
