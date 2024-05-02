@@ -3,6 +3,7 @@ import { Label, Node, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
+import { AudioContainer } from "../../../../extensions/shared-components/assets/game/audios/scripts/component/audio-container";
 import { ScoreboardCollapseExpandContent } from "../../../../extensions/shared-components/assets/game/scoreboards/scripts/components/scoreboard-collapse-expand-content";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
@@ -49,6 +50,9 @@ export default class Game extends GameComponent {
     @property(FootballDiceBetAreas)
     betAreas: FootballDiceBetAreas = null;
 
+    @property(Node)
+    nodeAudioContainer: Node = null;
+
     override namespace = settings.name;
     override containerOptions = containerOptions;
     isLoading = true;
@@ -60,8 +64,13 @@ export default class Game extends GameComponent {
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
     private settlementStatus: gc.GameServiceMessage.Status = null;
     private winningPlayers: gc.GameServiceMessage.TWinningPlayers = null;
+    private audioContainer: AudioContainer = null;
+    private volumnDefault = 0.5;
+    private readonly INTERVAL_PLAY_BG_MUSIC_COUNT = 7;
+    private readonly STEP_VOULUME = 0.05;
 
     onLoad() {
+        this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
         this.scorebboardComp = this.nodeScoreBoard.getComponent(ScoreboardCollapseExpandContent);
         this.scorebboardComp.renderCollapseScoreboard(false);
         super.onLoad();
@@ -141,6 +150,17 @@ export default class Game extends GameComponent {
             console.time("zoomin");
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
+            hasAnimation &&
+                this.schedule(
+                    () => {
+                        this.volumnDefault -= this.STEP_VOULUME;
+                        this.audioContainer.updateVolumeMusicSource(this.volumnDefault);
+                        console.log("descrease", this.volumnDefault);
+                    },
+                    0.5,
+                    this.INTERVAL_PLAY_BG_MUSIC_COUNT,
+                    0
+                );
             this.betAreas.zoomOutBetChoices(isAnimateFirstPhase);
             this.updateScorePanel({ home: 0, away: 0 }, false);
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
@@ -172,6 +192,17 @@ export default class Game extends GameComponent {
                     this.playSound("match-lose");
                 }
                 setTimeout(this.playEndMatchSound, 6000);
+
+                this.schedule(
+                    () => {
+                        this.volumnDefault += this.STEP_VOULUME;
+                        this.audioContainer.updateVolumeMusicSource(this.volumnDefault);
+                        console.log("incresase", this.volumnDefault);
+                    },
+                    1,
+                    this.INTERVAL_PLAY_BG_MUSIC_COUNT,
+                    3
+                );
             } else {
                 this.updateScorePanel(score, false);
             }
