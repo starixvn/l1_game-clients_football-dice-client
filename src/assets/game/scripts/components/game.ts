@@ -62,12 +62,7 @@ export default class Game extends GameComponent {
     private gameAnimation: FootballDiceAnimation = null;
     protected override enableFixHandleFinish = true;
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
-    private settlementStatus: gc.GameServiceMessage.Status = null;
-    private winningPlayers: gc.GameServiceMessage.TWinningPlayers = null;
     private audioContainer: AudioContainer = null;
-    private volumnDefault = 0.5;
-    private readonly INTERVAL_PLAY_BG_MUSIC_COUNT = 7;
-    private readonly STEP_VOULUME = 0.05;
     private histories: gc.RoundHistories.RoundHistory[] = [];
 
     onLoad() {
@@ -197,6 +192,7 @@ export default class Game extends GameComponent {
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
             }
+            hasAnimation && (this.gameAnimation.showResult = true);
             await this.gameAnimation.setResult(
                 result,
                 score,
@@ -207,11 +203,7 @@ export default class Game extends GameComponent {
             if (hasAnimation) {
                 this.stopCrowdGameSound();
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
-                if (this.settlementStatus?.win) {
-                    this.playSound("match-win");
-                } else {
-                    this.playSound("match-lose");
-                }
+                this.playSound("match-win");
                 const handleSoundEndMatch = () => {
                     this.playEndMatchSound();
                     this.audioContainer.updateVolumeMusicSource(0.5, 3);
@@ -252,6 +244,8 @@ export default class Game extends GameComponent {
         } else {
             this.playCrowdGameSound();
         }
+
+        this.gameAnimation.enableSoundDice = sfxEnable;
     }
 
     calculateScore(result: gc.GameServiceMessage.TResult) {
@@ -287,15 +281,5 @@ export default class Game extends GameComponent {
         } else if (roundTime === 0) {
             this.playSound("countdown-end");
         }
-    }
-
-    @render(Settlements.SettlementStatusStore, (store) => store.settlementStatus)
-    handleSettleStatus(settlementStatus: gc.GameServiceMessage.Status) {
-        this.settlementStatus = settlementStatus;
-    }
-
-    @render(Settlements.SettlementStore, (store) => store.winningPlayers)
-    handleWinningPlayers(winningPlayers: any) {
-        this.winningPlayers = winningPlayers;
     }
 }

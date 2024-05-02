@@ -1,4 +1,20 @@
-import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, log, tween, v3 } from "cc";
+import {
+    AudioSource,
+    BoxCollider,
+    Collider,
+    Component,
+    EventTouch,
+    ITriggerEvent,
+    JsonAsset,
+    Node,
+    Vec3,
+    _decorator,
+    game,
+    tween,
+    v3,
+} from "cc";
+
+import { random } from "lodash-es";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
@@ -24,10 +40,16 @@ export class FootballDiceAnimation extends Component {
     @property(RecordGroup)
     baseGroups: RecordGroup[] = [];
 
+    @property({ type: AudioSource })
+    audioDiceSourceList: AudioSource[] = [];
+
+    @property({ type: AudioSource })
+    audioFloorSourceList: AudioSource[] = [];
+
     @property(JsonAsset)
     animationJson: JsonAsset = null;
     private testRoundId = 0;
-    private readonly recordTimes = 2;
+    private readonly recordTimes = 20;
     private recordCount = 0;
     private readonly records = {
         home: [],
@@ -46,6 +68,8 @@ export class FootballDiceAnimation extends Component {
     HOME_SCORE_REAL_TIME = "home-real-time";
     AWAY_SCORE_REAL_TIME = "away-real-time";
     DICE_LIFTING_SOUND = "dice-lifting-sound";
+    enableSoundDice = false;
+    showResult = false;
 
     private readonly offsets = {
         DicesLowestY: -2.25,
@@ -76,9 +100,28 @@ export class FootballDiceAnimation extends Component {
     }
 
     onLoad() {
-        this.showAllDices(false);
+        //this.showAllDices(false);
         this.loadAnimation();
         game.frameRate = this.fpsReplay;
+    }
+
+    start() {
+        this.diceGroups.forEach((group) => {
+            let collier = group.items[0].getComponent(Collider);
+            collier.on("onTriggerEnter", this.onCollision, this);
+        });
+    }
+
+    onCollision(event: ITriggerEvent) {
+        if (!this.enableSoundDice || !this.showResult) {
+            return;
+        }
+        const index = random(0, 4);
+        if (!event.otherCollider.getComponent(BoxCollider)) {
+            this.audioDiceSourceList[index].play();
+        } else {
+            this.audioFloorSourceList[index].play();
+        }
     }
 
     showAllDices(show = true) {
@@ -307,9 +350,8 @@ export class FootballDiceAnimation extends Component {
         return data;
     }
 
-    private changetestRoundId(text, editbox, customEventData) {
-        this.testRoundId = +text;
-        log(`test round id ${this.testRoundId}`);
+    private changetestRoundId() {
+        this.testRoundId++;
     }
 
     get animationCount() {
@@ -324,6 +366,7 @@ export class FootballDiceAnimation extends Component {
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
         const score = { home: 0, away: 0 };
+        this.changetestRoundId();
         await this.setResult(result, score, this.testRoundId, true);
         console.timeEnd("test result in ");
     }
