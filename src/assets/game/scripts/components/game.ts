@@ -214,7 +214,7 @@ export default class Game extends GameComponent {
                 }
                 const handleSoundEndMatch = () => {
                     this.playEndMatchSound();
-                    this.audioContainer.updateVolumeMusicSource(0.5, 5);
+                    this.audioContainer.updateVolumeMusicSource(0.5, 3);
                 };
                 setTimeout(handleSoundEndMatch, 6000);
             } else {

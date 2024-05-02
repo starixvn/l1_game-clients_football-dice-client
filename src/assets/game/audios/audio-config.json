@@ -47,10 +47,6 @@
         "bundle": "resources",
         "type": "sfx"
     },
-    "paymoney": {
-        "bundle": "resources",
-        "type": "sfx"
-    },
     "starting-round": {
         "bundle": "shared-bundle",
         "path": "starting-round"

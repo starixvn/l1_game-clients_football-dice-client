@@ -1,83 +1,83 @@
 
 logo-team.png
-size: 1289,779
+size: 807,218
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 icon away
   rotate: false
-  xy: 2, 104
-  size: 624, 673
-  orig: 640, 790
-  offset: 8, 64
+  xy: 2, 3
+  size: 198, 213
+  orig: 202, 249
+  offset: 2, 20
   index: -1
 icon home
   rotate: false
-  xy: 628, 105
-  size: 557, 672
-  orig: 640, 790
-  offset: 46, 69
+  xy: 202, 3
+  size: 177, 213
+  orig: 202, 249
+  offset: 14, 21
   index: -1
 splash png/splash_1
   rotate: false
-  xy: 2, 2
-  size: 200, 100
-  orig: 200, 100
+  xy: 381, 146
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_2
-  rotate: true
-  xy: 1187, 577
-  size: 200, 100
-  orig: 200, 100
+  rotate: false
+  xy: 381, 74
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_3
   rotate: false
-  xy: 204, 2
-  size: 200, 100
-  orig: 200, 100
+  xy: 523, 146
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_4
-  rotate: true
-  xy: 1187, 375
-  size: 200, 100
-  orig: 200, 100
+  rotate: false
+  xy: 523, 74
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_5
   rotate: false
-  xy: 406, 2
-  size: 200, 100
-  orig: 200, 100
+  xy: 665, 146
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_6
-  rotate: true
-  xy: 1187, 173
-  size: 200, 100
-  orig: 200, 100
+  rotate: false
+  xy: 665, 74
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_7
   rotate: false
-  xy: 628, 3
-  size: 200, 100
-  orig: 200, 100
+  xy: 381, 2
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_8
   rotate: false
-  xy: 830, 3
-  size: 200, 100
-  orig: 200, 100
+  xy: 523, 2
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
 splash png/splash_9
   rotate: false
-  xy: 1032, 3
-  size: 200, 100
-  orig: 200, 100
+  xy: 665, 2
+  size: 140, 70
+  orig: 140, 70
   offset: 0, 0
   index: -1
