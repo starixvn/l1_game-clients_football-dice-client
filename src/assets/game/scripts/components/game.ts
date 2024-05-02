@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, Node, _decorator, sp } from "cc";
+import { Label, Node, _decorator, log, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -68,6 +68,7 @@ export default class Game extends GameComponent {
     private volumnDefault = 0.5;
     private readonly INTERVAL_PLAY_BG_MUSIC_COUNT = 7;
     private readonly STEP_VOULUME = 0.05;
+    private histories: gc.RoundHistories.RoundHistory[] = [];
 
     onLoad() {
         this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
@@ -89,7 +90,7 @@ export default class Game extends GameComponent {
     @render(Rounds.RoundStore, (store) => store.clientRoundId)
     storeClientRoundId(clientRoundId: number) {
         this.clientRoundId = clientRoundId;
-        console.log("clientRoundId", this.clientRoundId);
+        log("clientRoundId", this.clientRoundId);
     }
 
     getAudioKeyForLanguage(name: string): string {
@@ -101,6 +102,22 @@ export default class Game extends GameComponent {
         this.isLoading = isLoading;
     }
 
+    @render(RoundHistories.RoundHistoryStore, (store) => store.histories)
+    storeHistories(histories: gc.RoundHistories.RoundHistory[]) {
+        if (histories && histories.length > 0) {
+            // this.histories = histories;
+            //only store 2 last round histories
+            const last2RoundHistories = [];
+            for (let i = 0; i < 2; i++) {
+                if (i < histories.length) {
+                    const { roundId, result, settlementResult } = histories[i];
+                    last2RoundHistories.push({ roundId, result, settlementResult });
+                }
+            }
+            this.histories = last2RoundHistories;
+        }
+    }
+
     @render(RoundHistories.RoundHistoryStore, (store) => store.firstJoinGameHistory)
     async renderStaticResult(firstJoinGameHistory: gc.RoundHistories.IFirstJoinGameHistory) {
         if (!firstJoinGameHistory) {
@@ -108,7 +125,6 @@ export default class Game extends GameComponent {
         }
         const lastRound = firstJoinGameHistory.roundHistory;
         if (lastRound) {
-            console.log("render static result from last round history");
             const { result, settlementResult, roundId } = lastRound;
 
             const animationTime = firstJoinGameHistory.animationHighlight
@@ -116,6 +132,8 @@ export default class Game extends GameComponent {
                 : 0;
             const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
             this.roundIdDiceIndex = roundId;
+            await this.showLastRoundResult(roundId);
+            log("render result from firstJoinGameHistory ", roundId);
             await this.showResult(result, animated, settlementResult, animationTime);
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
@@ -128,6 +146,22 @@ export default class Game extends GameComponent {
                 this.handleFinishShowResult();
             }
         }
+    }
+
+    private async showLastRoundResult(currentRoundId: number) {
+        const lastRoundId = currentRoundId - 1;
+        if (lastRoundId < 1) {
+            return;
+        }
+        const history = this.histories.find((roundHistory) => roundHistory.roundId === lastRoundId);
+        if (!history) {
+            return;
+        }
+
+        log("show last round history ", lastRoundId);
+        const { result } = history;
+        const score = this.calculateScore(result);
+        await this.gameAnimation.setResult(result, score, lastRoundId, false);
     }
 
     @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
@@ -147,7 +181,6 @@ export default class Game extends GameComponent {
     ) {
         if (result) {
             console.time("total show result in ");
-            console.time("zoomin");
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
             hasAnimation &&
@@ -175,7 +208,6 @@ export default class Game extends GameComponent {
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
             }
-            console.timeEnd("zoomin");
             await this.gameAnimation.setResult(
                 result,
                 score,
