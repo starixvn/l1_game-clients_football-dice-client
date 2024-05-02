@@ -267,6 +267,7 @@ export class FootballDiceAnimation extends Component {
     }
 
     startRecordHome() {
+        this.showAllDices();
         game.frameRate = this.fpsRecord;
         this.recordCount = 0;
         this.currentRecordGroup = this.diceGroups[TeamIndex.Home];
