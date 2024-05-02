@@ -138,7 +138,7 @@
         "hasAlpha": true,
         "type": "texture",
         "compressSettings": {
-          "useCompressTexture": true
+          "useCompressTexture": false
         }
       },
       "ver": "1.0.3",
