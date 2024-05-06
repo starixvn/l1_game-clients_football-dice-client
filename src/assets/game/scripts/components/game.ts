@@ -186,7 +186,7 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
-                setTimeout(this.playCrowdGameSound, 1000);
+                //setTimeout(this.playCrowdGameSound, 1000);
 
                 await FunctionUtils.delay(500);
                 this.matchStartAnimation(true);
@@ -201,7 +201,6 @@ export default class Game extends GameComponent {
                 animationTime
             );
             if (hasAnimation) {
-                this.stopCrowdGameSound();
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
                 this.playSound("match-win");
                 const handleSoundEndMatch = () => {
@@ -280,6 +279,24 @@ export default class Game extends GameComponent {
             this.playSound("countdown-timer");
         } else if (roundTime === 0) {
             this.playSound("countdown-end");
+        }
+    }
+
+    @render(Rounds.RoundTimeStore, (store) => store.isInRoundTime)
+    playSoundCrowdedRoundInTime(isInRoundTime: any) {
+        if (isInRoundTime) {
+            console.log("playSoundCrowdedRoundInTime");
+            this.playCrowdGameSound();
+            this.audioContainer.updateVoulmeStoppableSFXSource(0.4, 2);
+        }
+    }
+
+    @render(Rounds.RoundTimeStore, (store) => store.isDisplayingResultState)
+    handleSoundCrowdedShowResult(isDisplayingResultState: boolean) {
+        if (isDisplayingResultState) {
+            console.log("handleSoundCrowdedShowResult");
+            this.playCrowdGameSound();
+            this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
     }
 }
