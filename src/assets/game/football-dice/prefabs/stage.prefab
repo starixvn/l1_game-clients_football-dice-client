@@ -269,7 +269,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 4
       }
     },
     "node": {
@@ -283,7 +283,7 @@
       "__uuid__": "49348e88-20d0-48b1-b1f2-d34a27acdb48",
       "__expectedType__": "cc.PhysicsMaterial"
     },
-    "_isTrigger": false,
+    "_isTrigger": true,
     "_center": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -499,7 +499,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 4
       }
     },
     "node": {
@@ -780,7 +780,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 34
       }
     },
     "node": {
@@ -794,7 +794,7 @@
       "__uuid__": "49348e88-20d0-48b1-b1f2-d34a27acdb48",
       "__expectedType__": "cc.PhysicsMaterial"
     },
-    "_isTrigger": false,
+    "_isTrigger": true,
     "_center": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1010,7 +1010,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 34
       }
     },
     "node": {
@@ -1348,7 +1348,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 66
       }
     },
     "node": {
@@ -1361,7 +1361,7 @@
     "_group": 2,
     "_type": 1,
     "_mass": 1,
-    "_allowSleep": false,
+    "_allowSleep": true,
     "_linearDamping": 0,
     "_angularDamping": 0.1,
     "_useGravity": true,
@@ -1581,7 +1581,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 66
       }
     },
     "node": {
@@ -1595,7 +1595,7 @@
       "__uuid__": "49348e88-20d0-48b1-b1f2-d34a27acdb48",
       "__expectedType__": "cc.PhysicsMaterial"
     },
-    "_isTrigger": false,
+    "_isTrigger": true,
     "_center": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1851,7 +1851,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 96
       }
     },
     "node": {
@@ -1864,7 +1864,7 @@
     "_group": 2,
     "_type": 1,
     "_mass": 1,
-    "_allowSleep": false,
+    "_allowSleep": true,
     "_linearDamping": 0,
     "_angularDamping": 0.1,
     "_useGravity": true,
@@ -2084,7 +2084,7 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 1
+        "__id__": 96
       }
     },
     "node": {
@@ -2098,7 +2098,7 @@
       "__uuid__": "49348e88-20d0-48b1-b1f2-d34a27acdb48",
       "__expectedType__": "cc.PhysicsMaterial"
     },
-    "_isTrigger": false,
+    "_isTrigger": true,
     "_center": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -2433,9 +2433,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -2.6918381390572677e-7,
-      "y": -0.2999999999693549,
-      "z": -5.016787862910377e-7
+      "x": -2.7169236746504843e-7,
+      "y": -0.2999999999759168,
+      "z": -5.324504481762915e-7
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -2796,9 +2796,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 1.1238346342423713e-7,
+      "x": 1.0987490256519908e-7,
       "y": -0.3000000000156785,
-      "z": -0.000013194353566170495
+      "z": -0.000013225125229165972
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -3104,7 +3104,7 @@
         "__id__": 167
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [],
     "_prefab": {
       "__id__": 187
@@ -3741,6 +3741,7 @@
       "__id__": 0
     },
     "fileId": "6fpTBSq/FEfKYGYABSb//B",
+    "instance": null,
     "targetOverrides": [
       {
         "__id__": 191
