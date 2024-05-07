@@ -1,20 +1,5 @@
-import {
-    AudioSource,
-    BoxCollider,
-    Collider,
-    Component,
-    EventTouch,
-    ITriggerEvent,
-    JsonAsset,
-    Node,
-    Vec3,
-    _decorator,
-    game,
-    tween,
-    v3,
-} from "cc";
+import { AudioSource, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
 
-import { random } from "lodash-es";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
@@ -100,28 +85,9 @@ export class FootballDiceAnimation extends Component {
     }
 
     onLoad() {
-        //this.showAllDices(false);
+        this.showAllDices(false);
         this.loadAnimation();
         game.frameRate = this.fpsReplay;
-    }
-
-    start() {
-        this.diceGroups.forEach((group) => {
-            let collier = group.items[0].getComponent(Collider);
-            collier.on("onTriggerEnter", this.onCollision, this);
-        });
-    }
-
-    onCollision(event: ITriggerEvent) {
-        if (!this.enableSoundDice || !this.showResult) {
-            return;
-        }
-        const index = random(0, 4);
-        if (!event.otherCollider.getComponent(BoxCollider)) {
-            this.audioDiceSourceList[index].play();
-        } else {
-            this.audioFloorSourceList[index].play();
-        }
     }
 
     showAllDices(show = true) {
