@@ -117,6 +117,7 @@ export default class Game extends GameComponent {
         if (!firstJoinGameHistory) {
             return;
         }
+
         const lastRound = firstJoinGameHistory.roundHistory;
         if (lastRound) {
             const { result, settlementResult, roundId } = lastRound;
@@ -126,6 +127,7 @@ export default class Game extends GameComponent {
                 : 0;
             const animated = firstJoinGameHistory.animationHighlight && animationTime < settings.durations.generatingResult - 1;
             this.roundIdDiceIndex = roundId;
+            animated && this.playCrowdGameSound();
             await this.showLastRoundResult(roundId);
             log("render result from firstJoinGameHistory ", roundId);
             await this.showResult(result, animated, settlementResult, animationTime);
@@ -201,6 +203,9 @@ export default class Game extends GameComponent {
                 animationTime
             );
             if (hasAnimation) {
+                this.audioContainer.updateVoulmeStoppableSFXSource(0, 2);
+                this.stopCrowdGameSound();
+
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
                 this.playSound("match-win");
                 const handleSoundEndMatch = () => {
@@ -238,6 +243,7 @@ export default class Game extends GameComponent {
 
     @render(gc.UserSettings.UserSettingStore, (store) => store.sfxEnable)
     stopSoundStoppableSFX(sfxEnable: boolean) {
+        console.log("sfxEnable", sfxEnable);
         if (!sfxEnable) {
             this.stopCrowdGameSound();
         } else {
@@ -282,19 +288,17 @@ export default class Game extends GameComponent {
         }
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.isInRoundTime)
-    playSoundCrowdedRoundInTime(isInRoundTime: any) {
-        if (isInRoundTime) {
-            console.log("playSoundCrowdedRoundInTime");
+    @render(Rounds.RoundTimeStore, (store) => store.isLocking)
+    playSoundCrowdedRoundIsLocking(isLocking: boolean) {
+        if (isLocking) {
             this.playCrowdGameSound();
-            this.audioContainer.updateVoulmeStoppableSFXSource(0.4, 2);
+            this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
     }
 
-    @render(Rounds.RoundTimeStore, (store) => store.isDisplayingResultState)
-    handleSoundCrowdedShowResult(isDisplayingResultState: boolean) {
-        if (isDisplayingResultState) {
-            console.log("handleSoundCrowdedShowResult");
+    @render(Rounds.RoundTimeStore, (store) => store.roundState)
+    handleSoundCrowdedShowResult(roundState: string) {
+        if (roundState === gc.Rounds.ROUND_STATE.SHOW_ANIMATION_RESULT) {
             this.playCrowdGameSound();
             this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
