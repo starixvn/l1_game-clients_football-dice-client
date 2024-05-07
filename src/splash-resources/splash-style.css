@@ -1,5 +1,5 @@
 .splash-container .bg_no_translate {
-    background-image: url("./game_background.png?v=4");
+    background-image: url("./game_background.png?v=5");
 }
 
 .splash-container .splash_game_name_vi {
@@ -24,4 +24,9 @@
 
 .splash-container .splash_game_name_zh_tw {
     background-image: url("./game_name_zh_tw.png?v=4");
+}
+
+.bg_no_translate {
+    width: 1226px !important;
+    height: 774px !important;
 }
