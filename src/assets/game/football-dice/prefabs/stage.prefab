@@ -2521,7 +2521,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@bf061",
+        "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@bf061",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -2530,7 +2530,7 @@
       "__id__": 136
     },
     "_mesh": {
-      "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@0e0fe",
+      "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@0e0fe",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -2884,7 +2884,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@bf061",
+        "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@bf061",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -2893,7 +2893,7 @@
       "__id__": 153
     },
     "_mesh": {
-      "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@ca09f",
+      "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@ca09f",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -3261,7 +3261,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@229a9",
+        "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@229a9",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -3270,7 +3270,7 @@
       "__id__": 171
     },
     "_mesh": {
-      "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@e3c4f",
+      "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@e3c4f",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -3382,7 +3382,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@c8018",
+        "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@c8018",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -3391,7 +3391,7 @@
       "__id__": 176
     },
     "_mesh": {
-      "__uuid__": "0489af5e-d30a-4034-82ea-8ff7e3a322e4@b652d",
+      "__uuid__": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@b652d",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
