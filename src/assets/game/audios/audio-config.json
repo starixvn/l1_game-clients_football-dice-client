@@ -55,25 +55,25 @@
         "bundle": "resources",
         "path": "zoomout"
     },
-    "bmg-song1": {
+    "bgm-song1": {
         "bundle": "resources",
         "type": "music",
         "isMusicGame": true,
         "isLazyLoad": true
     },
-    "bmg-song2": {
+    "bgm-song2": {
         "bundle": "resources",
         "type": "music",
         "isMusicGame": true,
         "isLazyLoad": true
     },
-    "bmg-song3": {
+    "bgm-song3": {
         "bundle": "resources",
         "type": "music",
         "isMusicGame": true,
         "isLazyLoad": true
     },
-    "bmg-song4": {
+    "bgm-song4": {
         "bundle": "resources",
         "type": "music",
         "isMusicGame": true,

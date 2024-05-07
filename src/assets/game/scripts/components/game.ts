@@ -243,7 +243,6 @@ export default class Game extends GameComponent {
 
     @render(gc.UserSettings.UserSettingStore, (store) => store.sfxEnable)
     stopSoundStoppableSFX(sfxEnable: boolean) {
-        console.log("sfxEnable", sfxEnable);
         if (!sfxEnable) {
             this.stopCrowdGameSound();
         } else {
