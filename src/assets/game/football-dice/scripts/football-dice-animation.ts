@@ -1,4 +1,4 @@
-import { AudioSource, Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
+import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
 
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import Dice from "../../shared/dice";
@@ -24,12 +24,6 @@ export class FootballDiceAnimation extends Component {
 
     @property(RecordGroup)
     baseGroups: RecordGroup[] = [];
-
-    @property({ type: AudioSource })
-    audioDiceSourceList: AudioSource[] = [];
-
-    @property({ type: AudioSource })
-    audioFloorSourceList: AudioSource[] = [];
 
     @property(JsonAsset)
     animationJson: JsonAsset = null;
