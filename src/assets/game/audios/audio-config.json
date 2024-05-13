@@ -19,6 +19,10 @@
         "bundle": "resources",
         "type": "sfx"
     },
+    "paymoney": {
+        "bundle": "resources",
+        "type": "sfx"
+    },
     "logoteam-rollingin": {
         "bundle": "resources",
         "type": "sfx"

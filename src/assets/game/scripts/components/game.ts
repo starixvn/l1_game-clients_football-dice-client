@@ -64,6 +64,8 @@ export default class Game extends GameComponent {
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
     private audioContainer: AudioContainer = null;
     private histories: gc.RoundHistories.RoundHistory[] = [];
+    private settlementStatus: gc.GameServiceMessage.Status = null;
+    private winningPlayers: gc.GameServiceMessage.TWinningPlayers = null;
 
     onLoad() {
         this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
@@ -208,6 +210,12 @@ export default class Game extends GameComponent {
 
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
                 this.playSound("match-win");
+                if (this.winningPlayers || this.settlementStatus?.win) {
+                    console.log("winners", this.winningPlayers);
+                    this.scheduleOnce(() => {
+                        this.playSound("paymoney");
+                    }, 1.5);
+                }
                 const handleSoundEndMatch = () => {
                     this.playEndMatchSound();
                     this.audioContainer.updateVolumeMusicSource(0.5, 3);
@@ -301,5 +309,15 @@ export default class Game extends GameComponent {
             this.playCrowdGameSound();
             this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
+    }
+
+    @render(Settlements.SettlementStatusStore, (store) => store.settlementStatus)
+    handleSettleStatus(settlementStatus: gc.GameServiceMessage.Status) {
+        this.settlementStatus = settlementStatus;
+    }
+
+    @render(Settlements.SettlementStore, (store) => store.winningPlayers)
+    handleWinningPlayers(winningPlayers: any) {
+        this.winningPlayers = winningPlayers;
     }
 }
