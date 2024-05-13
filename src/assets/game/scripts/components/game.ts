@@ -190,7 +190,6 @@ export default class Game extends GameComponent {
                 await FunctionUtils.delay(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
-                //setTimeout(this.playCrowdGameSound, 1000);
 
                 await FunctionUtils.delay(500);
                 this.matchStartAnimation(true);
@@ -210,12 +209,12 @@ export default class Game extends GameComponent {
 
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
                 this.playSound("match-win");
-                if (this.winningPlayers || this.settlementStatus?.win) {
-                    console.log("winners", this.winningPlayers);
-                    this.scheduleOnce(() => {
-                        this.playSound("paymoney");
-                    }, 1.5);
-                }
+                // if (this.winningPlayers || this.settlementStatus?.win) {
+                //     console.log("winners", this.winningPlayers);
+                //     this.scheduleOnce(() => {
+                //         this.playSound("paymoney");
+                //     }, 1.5);
+                // }
                 const handleSoundEndMatch = () => {
                     this.playEndMatchSound();
                     this.audioContainer.updateVolumeMusicSource(0.5, 3);
