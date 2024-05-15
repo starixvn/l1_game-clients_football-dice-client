@@ -9,7 +9,7 @@ interface RecordGroupData {
 export class RecordGroup extends Component {
     private _items: RecordItem[];
     data: RecordGroupData[] = [];
-    private intervalTime = 0.033333; //fps 30
+    private readonly intervalTime = 0.033333; //fps 30
     private replayStep = 0;
     private currentGroupData: RecordGroupData;
     private onCompleteReplay = () => {};
