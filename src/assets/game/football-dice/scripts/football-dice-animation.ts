@@ -310,8 +310,8 @@ export class FootballDiceAnimation extends Component {
         return data;
     }
 
-    private changetestRoundId() {
-        this.testRoundId++;
+    private changetestRoundId(text, editbox, customEventData) {
+        this.testRoundId = +text;
     }
 
     get animationCount() {
@@ -326,7 +326,6 @@ export class FootballDiceAnimation extends Component {
         console.log("result ", [...result.home, ...result.away]);
         console.time("test result in ");
         const score = { home: 0, away: 0 };
-        this.changetestRoundId();
         await this.setResult(result, score, this.testRoundId, true);
         console.timeEnd("test result in ");
     }

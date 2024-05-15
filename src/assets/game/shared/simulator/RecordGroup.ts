@@ -79,6 +79,9 @@ export class RecordGroup extends Component {
     }
 
     tryReplay(groupData: RecordGroupData, index: number) {
+        if (!groupData) {
+            return false;
+        }
         let success = true;
         const maxStep = groupData[this.items[0].node.name].length - 1;
         if (index > maxStep) {
@@ -111,6 +114,7 @@ export class RecordGroup extends Component {
         }
         this.enableReplay = true;
         this.deltaTime = initTime;
+        this.replayStep = 0;
         this.onCompleteReplay = onComplete;
     }
 
@@ -121,8 +125,12 @@ export class RecordGroup extends Component {
     update(dt: number) {
         if (this.enableReplay) {
             this.deltaTime += dt;
-            this.replayStep = this.calculateReplayStep();
-            this.doingReplay();
+
+            const newStep = this.calculateReplayStep();
+            while (newStep > this.replayStep) {
+                this.replayStep++;
+                this.doingReplay();
+            }
             return;
         }
         if (this.enableRecord) {

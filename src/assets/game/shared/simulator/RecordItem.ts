@@ -81,8 +81,8 @@ export class RecordItem extends Component {
             this.resetSimulator();
         }
 
-        // const collider = this.getComponent(Collider);
-        // collider && (collider.enabled = enabled);
+        const collider = this.getComponent(Collider);
+        collider && (collider.enabled = enabled);
 
         const rigidBody = this.getComponent(RigidBody);
         if (rigidBody) {
