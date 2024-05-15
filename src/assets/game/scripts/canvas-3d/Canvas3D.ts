@@ -36,8 +36,7 @@ export class Canvas3D extends Canvas {
         const fov = this.cameraComponent.fov;
         const size = screen.windowSize;
         const halfHeight = size.height / view.getScaleY() / 2;
-        const distance = halfHeight / Math.tan(math.toRadian(fov / 2));
-        return distance;
+        return halfHeight / Math.tan(math.toRadian(fov / 2));
     }
 
     protected _onResizeCamera() {

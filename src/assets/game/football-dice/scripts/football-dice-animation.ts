@@ -340,7 +340,6 @@ export class FootballDiceAnimation extends Component {
             const animationIndex = roundId % this.animationCount;
 
             console.log("========= animation index ", animationIndex);
-            console.log("========= result ", [...result.home, ...result.away]);
             let recordGroup, animationData;
 
             Object.keys(result).forEach((team) => {

@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { Label, Node, _decorator, log, sp } from "cc";
+import { Label, Node, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
@@ -64,8 +64,6 @@ export default class Game extends GameComponent {
     private scorebboardComp: ScoreboardCollapseExpandContent = null;
     private audioContainer: AudioContainer = null;
     private histories: gc.RoundHistories.RoundHistory[] = [];
-    private settlementStatus: gc.GameServiceMessage.Status = null;
-    private winningPlayers: gc.GameServiceMessage.TWinningPlayers = null;
 
     onLoad() {
         this.audioContainer = this.nodeAudioContainer.getComponent(AudioContainer);
@@ -131,7 +129,6 @@ export default class Game extends GameComponent {
             this.roundIdDiceIndex = roundId;
             animated && this.playCrowdGameSound();
             await this.showLastRoundResult(roundId);
-            log("render result from firstJoinGameHistory ", roundId);
             await this.showResult(result, animated, settlementResult, animationTime);
             if (!firstJoinGameHistory.animationHighlight) {
                 this.gameAnimation.modeDownBases(false);
@@ -156,7 +153,6 @@ export default class Game extends GameComponent {
             return;
         }
 
-        log("show last round history ", lastRoundId);
         const { result } = history;
         const score = this.calculateScore(result);
         await this.gameAnimation.setResult(result, score, lastRoundId, false);
@@ -178,7 +174,6 @@ export default class Game extends GameComponent {
         animationTime = 0
     ) {
         if (result) {
-            console.time("total show result in ");
             const isAnimateFirstPhase = hasAnimation && animationTime === 0;
             const score = this.calculateScore(result);
             hasAnimation && this.audioContainer.updateVolumeMusicSource(0.1, 3);
@@ -209,12 +204,6 @@ export default class Game extends GameComponent {
 
                 this.nodeWinningAnimation.getComponent(WinningAnimation).setAnimation(settlementResult);
                 this.playSound("match-win");
-                // if (this.winningPlayers || this.settlementStatus?.win) {
-                //     console.log("winners", this.winningPlayers);
-                //     this.scheduleOnce(() => {
-                //         this.playSound("paymoney");
-                //     }, 1.5);
-                // }
                 const handleSoundEndMatch = () => {
                     this.playEndMatchSound();
                     this.audioContainer.updateVolumeMusicSource(0.5, 3);
@@ -223,7 +212,6 @@ export default class Game extends GameComponent {
             } else {
                 this.updateScorePanel(score, false);
             }
-            console.timeEnd("total show result in ");
         }
     }
 
@@ -308,15 +296,5 @@ export default class Game extends GameComponent {
             this.playCrowdGameSound();
             this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
-    }
-
-    @render(Settlements.SettlementStatusStore, (store) => store.settlementStatus)
-    handleSettleStatus(settlementStatus: gc.GameServiceMessage.Status) {
-        this.settlementStatus = settlementStatus;
-    }
-
-    @render(Settlements.SettlementStore, (store) => store.winningPlayers)
-    handleWinningPlayers(winningPlayers: any) {
-        this.winningPlayers = winningPlayers;
     }
 }
