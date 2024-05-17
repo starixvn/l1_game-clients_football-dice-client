@@ -1,148 +1,104 @@
 {
-    "blue_en": {
-        "bundle": "resources"
+    "countdown-end": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "blue_vi": {
-        "bundle": "resources"
+    "countdown-timer": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "blue_th": {
-        "bundle": "resources"
+    "dice-lifting": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "blue_id": {
-        "bundle": "resources"
+    "zoomin": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "blue_zh_cn": {
-        "bundle": "resources"
+    "zoomout": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "blue_zh_tw": {
-        "bundle": "resources"
+    "paymoney": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_en": {
-        "bundle": "resources"
+    "logoteam-rollingin": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_vi": {
-        "bundle": "resources"
+    "match-win": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_th": {
-        "bundle": "resources"
+    "match-lose": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_id": {
-        "bundle": "resources"
+    "match-start": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_zh_cn": {
-        "bundle": "resources"
+    "whistle-begin-settle": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "green_zh_tw": {
-        "bundle": "resources"
+    "whistle-end-match": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "pink_en": {
-        "bundle": "resources"
+    "crowd-game": {
+        "bundle": "resources",
+        "type": "sfx"
     },
-    "pink_vi": {
-        "bundle": "resources"
+    "starting-round": {
+        "bundle": "shared-bundle",
+        "path": "starting-round"
     },
-    "pink_th": {
-        "bundle": "resources"
-    },
-    "pink_id": {
-        "bundle": "resources"
-    },
-    "pink_zh_cn": {
-        "bundle": "resources"
-    },
-    "pink_zh_tw": {
-        "bundle": "resources"
-    },
-    "red_en": {
-        "bundle": "resources"
-    },
-    "red_vi": {
-        "bundle": "resources"
-    },
-    "red_th": {
-        "bundle": "resources"
-    },
-    "red_id": {
-        "bundle": "resources"
-    },
-    "red_zh_cn": {
-        "bundle": "resources"
-    },
-    "red_zh_tw": {
-        "bundle": "resources"
-    },
-    "white_en": {
-        "bundle": "resources"
-    },
-    "white_vi": {
-        "bundle": "resources"
-    },
-    "white_th": {
-        "bundle": "resources"
-    },
-    "white_id": {
-        "bundle": "resources"
-    },
-    "white_zh_cn": {
-        "bundle": "resources"
-    },
-    "white_zh_tw": {
-        "bundle": "resources"
-    },
-    "yellow_en": {
-        "bundle": "resources"
-    },
-    "yellow_vi": {
-        "bundle": "resources"
-    },
-    "yellow_th": {
-        "bundle": "resources"
-    },
-    "yellow_id": {
-        "bundle": "resources"
-    },
-    "yellow_zh_cn": {
-        "bundle": "resources"
-    },
-    "yellow_zh_tw": {
-        "bundle": "resources"
-    },
-    "dice_drop": {
-        "bundle": "resources"
+    "receive-finish": {
+        "bundle": "resources",
+        "path": "zoomout"
     },
     "bgm-song1": {
         "bundle": "resources",
         "type": "music",
+        "isMusicGame": true,
         "isLazyLoad": true
     },
     "bgm-song2": {
         "bundle": "resources",
         "type": "music",
+        "isMusicGame": true,
         "isLazyLoad": true
     },
     "bgm-song3": {
         "bundle": "resources",
         "type": "music",
+        "isMusicGame": true,
         "isLazyLoad": true
     },
     "bgm-song4": {
         "bundle": "resources",
         "type": "music",
+        "isMusicGame": true,
         "isLazyLoad": true
     },
-    "bgm-song5": {
-        "bundle": "resources",
-        "type": "music",
-        "isLazyLoad": true
-    },
-    "bgm-song6": {
-        "bundle": "resources",
-        "type": "music",
-        "isLazyLoad": true
-    },
-    "bgm-song7": {
-        "bundle": "resources",
-        "type": "music",
-        "isLazyLoad": true
-    }
+    //remove sounds
+    "draw-single-card": {},
+    "draw-single-domino-card": {},
+    "start-betting_en": {},
+    "stop-betting_en": {},
+    "start-betting_vi": {},
+    "stop-betting_vi": {},
+    "start-betting_id": {},
+    "stop-betting_id": {},
+    "start-betting_th": {},
+    "stop-betting_th": {},
+    "start-betting_zh_cn": {},
+    "stop-betting_zh_cn": {},
+    "start-betting_zh_tw": {},
+    "stop-betting_zh_tw": {},
+    "bgm-song5": {},
+    "bgm-song6": {},
+    "bgm-song7": {}
 }

@@ -3,14 +3,14 @@ import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { sharedContainer } from "../../scripts/shared-container";
 
 export const settings = {
-    id: 71,
-    name: "ColorGame",
+    id: 78,
+    name: "FootballDice",
     durations: {
-        wholeRound: 41,
+        wholeRound: 44,
         lockingBet: 3,
-        placingBet: 30,
-        generatingResult: 3,
-        startRound: 2,
+        placingBet: 20,
+        generatingResult: 19,
+        startRound: 1,
     },
     numberOfRoundHistory: 100,
 };
@@ -21,4 +21,5 @@ export const containerOptions: gc.IContainerOptions = {
         container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings);
         container.bind(LogStore).to(LogStore);
     },
+    features: [gc.RoundBasePF, ...gc.defaultFeatures],
 };

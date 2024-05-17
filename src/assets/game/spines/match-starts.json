@@ -1,0 +1,51 @@
+{
+"skeleton": { "hash": "XhI/pVp4+Roj5RKVpNmkEe8ZZEE", "spine": "3.8.99" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "control-all", "parent": "root" },
+	{ "name": "text-match-start", "parent": "control-all", "x": 0.51, "y": 0.06 }
+],
+"slots": [
+	{ "name": "clipping-top", "bone": "control-all", "attachment": "clipping-top" },
+	{ "name": "up", "bone": "text-match-start", "attachment": "up" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"clipping-top": {
+				"clipping-top": {
+					"type": "clipping",
+					"end": "clipping-top",
+					"vertexCount": 4,
+					"vertices": [ -200.23, -49.92, 199.93, -49.76, 199.93, 50.41, -199.92, 50.1 ]
+				}
+			},
+			"up": {
+				"up": { "x": -0.89, "y": 56.83, "width": 1, "height": 1 }
+			}
+		}
+	}
+],
+"animations": {
+	"match-starts": {
+		"slots": {
+			"up": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		},
+		"bones": {
+			"text-match-start": {
+				"translate": [
+					{ "y": -90.36, "curve": 0.562, "c2": 0.74, "c3": 0.724 },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.1667, "curve": 0.302, "c3": 0.793, "c4": 0.72 },
+					{ "time": 1.5, "y": 96.62 }
+				]
+			}
+		}
+	}
+}
+}

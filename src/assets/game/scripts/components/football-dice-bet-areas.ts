@@ -1,0 +1,62 @@
+import gc from "@sg/game-client-base";
+import { Layout, Node, _decorator, tween, v3 } from "cc";
+import Observer from "observer";
+import { ObserverComponent } from "../../../../extensions/shared-components/assets/shared/common-components/observer-component/scripts/observer-component";
+const { ccclass, property } = _decorator;
+const { Settlements, Rounds } = gc;
+const { render, handle } = Observer;
+
+@ccclass
+export class FootballDiceBetAreas extends ObserverComponent {
+    @property(Node)
+    chipContainer: Node = null;
+
+    @property(Node)
+    betChoices: Node = null;
+
+    @render(Rounds.RoundTimeStore, (store) => store.isStartRound)
+    async setAnimZoomOutBetChoices(isStartRound: boolean) {
+        if (isStartRound) {
+            this.zoomInBetChoices(true);
+        }
+    }
+
+    zoomOutBetChoices(hasAnimation: boolean) {
+        this.playZoomOutSound();
+        this.setAnimZoomBetChoices(v3(0.75, 0.75, 1), 1.67, hasAnimation);
+    }
+
+    zoomInBetChoices(hasAnimation: boolean) {
+        hasAnimation && this.playZoomInSound();
+        this.setAnimZoomBetChoices(v3(1, 1, 1), 1, hasAnimation);
+    }
+
+    setAnimZoomBetChoices(scaleRatio, time: number, hasAnimation: boolean) {
+        if (hasAnimation) {
+            tween(this.betChoices)
+                .to(time, { scale: scaleRatio }, { easing: "sineInOut", onUpdate: () => this.updateLayoutBetAreas() })
+                .start();
+            this.chipContainer && tween(this.chipContainer).to(time, { scale: scaleRatio }, { easing: "sineInOut" }).start();
+        } else {
+            this.betChoices.scale = scaleRatio;
+            this.chipContainer.scale = scaleRatio;
+            this.updateLayoutBetAreas();
+        }
+    }
+
+    updateLayoutBetAreas() {
+        const layout = this.node.getComponent(Layout);
+        if (layout) {
+            layout.enabled = false;
+            layout.enabled = true;
+            layout.updateLayout();
+            layout.enabled = false;
+        }
+    }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("zoomin"))
+    playZoomInSound() {}
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX("zoomin"))
+    playZoomOutSound() {}
+}

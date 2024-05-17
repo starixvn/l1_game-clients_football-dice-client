@@ -8,8 +8,8 @@ variables:
   GIT_STRATEGY: clone
   COCOS_VERSION: "3.8.0"
   COCOS_PROJECT_DIR: src
-  INTEGRATION_IMAGE: pentagon/l1_color_game_client
-  INTEGRATION_WS_PATH: colorgame
+  INTEGRATION_IMAGE: pentagon/l1_football_dice_client
+  INTEGRATION_WS_PATH: footballdice
 
 .build_cocos_creator_script: &build_cocos_creator_script
   stage: test
@@ -23,11 +23,31 @@ variables:
     - node --version
     - npm run install-dependencies --prefix "./$COCOS_PROJECT_DIR"
     - set +e
-    - /Applications/CocosCreator/Creator/$COCOS_VERSION/CocosCreator.app/Contents/MacOS/CocosCreator --project "./$COCOS_PROJECT_DIR" --build "platform=web-mobile;debug=false;webOrientation=landscape;md5Cache=true;replaceSplashScreen=true"
+    - |
+      MAX_ATTEMPTS=2
+      ATTEMPT_COUNT=0
+      TIMEOUT_SECOND=15
+      STATUS_SUCCESS=36
+
+      until /Applications/CocosCreator/Creator/$COCOS_VERSION/CocosCreator.app/Contents/MacOS/CocosCreator --project "./$COCOS_PROJECT_DIR" --build "platform=web-mobile;debug=false;webOrientation=landscape;md5Cache=true;replaceSplashScreen=true"; do
+        EXIT_STATUS=$?
+        echo "Status build: $EXIT_STATUS"
+        if [ $EXIT_STATUS -eq $STATUS_SUCCESS ]; then
+          echo "Build succeeded"
+          break
+        fi
+        ATTEMPT_COUNT=$((ATTEMPT_COUNT+1))
+        if [ $ATTEMPT_COUNT -gt $MAX_ATTEMPTS ]; then
+          echo "Failed to build project after $MAX_ATTEMPTS attempts"
+          exit 1
+        fi
+        echo "Retrying build in $TIMEOUT_SECOND second..."
+        sleep $((TIMEOUT_SECOND))
+      done
     - set -e
     - |
       if [ -z "$(ls -A ./$COCOS_PROJECT_DIR/build/web-mobile)" ]; then
-        echo -e "\033[0;31mFolder build is empty, please check the build scritp"
+        echo -e "\033[0;31mFolder build is empty, please check the build script"
         exit 1
       fi
   tags:
