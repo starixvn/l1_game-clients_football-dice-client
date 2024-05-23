@@ -83,6 +83,12 @@
         "isMusicGame": true,
         "isLazyLoad": true
     },
+    "bgm-song5": {
+        "bundle": "resources",
+        "type": "music",
+        "isMusicGame": true,
+        "isLazyLoad": true
+    },
     //remove sounds
     "draw-single-card": {},
     "draw-single-domino-card": {},
@@ -98,7 +104,6 @@
     "stop-betting_zh_cn": {},
     "start-betting_zh_tw": {},
     "stop-betting_zh_tw": {},
-    "bgm-song5": {},
     "bgm-song6": {},
     "bgm-song7": {}
 }
