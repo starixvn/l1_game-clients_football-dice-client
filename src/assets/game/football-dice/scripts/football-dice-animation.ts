@@ -337,8 +337,6 @@ export class FootballDiceAnimation extends Component {
             game.frameRate = this.fpsReplay;
             const { home, away } = score;
             const animationIndex = roundId % this.animationCount;
-
-            console.log("========= animation index ", animationIndex);
             let recordGroup, animationData;
 
             Object.keys(result).forEach((team) => {
