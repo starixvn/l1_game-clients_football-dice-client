@@ -1,11 +1,15 @@
 const win = window as any;
 export const languages = {
     "Common": {
+        "Loss": "Thua",
         "back": "Quay Lại",
         "bet_amount_of_any_choice_incorrect": "Tiền cược của một trong các cửa không hợp lệ.",
         "bet_choice": "Lựa Chọn",
         "bet_detail": "Chi Tiết Cược",
         "bet_history": "Lịch Sử",
+        "bet_limit": "Giới Hạn Cược",
+        "bet_option_even": "Chẵn",
+        "bet_option_odd": "Lẻ",
         "button_change": "Thay Đổi",
         "character_name": "Tên nhân vật",
         "copy_failed_md5": "Chức năng Copy tạm thời không hoạt động.",
@@ -141,6 +145,7 @@ export const languages = {
         "pf_verification_para_2": "Lấy {value} ký tự đầu tiên trong chuỗi SHA512:",
         "pf_verification_para_3": "Đổi Sang Hệ Thập Phân",
         "pf_verification_para_4": "Tính Kết Quả ",
+        "powered_by_vgaming": "Được cung cấp bởi Vgaming",
         "promotion": "Khuyến Mãi",
         "promotion_terms_and_conditions": "Điều Khoản Khuyến Mãi",
         "result": "Kết Quả",
@@ -152,10 +157,12 @@ export const languages = {
         "submit": "XÁC NHẬN",
         "terms_and_conditions_content": "- Tất cả người chơi đều có thể tham gia các chương trình khuyến mãi và có cơ hội giành được những giải thưởng hấp dẫn.\n- Tiền thắng được tính toán dựa theo quy định của chương trình khuyến mãi và tỷ lệ trả thưởng.\n- Chương trình khuyến mãi chỉ được áp dụng trong một khoảng thời gian nhất định do Công ty quy định. Khi chương trình khuyến mãi kết thúc, tỷ lệ trả thưởng sẽ được điều chỉnh trở về như ban đầu.\n- Trong một số tình huống, thể lệ chương trình có thể thay đổi mà không cần thông báo trước.\nTrong mọi trường hợp xảy ra tranh chấp, quyết định của Công ty sẽ là quyết định cuối cùng.",
         "time": "Thời Gian",
+        "total": "Tổng",
         "total_stake": "Tổng Cược",
         "under_maintenance_suggest": "Sau thời gian bảo trì, bạn hãy đăng nhập lại để có thể tiếp tục chơi game.",
         "under_maintenance_time": "Thời gian bảo trì từ %{startTime} đến %{endTime} (GMT+8).",
-        "win": "Thắng"
+        "win": "Thắng",
+        "you_reach_max_win": "Bạn Đã Đạt Mức Tiền Thắng Tối Đa"
     },
     "FootballDice": {
         "away_win": "ĐỘI KHÁCH THẮNG",
@@ -168,6 +175,7 @@ export const languages = {
         "glossary_draw": "Hòa",
         "glossary_home": "Đội Nhà",
         "home_win": "ĐỘI NHÀ THẮNG",
+        "lobby_membersite_banner": "Chơi Sân Nhỏ, Có Bao Thắng To",
         "match_starts": "TRẬN ĐẤU BẮT ĐẦU",
         "pf_ home_dice_2": "Đội Nhà - Xúc Xắc 2",
         "pf_away_dice_1": "Đội Khách - Xúc Xắc 1",
