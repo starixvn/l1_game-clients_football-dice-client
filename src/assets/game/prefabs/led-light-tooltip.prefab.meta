@@ -1,1 +1,13 @@
-{"ver":"1.1.45","importer":"prefab","imported":true,"uuid":"d25d4128-1cf7-4a1c-a16d-dc6836fdf27d","files":[".json"],"subMetas":{},"userData":{"syncNodeName":"led-light-tooltip"}}
+{
+  "ver": "1.1.50",
+  "importer": "prefab",
+  "imported": true,
+  "uuid": "d25d4128-1cf7-4a1c-a16d-dc6836fdf27d",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "syncNodeName": "led-light-tooltip"
+  }
+}
