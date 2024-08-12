@@ -1,9 +1,11 @@
 import gc from "@sg/game-client-base";
-import { Label, Node, _decorator, sp } from "cc";
+import { Label, Node, _decorator, assetManager, director, game, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import Observer from "observer";
 import { AudioContainer } from "../../../../extensions/shared-components/assets/game/audios/scripts/component/audio-container";
+import { InGameMenuEvents } from "../../../../extensions/shared-components/assets/game/in-game-menu/scripts/stores/in-game-menu-events";
+import { InGameMenuStore } from "../../../../extensions/shared-components/assets/game/in-game-menu/scripts/stores/in-game-menu-store";
 import { ScoreboardCollapseExpandContent } from "../../../../extensions/shared-components/assets/game/scoreboards/scripts/components/scoreboard-collapse-expand-content";
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
@@ -296,5 +298,36 @@ export default class Game extends GameComponent {
             this.playCrowdGameSound();
             this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
+    }
+
+    @render(InGameMenuStore, (store) => store.event, { fireImmediately: false })
+    async handleGoToLobby({ event }: { event: InGameMenuEvents }) {
+        if (event === InGameMenuEvents.GO_TO_LOBBY) {
+            await this.forceCleanup();
+        }
+    }
+
+    async forceCleanup() {
+        // Unbind Store
+        const container = gc.getContainer(containerOptions);
+
+        await container.unbindAllAsync();
+        await container.parent.unbindAllAsync();
+        console.log("container after unbind", container);
+
+        // Clear asset manager cache
+        assetManager?.assets?.clear();
+        assetManager?.bundles?.clear();
+        assetManager?.cacheManager?.clearCache();
+        assetManager?.cacheManager?.clearLRU();
+
+        // Clear all loaded scenes
+        director?.purgeDirector();
+        director.getScheduler().destroy();
+
+        // Clear all actions
+        director?.removeAll(game);
+
+        game?.pause();
     }
 }
