@@ -297,4 +297,13 @@ export default class Game extends GameComponent {
             this.audioContainer.updateVoulmeStoppableSFXSource(1, 2);
         }
     }
+
+    async forceCleanup() {
+        super.forceCleanup();
+
+        // Unbind Store
+        const container = gc.getContainer(containerOptions);
+        await container.unbindAllAsync();
+        await container.parent.unbindAllAsync();
+    }
 }
