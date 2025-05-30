@@ -1041,7 +1041,7 @@
     "_id": "a2EcfjauBAlbVgHAo5vpxM"
   },
   {
-    "__type__": "cc.Fxaa",
+    "__type__": "cc.FXAA",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},

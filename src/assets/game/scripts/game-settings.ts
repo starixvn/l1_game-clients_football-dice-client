@@ -2,9 +2,12 @@ import gc from "@sg/game-client-base";
 import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { sharedContainer } from "../../scripts/shared-container";
 
+const GAME_NAME = "FootballDice";
+
 export const settings = {
     id: 78,
-    name: "FootballDice",
+    name: GAME_NAME,
+    observerNamespace: GAME_NAME,
     durations: {
         wholeRound: 44,
         lockingBet: 3,

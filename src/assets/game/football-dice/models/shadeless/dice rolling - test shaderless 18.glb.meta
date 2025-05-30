@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.8",
+  "ver": "2.3.13",
   "importer": "gltf",
   "imported": true,
   "uuid": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1",
@@ -289,7 +289,6 @@
         ]
       }
     ],
-    "redirect": "27bbe9c3-170b-4a4b-9e4b-c3cedc9e4ee1@f3a9d",
     "lods": {
       "enable": false,
       "hasBuiltinLOD": false,
