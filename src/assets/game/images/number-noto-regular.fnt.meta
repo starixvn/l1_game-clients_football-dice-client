@@ -10,7 +10,7 @@
   "userData": {
     "_fntConfig": {
       "fontSize": 48,
-      "atlasName": "main-atlas.png",
+      "atlasName": "main-atlas.webp",
       "fontDefDictionary": {
         "9": {
           "rect": {
@@ -269,6 +269,6 @@
       "kerningDict": {}
     },
     "fontSize": 48,
-    "textureUuid": "b15b3960-ae0d-4754-a9ef-95a5fd26d618"
+    "textureUuid": "9c5a4399-c7cb-4b61-a142-aad3d56a1220"
   }
 }

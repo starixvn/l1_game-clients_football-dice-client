@@ -2,22 +2,22 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "a131f4d2-17e0-423e-b475-180f94de7749",
+  "uuid": "a5cac49e-289c-40e3-9755-0e2862e6de06",
   "files": [
     ".json",
-    ".png"
+    ".webp"
   ],
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "a131f4d2-17e0-423e-b475-180f94de7749@6c48a",
+      "uuid": "a5cac49e-289c-40e3-9755-0e2862e6de06@6c48a",
       "displayName": "game_background",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "a131f4d2-17e0-423e-b475-180f94de7749",
+        "imageUuidOrDatabaseUri": "a5cac49e-289c-40e3-9755-0e2862e6de06",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "a131f4d2-17e0-423e-b475-180f94de7749@f9941",
+      "uuid": "a5cac49e-289c-40e3-9755-0e2862e6de06@f9941",
       "displayName": "game_background",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "a131f4d2-17e0-423e-b475-180f94de7749@6c48a",
+        "imageUuidOrDatabaseUri": "a5cac49e-289c-40e3-9755-0e2862e6de06@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": true,
     "hasAlpha": true,
-    "redirect": "a131f4d2-17e0-423e-b475-180f94de7749@6c48a"
+    "redirect": "a5cac49e-289c-40e3-9755-0e2862e6de06@6c48a"
   }
 }
