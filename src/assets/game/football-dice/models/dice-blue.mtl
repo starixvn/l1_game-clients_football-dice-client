@@ -82,7 +82,7 @@
       "metallic": 0.2,
       "specularIntensity": 0,
       "mainTexture": {
-        "__uuid__": "ad16d6ed-3723-4c7c-b488-1103dc4316ba@6c48a",
+        "__uuid__": "f7470117-a613-4d23-b6a4-890b962c8e43@6c48a",
         "__expectedType__": "cc.Texture2D"
       }
     },
