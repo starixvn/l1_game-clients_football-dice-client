@@ -23,7 +23,6 @@ const defaultConfig: gc.Configs.SiteConfigs = {
         proxyPath: "footballdice",
         route: "footballdice",
     },
-    mainObserverNamespace: "FootballDice",
     tolgeeUrl: "",
     boostedOddsDelayTimeByMinutes: 2,
 };
