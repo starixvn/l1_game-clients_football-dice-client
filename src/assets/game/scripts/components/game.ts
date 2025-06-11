@@ -8,7 +8,8 @@ import { ScoreboardCollapseExpandContent } from "../../../../extensions/shared-c
 import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
-import { containerOptions, settings } from "../game-settings";
+import { settings } from "../game-settings";
+import { containerOptions } from "../containerOptions";
 import "./../../../resources/i18n";
 import { FootballDiceBetAreas } from "./football-dice-bet-areas";
 import { ScoreTable } from "./score-table";
