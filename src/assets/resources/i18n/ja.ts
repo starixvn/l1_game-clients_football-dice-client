@@ -11,7 +11,7 @@ export const languages = {
         "bet_choice_even": "偶数",
         "bet_choice_home": "ホーム",
         "bet_choice_odd": "奇数",
-        "bet_choice_over": "終了",
+        "bet_choice_over": "オーバー",
         "betChoice_shorten": "ベット選択",
         "bet_choice_under": "アンダー",
         "bet_detail": "ベット詳細",
