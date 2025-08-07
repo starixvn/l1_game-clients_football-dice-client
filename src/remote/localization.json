@@ -6,7 +6,8 @@
         "vi": "XÍ NGẦU TÚC CẦU",
         "zh_cn": "足球骰子",
         "zh_tw": "足球骰子",
-        "ja": "サッカーダイス"
+        "ja": "サッカーダイス",
+        "es": "FÚTBOL DADOS"
     },
     "gameNames": {
         "en": "Football Dice",
@@ -15,6 +16,7 @@
         "vi": "Xí Ngầu Túc Cầu",
         "zh_cn": "足球骰子",
         "zh_tw": "足球骰子",
-        "ja": "フットボールダイス"
+        "ja": "サッカーダイス",
+        "es": "FÚTBOL DADOS"
     }
 }
