@@ -2,14 +2,14 @@ import gc from "@sg/game-client-base";
 import { Label, Node, _decorator, sp } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
+import { AnimationUtils } from "db://shared-components/shared/utils";
 import Observer from "observer";
 import { AudioContainer } from "../../../../extensions/shared-components/assets/game/audios/scripts/component/audio-container";
 import { ScoreboardCollapseExpandContent } from "../../../../extensions/shared-components/assets/game/scoreboards/scripts/components/scoreboard-collapse-expand-content";
-import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { FootballDiceAnimation } from "../../football-dice/scripts/football-dice-animation";
-import { settings } from "../game-settings";
 import { containerOptions } from "../containerOptions";
+import { settings } from "../game-settings";
 import "./../../../resources/i18n";
 import { FootballDiceBetAreas } from "./football-dice-bet-areas";
 import { ScoreTable } from "./score-table";
@@ -183,11 +183,11 @@ export default class Game extends GameComponent {
             await this.gameAnimation.zoomInCamera(isAnimateFirstPhase);
 
             if (isAnimateFirstPhase) {
-                await FunctionUtils.delay(500);
+                await AnimationUtils.delayTime(500);
                 this.startLogoAnimation();
                 this.playStartMatchSound();
 
-                await FunctionUtils.delay(500);
+                await AnimationUtils.delayTime(500);
                 this.matchStartAnimation(true);
                 this.scorebboardComp.renderCollapseScoreboard(true);
             }

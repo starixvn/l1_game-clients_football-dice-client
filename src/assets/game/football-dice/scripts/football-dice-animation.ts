@@ -1,6 +1,6 @@
 import { Component, EventTouch, JsonAsset, Node, Vec3, _decorator, game, tween, v3 } from "cc";
 
-import { FunctionUtils } from "../../../../extensions/shared-components/assets/shared/utils/function-utils";
+import { AnimationUtils } from "db://shared-components/shared/utils";
 import Dice from "../../shared/dice";
 import { getFaceUpVector } from "../../shared/dice-utils";
 import { RecordGroup } from "../../shared/simulator/RecordGroup";
@@ -365,7 +365,7 @@ export class FootballDiceAnimation extends Component {
             const onComplete =
                 (recordGroup, baseNode, complete, animated = true) =>
                 async () => {
-                    animated && (await FunctionUtils.delay(300));
+                    animated && (await AnimationUtils.delayTime(300));
                     this.node.emit(this.DICE_LIFTING_SOUND);
                     await this.moveUp(recordGroup, baseNode, animated);
                     complete && complete();
@@ -412,7 +412,7 @@ export class FootballDiceAnimation extends Component {
                         },
                         { easing: "sineInOut" }
                     )
-                    .call(resolve)
+                    .call(() => resolve())
                     .start();
             } else {
                 node.position = position;
