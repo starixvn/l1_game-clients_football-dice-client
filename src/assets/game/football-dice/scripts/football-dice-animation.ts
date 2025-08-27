@@ -365,7 +365,7 @@ export class FootballDiceAnimation extends Component {
             const onComplete =
                 (recordGroup, baseNode, complete, animated = true) =>
                 async () => {
-                    animated && (await AnimationUtils.delayTime(300));
+                    animated && (await AnimationUtils.delayTime(0.3));
                     this.node.emit(this.DICE_LIFTING_SOUND);
                     await this.moveUp(recordGroup, baseNode, animated);
                     complete && complete();
