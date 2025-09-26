@@ -2,7 +2,7 @@ window.envConfig = {
     systemType: "SG",
     ssl: true,
     subDomain: "l1uatproxy",
-    env: "SIT",
+    env: "UAT",
     subGuideDomain: "l1guidesuat",
     enableMsgpackParserAllGames: true,
     enableMsgpackParserOnNotification: true,
